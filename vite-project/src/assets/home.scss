@@ -1,0 +1,22 @@
+$FontSize: 18px;
+$Decoration : none;
+$FontColor: white;
+$TitleFontSize: 20px;
+$Display: flex;
+
+
+body{
+   direction: rtl;
+   font-size: $FontSize;
+}
+ul {
+    background-color: red;
+   
+}
+.nav-item {
+    text-decoration: $Decoration;
+    color: $FontColor;
+}
+.active {
+    text-decoration: underline;
+}
