@@ -1,0 +1,54 @@
+// colors
+$FontColor: white;
+// sizes
+$TitleFontSize: 20px;
+$FontSize: 18px;
+// the style of display's elements in the page
+$Display: flex;
+$Justify-content: space-around;
+$Decoration : none;
+// margins
+$DefaultMargin: 0;
+
+
+body,
+html {
+    direction: rtl;
+    margin: $DefaultMargin;
+    font-size: $FontSize;
+}
+
+// hero section
+.hero {
+    background-image: url(../pic/Rectangle\ 1@2x.png);
+    height: 720px;
+    ;
+}
+
+// navbar menu section
+.navigation {
+    display: $Display;
+    justify-content: $Justify-content;
+}
+
+// nav list in the navbar menu section
+.nav-list {
+    display: $Display;
+    justify-content: $Justify-content;
+    width: 50%;
+}
+.left-nav{
+    direction: ltr;
+    justify-content: flex-start;
+}
+
+// items in the navbar menu
+.nav-item {
+
+    text-decoration: $Decoration;
+    color: $FontColor;
+}
+
+.active {
+    text-decoration: underline;
+}
