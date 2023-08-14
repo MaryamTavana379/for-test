@@ -21,6 +21,8 @@ $DefaultMargin: 0;
 }
 
 @mixin slider ($Align: center) {
+    width: 100%;
+    
     text-align: $Align;
     color: $TextColor;
     font-size: $TitleFontSize;
