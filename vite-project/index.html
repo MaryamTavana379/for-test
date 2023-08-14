@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/assets/styles/home.scss">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    
+
     <title>Vite + Vue</title>
+
   </head>
   <body>
     <div id="app" class="container">
@@ -24,15 +30,53 @@
           </ul>
           <!-- left side items on the navbar -->
           <ul class="nav-list left-nav">
-            <button class="accordion-button"> تماس با ما </button>
+            <button class="btn"> تماس با ما </button>
             <i class="fa-thin fa-magnifying-glass"></i>
 
           </ul>
     
         </div>
+        <!-- swiper slider -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <h1 class="sliderTxt"> بهترین ساعت ها </h1>
+              <p class="slidertxt"> را از ما بخواهید</p>
+              <hr class="underline"/>
+              <button class="btn sliderBtn"> تماس با ما </button>
+            </div>
+            <div class="swiper-slide">
+              <h1 class="sliderTxt"> بهترین ساعت ها </h1>
+              <p class="slidertxt"> را از ما بخواهید</p>
+              <hr class="underline"/>
+              <button class="btn sliderBtn"> تماس با ما </button>
+            </div>
+            <div class="swiper-slide">
+              <h1 class="sliderTxt"> بهترین ساعت ها </h1>
+              <p class="slidertxt"> را از ما بخواهید</p>
+              <hr class="underline"/>
+              <button class="btn sliderBtn"> تماس با ما </button>
+            </div>
+           
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
     
       </section>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
 
   </body>
 </html>

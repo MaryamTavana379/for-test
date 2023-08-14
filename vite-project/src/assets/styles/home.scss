@@ -1,7 +1,8 @@
 // colors
-$FontColor: white;
+$MainColor: #AB987A;
+$TextColor: white;
 // sizes
-$TitleFontSize: 20px;
+$TitleFontSize: 30px;
 $FontSize: 18px;
 // the style of display's elements in the page
 $Display: flex;
@@ -9,20 +10,39 @@ $Justify-content: space-around;
 $Decoration : none;
 // margins
 $DefaultMargin: 0;
+@mixin button ($BackgroundColor: $MainColor, $TextColor: $TextColor, $BtnWidth: 124px, $BtnHeight: 41px, $FontSize: 16px, $BtnBorder: none) {
+    background-color: $BackgroundColor;
+    color: $TextColor;
+    width: $BtnWidth;
+    height: $BtnHeight ;
+    font-size: $FontSize;
+    border: $BtnBorder;
 
+}
+
+@mixin slider ($Align: center) {
+    text-align: $Align;
+    color: $TextColor;
+    font-size: $TitleFontSize;
+}
+
+@mixin hr ($Width: 10%, $Border: 1px solid $MainColor) {
+    width: $Width;
+    border: $Border;
+}
 
 body,
 html {
     direction: rtl;
     margin: $DefaultMargin;
     font-size: $FontSize;
+    
 }
 
 // hero section
 .hero {
     background-image: url(../pic/Rectangle\ 1@2x.png);
     height: 720px;
-    ;
 }
 
 // navbar menu section
@@ -37,18 +57,35 @@ html {
     justify-content: $Justify-content;
     width: 50%;
 }
+// button and search icon in the navbar menu
 .left-nav{
     direction: ltr;
     justify-content: flex-start;
+}
+// button in the navbar menu
+.btn {
+    @include button();
 }
 
 // items in the navbar menu
 .nav-item {
 
     text-decoration: $Decoration;
-    color: $FontColor;
+    color: $TextColor;
+}
+// home 
+.active {
+    text-decoration: underline !important;
+}
+        
+.swiper {
+    @include slider();
 }
 
-.active {
-    text-decoration: underline;
+hr {
+    @include hr();
+}
+        
+.sliderBtn {
+    @include button($BtnWidth: 200px, $BtnHeight: 59px, $FontSize: 24px)
 }
