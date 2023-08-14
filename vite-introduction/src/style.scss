@@ -1,0 +1,50 @@
+@mixin mainStyle ($Align:rtl, $Margin: 0, $Padding:0){
+  direction: $Align;
+  margin: $Margin;
+  padding: $Padding;
+}
+@mixin introduction ($Display: flex, $Content: space-around) {
+  display: $Display;
+  justify-content: $Content
+ 
+}
+$Width :50%;
+
+
+html,body{
+  @include mainStyle();
+}
+
+.introduction {
+  @include introduction()
+}
+img{
+  width: 100px;
+
+}
+.introduction--container{
+width: $Width;
+line-height: 50px;
+
+}
+.introduction--container img{
+  width: 704px;
+  height: 400px;
+
+
+}
+strong{
+  font-size: xx-large;
+  font-weight: bold;
+}
+p{ 
+  font-size: 24px;
+  
+}
+button{
+  width: 204px;
+  height: 55px;
+  font-size: 20px;
+  font-weight: 100;
+  margin: 20px;
+}
