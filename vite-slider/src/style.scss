@@ -1,0 +1,40 @@
+$Width:100% ;
+$Heigth: 100% ;
+$BackgroundColor: #eee ;
+$Align: center;
+
+html,
+body {
+  position: relative;
+  height: $Heigth;
+}
+
+body {
+  background: $BackgroundColor;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: $Width;
+  height: $Heigth;
+}
+
+.swiper-slide {
+  text-align: $Align;
+  font-size: 18px;
+  background: $BackgroundColor;
+  display: flex;
+  justify-content: $Align;
+  align-items: $Align;
+}
+
+.swiper-slide img {
+  display: block;
+  width: $Width;
+  height: $Heigth;
+  object-fit: cover;
+}
