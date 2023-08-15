@@ -3,15 +3,33 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+   <!-- this section is after the hero section -->
+   <section class="introduction">
+    <!-- this section is for icons -->
+    <div class="introduction--container">
+      <ul>
+        <li>
+          <p><strong>20+</strong> سال تجربه </p>
+        </li>
+        <li>
+          <p><strong>20+</strong> سال تجربه </p>
+        </li>
+        <li>
+          <p><strong>20+</strong> سال تجربه </p>
+        </li>
+        <li>
+          <p><strong>20+</strong> سال تجربه </p>
+        </li>
+      </ul>
+      <button> درباره ما </button>
+    </div>
+
+    <!-- this section is used for image -->
+    <div class="introduction--container">
+      <img src="./assets/1.jpg" alt="pic1">
+    </div>
+
+  </section>
 </template>
 
 <style scoped>
