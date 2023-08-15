@@ -20,12 +20,12 @@ $DefaultMargin: 0;
 
 }
 
-@mixin slider ($Align: center) {
+@mixin slider ($Align: center, $Direction: ltr) {
     width: 100%;
-    
     text-align: $Align;
     color: $TextColor;
     font-size: $TitleFontSize;
+    direction: $Direction;
 }
 
 @mixin hr ($Width: 10%, $Border: 1px solid $MainColor) {
@@ -43,7 +43,7 @@ html {
 
 // hero section
 .hero {
-    background-image: url(../pic/Rectangle\ 1@2x.png);
+    background-image: url(../pic/1.png);
     height: 720px;
 }
 
