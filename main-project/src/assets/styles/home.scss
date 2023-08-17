@@ -5,20 +5,26 @@ $TextColor: white;
 $TitleFontSize: 30px;
 $FontSize: 18px;
 // the style of display's elements in the page
+$Position: relative;
 $Width: 100%;
 $Display: flex;
-$Justify-content: space-between;
 $Decoration : none;
 // margins
 $DefaultMargin: 0;
 $DefaultPadding: 0;
+@mixin display ($Display: flex, $Width: 100%, $Justify-content: space-between) {
+    display: $Display;
+    width: $Width;
+    justify-content: $Justify-content;
 
-@mixin navlist( $Align: center, $Width: 50%, $Content: space-evenly, $Direction: row){
+}
+
+@mixin navlist($Align: center, $Width: 50%, $Content: space-evenly, $Direction: row, $Padding: $DefaultPadding) {
     display: $Display;
     justify-content: $Content;
     align-items: $Align;
     width: $Width;
-    padding: $DefaultPadding;
+    padding: $Padding;
     flex-direction: $Direction;
 
 }
@@ -27,7 +33,7 @@ $DefaultPadding: 0;
     text-decoration: $Decoration;
 }
 
-@mixin button ($BackgroundColor: $MainColor, $TextColor: $TextColor, $BtnWidth: 124px, $BtnHeight: 41px, $FontSize: 16px, $BtnBorder: none) {
+@mixin mainButton ($BackgroundColor: $MainColor, $TextColor: $TextColor, $BtnWidth: 124px, $BtnHeight: 41px, $FontSize: 16px, $BtnBorder: none) {
     background-color: $BackgroundColor;
     color: $TextColor;
     width: $BtnWidth;
@@ -60,7 +66,14 @@ html {
     direction: rtl;
     margin: $DefaultMargin;
     font-size: $FontSize;
+    overflow-x: hidden;
+    li {
+            list-style: none;
+        }
     
+}
+section{
+    margin-bottom: 50px;
 }
 
 // hero section
@@ -71,11 +84,9 @@ html {
 
 // navbar menu section
 .navigation {
+    @include display();
     position: fixed;
     z-index: 9;
-    width: $Width;
-    display: $Display;
-    justify-content: $Justify-content;
 }
 
 // nav list in the navbar menu section
@@ -92,7 +103,7 @@ html {
 }
 // button in the navbar menu
 .btn {
-    @include button();
+    @include mainButton();
 }
 
 // items in the navbar menu
@@ -130,11 +141,75 @@ html {
 .swiper__title , .swiper__subtitle{
     margin: $DefaultMargin;
 }
-
+// the hr tag under the subtitle on each slide
 hr {
     @include hr();
 }
-        
+// button on the slides        
 .swiper__btn {
-    @include button($BtnWidth: 200px, $BtnHeight: 59px, $FontSize: 24px)
+    @include mainButton($BtnWidth: 200px, $BtnHeight: 59px, $FontSize: 24px)
+}
+//ul list on the introduction section
+.introduction {
+
+    @include display($Justify-content: space-around);
+
+    .introduction__container {
+        @include navlist($Direction: column, $Width: 100%, $Align: none, $Padding:40px);
+        width: 50%;
+    }
+
+    ul {
+
+        line-height: 100px;
+        margin: $DefaultMargin;
+        padding: $DefaultPadding;
+    }
+
+    li {
+        display: $Display;
+        align-items: center;
+    }
+
+    .demo {
+        position: relative;
+    }
+
+    // .demo::after{
+    //     content: ' ';
+    //     display: block;
+    //     position: absolute;
+    //     background-color: #AB987A;
+    //     border-radius: 50%;
+    //     right: -20px;
+    //     top: 15px;
+    //     width: 60px;
+    //     height: 60px;
+    //     opacity: 5%;
+    // }
+    .introduction__background {
+        position: relative;
+    }
+
+    .introduction__img {
+        width: 40px;
+        height: 40px;
+    }
+
+    i {
+        color: black;
+    }
+
+    span {
+        font-size: $FontSize;
+    }
+
+    strong {
+        font-size: $TitleFontSize;
+    }
+
+    button {
+        @include mainButton($BackgroundColor: unset, $TextColor: $MainColor, $BtnBorder: 2px solid $MainColor, $BtnWidth: 200px, $BtnHeight:50px);
+
+    }
 }
