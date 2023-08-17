@@ -5,11 +5,28 @@ $TextColor: white;
 $TitleFontSize: 30px;
 $FontSize: 18px;
 // the style of display's elements in the page
+$Width: 100%;
 $Display: flex;
-$Justify-content: space-around;
+$Justify-content: space-between;
 $Decoration : none;
 // margins
 $DefaultMargin: 0;
+$DefaultPadding: 0;
+
+@mixin navlist( $Align: center, $Width: 50%, $Content: space-evenly, $Direction: row){
+    display: $Display;
+    justify-content: $Content;
+    align-items: $Align;
+    width: $Width;
+    padding: $DefaultPadding;
+    flex-direction: $Direction;
+
+}
+@mixin Items($Color: $TextColor, $Decoration: $Decoration ){
+    color: $Color;
+    text-decoration: $Decoration;
+}
+
 @mixin button ($BackgroundColor: $MainColor, $TextColor: $TextColor, $BtnWidth: 124px, $BtnHeight: 41px, $FontSize: 16px, $BtnBorder: none) {
     background-color: $BackgroundColor;
     color: $TextColor;
@@ -20,12 +37,13 @@ $DefaultMargin: 0;
 
 }
 
-@mixin slider ($Align: center, $Direction: ltr) {
-    width: 100%;
+@mixin slider ($Align: center, $Direction: ltr, $Height: 100%) {
+    width: $Width;
     text-align: $Align;
     color: $TextColor;
     font-size: $TitleFontSize;
     direction: $Direction;
+    height: $Height;
 }
 
 @mixin hr ($Width: 10%, $Border: 1px solid $MainColor) {
@@ -49,20 +67,23 @@ html {
 
 // navbar menu section
 .navigation {
+    position: fixed;
+    width: $Width;
     display: $Display;
     justify-content: $Justify-content;
 }
 
 // nav list in the navbar menu section
-.nav-list {
-    display: $Display;
-    justify-content: $Justify-content;
-    width: 50%;
+.nav__list--right {
+  @include navlist( )
 }
 // button and search icon in the navbar menu
-.left-nav{
-    direction: ltr;
-    justify-content: flex-start;
+.nav__list--left {
+   @include navlist($Direction: row-reverse, $Width:30%)
+}
+//fontawsome search icon
+.fa-search{
+    color: $TextColor
 }
 // button in the navbar menu
 .btn {
@@ -70,10 +91,8 @@ html {
 }
 
 // items in the navbar menu
-.nav-item {
-
-    text-decoration: $Decoration;
-    color: $TextColor;
+.nav__item {
+ @include Items();
 }
 // home 
 .active {
@@ -88,6 +107,6 @@ hr {
     @include hr();
 }
         
-.sliderBtn {
+.swiper__btn {
     @include button($BtnWidth: 200px, $BtnHeight: 59px, $FontSize: 24px)
 }
