@@ -22,7 +22,7 @@ $DefaultPadding: 0;
     flex-direction: $Direction;
 
 }
-@mixin Items($Color: $TextColor, $Decoration: $Decoration ){
+@mixin Items($Color: #ccc2c2, $Decoration: $Decoration ){
     color: $Color;
     text-decoration: $Decoration;
 }
@@ -45,6 +45,10 @@ $DefaultPadding: 0;
     direction: $Direction;
     height: $Height;
 }
+@mixin swiperSlide ($BackgroungImg: url(../pic/1.png), $Repeat: round) {
+    background-image: $BackgroungImg;
+    background-repeat: $Repeat;
+}
 
 @mixin hr ($Width: 10%, $Border: 1px solid $MainColor) {
     width: $Width;
@@ -61,13 +65,14 @@ html {
 
 // hero section
 .hero {
-    background-image: url(../pic/1.png);
+  
     height: 720px;
 }
 
 // navbar menu section
 .navigation {
     position: fixed;
+    z-index: 9;
     width: $Width;
     display: $Display;
     justify-content: $Justify-content;
@@ -97,10 +102,33 @@ html {
 // home 
 .active {
     text-decoration: underline !important;
+    color: white
 }
-        
+// swiper container        
 .swiper {
     @include slider();
+}
+// swiper slide
+.swiper__slide1{
+    @include swiperSlide()
+}
+.swiper__slide2{
+    @include swiperSlide($BackgroungImg: url(../pic/2.jpg))
+}
+.swiper__slide3{
+    @include swiperSlide($BackgroungImg: url(../pic/3.jpg))
+}
+
+// items on the each slide
+.swiper-slide{
+    display: $Display;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+// titles on the sildes
+.swiper__title , .swiper__subtitle{
+    margin: $DefaultMargin;
 }
 
 hr {
