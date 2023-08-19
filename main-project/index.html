@@ -1,20 +1,22 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    /> -->
 
     <title>Vite + Vue</title>
-
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <!-- hero section -->
       <section class="hero">
         <!-- navbar menu -->
@@ -29,40 +31,36 @@
           </ul>
           <!-- left side items on the navbar -->
           <ul class="nav__list--left">
-            <button class="btn"> تماس با ما </button>
+            <button class="btn">تماس با ما</button>
             <i class="fa fa-search"></i>
-
           </ul>
-    
         </div>
         <!-- swiper slider -->
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide swiper__slide1">
-              <h1 class="swiper__title"> بهترین ساعت ها </h1>
-              <p class="swiper__subtitle"> را از ما بخواهید</p>
-              <hr class="swiper__line"/>
-              <button class="btn swiper__btn"> تماس با ما </button>
+            <div class="swiper-slide swiper__slider swiper__slide1">
+              <h1 class="swiper__title">بهترین ساعت ها</h1>
+              <p class="swiper__subtitle">را از ما بخواهید</p>
+              <hr class="swiper__line" />
+              <button class="btn swiper__btn">تماس با ما</button>
             </div>
-            <div class="swiper-slide swiper__slide2">
-              <h1 class="swiper__title"> 2بهترین ساعت ها </h1>
-              <p class="swiper__subtitle"> را از ما بخواهید</p>
-              <hr class="swiper__line"/>
-              <button class="btn swiper__btn"> تماس با ما </button>
+            <div class="swiper-slide swiper__slider swiper__slide2">
+              <h1 class="swiper__title">2بهترین ساعت ها</h1>
+              <p class="swiper__subtitle">را از ما بخواهید</p>
+              <hr class="swiper__line" />
+              <button class="btn swiper__btn">تماس با ما</button>
             </div>
-            <div class="swiper-slide swiper__slide3">
-              <h1 class="swiper__title"> 3بهترین ساعت ها </h1>
-              <p class="swiper__subtitle"> را از ما بخواهید</p>
-              <hr class="swiper__line"/>
-              <button class="btn swiper__btn"> تماس با ما </button>
+            <div class="swiper-slide swiper__slider swiper__slide3">
+              <h1 class="swiper__title">3بهترین ساعت ها</h1>
+              <p class="swiper__subtitle">را از ما بخواهید</p>
+              <hr class="swiper__line" />
+              <button class="btn swiper__btn">تماس با ما</button>
             </div>
-           
           </div>
-          
+
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
-    
       </section>
       <!-- this section is after the hero section -->
       <section class="introduction">
@@ -72,52 +70,66 @@
             <li class="introduction__items">
               <div class="demo">
                 <div class="introduction__background">
-                  <img class="introduction__img" src="./src/assets/icon/all_inclusive.png">
+                  <img
+                    class="introduction__icon"
+                    src="./src/assets/icon/all_inclusive.png"
+                  />
                 </div>
               </div>
-              
               <span class="introduction__span">
                 <strong class="introduction__num"> +20 </strong>
-                سال تجربه </span>
+                سال تجربه
+              </span>
             </li>
             <li class="introduction__items">
-              <img src="./src/assets/icon/Vector.png"><span class="introduction__span"><strong class="introduction__num"> +20
-                </strong>
-                سال تجربه </span>
+              <img
+                class="introduction__icon"
+                src="./src/assets/icon/Vector.png"
+              /><span class="introduction__span"
+                ><strong class="introduction__num"> +20 </strong> سال تجربه
+              </span>
             </li>
             <li class="introduction__items">
-              <img src="./src/assets/icon/Group.png"><span class="introduction__span"><strong class="introduction__num"> +20
-                </strong>
-                سال تجربه </span>
+              <img class="introduction__icon" src="./src/assets/icon/Group.png" /><span
+                class="introduction__span"
+                ><strong class="introduction__num"> +20 </strong> سال تجربه
+              </span>
+            </li>
+
             <li class="introduction__items">
-              <img src="./src/assets/icon/Vector (1).png"><span class="introduction__span"><strong class="introduction__num">
-                  +20 </strong>
-                سال تجربه </span>
+              <img class="introduction__icon" src="./src/assets/icon/Vector (1).png" /><span
+                class="introduction__span"
+                ><strong class="introduction__num"> +20 </strong> سال تجربه
+              </span>
             </li>
           </ul>
-          <button class="introduction__btn"> درباره ما </button>
+          <button class="introduction__btn">درباره ما</button>
         </div>
-      
+
         <!-- this section is used for image -->
         <div class="introduction__container">
-          <img src="./src/assets/pic/introduction.png" alt="pic1">
+          <img
+            class="introduction__img"
+            src="./src/assets/pic/introduction.png"
+            alt="pic1"
+          />
         </div>
-
-  </section>
-    </div>
+      </section>
+      <!-- products section -->
+      <section class="products">
+        <div class="products__header">
+          <p class="products__title"> کالکشن لوکس </p>
+          <hr class="swiper__line" />
+          <h1 class="products__subtitle"> محصولات </h1>
+          <button class="btn swiper__btn"> مشاهده همه </button>
+        </div>
+      </section>
+    </main>
     <script type="module" src="./src/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     
-
-
+ 
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
 
+    </script>
   </body>
 </html>

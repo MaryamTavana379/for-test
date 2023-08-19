@@ -1,5 +1,15 @@
+@font-face {
+    font-weight: 400;
+  font-family: "YekanBakh";
+  src: url("../font/Yekan Bakh/yekan bakh en 04 regular.ttf");
+}
+@font-face {
+    font-weight: 900;
+    font-family: "YekanBakh";
+    src: url("../font/Yekan Bakh/yekan bakh en 06 bold.ttf");
+  }
 // colors
-$MainColor: #AB987A;
+$MainColor: #ab987a;
 $TextColor: white;
 // sizes
 $TitleFontSize: 30px;
@@ -7,209 +17,235 @@ $FontSize: 18px;
 // the style of display's elements in the page
 $Position: relative;
 $Width: 100%;
-$Display: flex;
-$Decoration : none;
+$Display: flex ;
+$Decoration: none;
 // margins
 $DefaultMargin: 0;
 $DefaultPadding: 0;
-@mixin display ($Display: flex, $Width: 100%, $Justify-content: space-between) {
-    display: $Display;
-    width: $Width;
-    justify-content: $Justify-content;
-
+@mixin display(
+  $Display: flex,
+  $Width: 100%,
+  $Justify-content: space-between,
+  $MaxWidth: 1302px
+) {
+  max-width: $MaxWidth;
+  margin: auto;
+  display: $Display;
+  width: $Width;
+  justify-content: $Justify-content;
 }
 
-@mixin navlist($Align: center, $Width: 50%, $Content: space-evenly, $Direction: row, $Padding: $DefaultPadding) {
-    display: $Display;
-    justify-content: $Content;
-    align-items: $Align;
-    width: $Width;
-    padding: $Padding;
-    flex-direction: $Direction;
-
+@mixin navlist(
+  $Align: center,
+  $Width: 50%,
+  $Content: space-evenly,
+  $Direction: row,
+  $Padding: $DefaultPadding
+) {
+  display: $Display;
+  justify-content: $Content;
+  align-items: $Align;
+  width: $Width;
+  padding: $Padding;
+  flex-direction: $Direction;
 }
-@mixin Items($Color: #ccc2c2, $Decoration: $Decoration ){
-    color: $Color;
-    text-decoration: $Decoration;
-}
-
-@mixin mainButton ($BackgroundColor: $MainColor, $TextColor: $TextColor, $BtnWidth: 124px, $BtnHeight: 41px, $FontSize: 16px, $BtnBorder: none) {
-    background-color: $BackgroundColor;
-    color: $TextColor;
-    width: $BtnWidth;
-    height: $BtnHeight ;
-    font-size: $FontSize;
-    border: $BtnBorder;
-
+@mixin Items($Color: #ccc2c2, $Decoration: $Decoration) {
+  color: $Color;
+  text-decoration: $Decoration;
 }
 
-@mixin slider ($Align: center, $Direction: ltr, $Height: 100%) {
-    width: $Width;
-    text-align: $Align;
-    color: $TextColor;
-    font-size: $TitleFontSize;
-    direction: $Direction;
-    height: $Height;
-}
-@mixin swiperSlide ($BackgroungImg: url(../pic/1.png), $Repeat: round) {
-    background-image: $BackgroungImg;
-    background-repeat: $Repeat;
+@mixin mainButton(
+  $BackgroundColor: $MainColor,
+  $TextColor: $TextColor,
+  $BtnWidth: 124px,
+  $BtnHeight: 41px,
+  $FontSize: 16px,
+  $BtnBorder: none
+) {
+  background-color: $BackgroundColor;
+  color: $TextColor;
+  width: $BtnWidth;
+  height: $BtnHeight;
+  font-size: $FontSize;
+  border: $BtnBorder;
 }
 
-@mixin hr ($Width: 10%, $Border: 1px solid $MainColor) {
-    width: $Width;
-    border: $Border;
+@mixin slider($Align: center, $Direction: ltr, $Height: 100%) {
+  width: $Width;
+  text-align: $Align;
+  color: $TextColor;
+  font-size: $TitleFontSize;
+  direction: $Direction;
+  height: $Height;
+}
+@mixin swiperSlide($BackgroungImg: url(../pic/1.png), $Repeat: round) {
+  background-image: $BackgroungImg;
+  background-repeat: $Repeat;
+}
+
+@mixin hr($Width: 10%, $Border: 1px solid $MainColor) {
+  width: $Width;
+  border: $Border;
 }
 
 body,
 html {
-    direction: rtl;
-    margin: $DefaultMargin;
-    font-size: $FontSize;
-    overflow-x: hidden;
-    li {
-            list-style: none;
-        }
-    
+  direction: rtl;
+  margin: $DefaultMargin;
+  font-size: $FontSize;
+  overflow-x: hidden;
+  font-family: "YekanBakh";
+  font-weight: 400;
+
+  li {
+    list-style: none;
+  }
 }
-section{
-    margin-bottom: 50px;
+section {
+  margin-bottom: 50px;
 }
 
 // hero section
 .hero {
-  
-    height: 720px;
+  height: 720px;
 }
 
 // navbar menu section
 .navigation {
-    @include display();
-    position: fixed;
-    z-index: 9;
+  @include display($MaxWidth:auto);
+  position: fixed;
+  z-index: 9;
 }
 
 // nav list in the navbar menu section
 .nav__list--right {
-  @include navlist( )
+  @include navlist();
 }
 // button and search icon in the navbar menu
 .nav__list--left {
-   @include navlist($Direction: row-reverse, $Width:30%)
+  @include navlist($Direction: row-reverse, $Width: 30%);
 }
 //fontawsome search icon
-.fa-search{
-    color: $TextColor
+.fa-search {
+  color: $TextColor;
 }
 // button in the navbar menu
 .btn {
-    @include mainButton();
+  @include mainButton();
 }
 
 // items in the navbar menu
 .nav__item {
- @include Items();
+  @include Items();
 }
-// home 
+// home
 .active {
-    text-decoration: underline !important;
-    color: white
+  text-decoration: underline !important;
+  color: white;
 }
-// swiper container        
+// swiper container
 .swiper {
-    @include slider();
+  @include slider();
 }
 // swiper slide
-.swiper__slide1{
-    @include swiperSlide()
+.swiper__slide1 {
+  @include swiperSlide();
 }
-.swiper__slide2{
-    @include swiperSlide($BackgroungImg: url(../pic/2.jpg))
+.swiper__slide2 {
+  @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
 }
-.swiper__slide3{
-    @include swiperSlide($BackgroungImg: url(../pic/3.jpg))
+.swiper__slide3 {
+  @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
 }
 
 // items on the each slide
-.swiper-slide{
-    display: $Display;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
+.swiper__slider {
+  display: $Display !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 // titles on the sildes
-.swiper__title , .swiper__subtitle{
-    margin: $DefaultMargin;
+.swiper__title,
+.swiper__subtitle {
+  margin: $DefaultMargin;
 }
 // the hr tag under the subtitle on each slide
 hr {
-    @include hr();
+  @include hr();
 }
-// button on the slides        
+// button on the slides
 .swiper__btn {
-    @include mainButton($BtnWidth: 200px, $BtnHeight: 59px, $FontSize: 24px)
+  @include mainButton($BtnWidth: 200px, $BtnHeight: 59px, $FontSize: 24px);
 }
 //ul list on the introduction section
 .introduction {
+  @include display($Justify-content: space-around);
 
-    @include display($Justify-content: space-around);
+  .introduction__container {
+    @include navlist($Direction: column, $Align: none);
+    width: 50%;
+  }
 
-    .introduction__container {
-        @include navlist($Direction: column, $Width: 100%, $Align: none, $Padding:40px);
-        width: 50%;
-    }
+  ul {
+    line-height: 80px;
+    margin: $DefaultMargin;
+    padding: $DefaultPadding;
+  }
 
-    ul {
+  li {
+    display: $Display;
+    align-items: center;
+  }
 
-        line-height: 100px;
-        margin: $DefaultMargin;
-        padding: $DefaultPadding;
-    }
+  .demo {
+    position: relative;
+  }
 
-    li {
-        display: $Display;
-        align-items: center;
-    }
+  // .demo::after{
+  //     content: ' ';
+  //     display: block;
+  //     position: absolute;
+  //     background-color: #AB987A;
+  //     border-radius: 50%;
+  //     right: -20px;
+  //     top: 15px;
+  //     width: 60px;
+  //     height: 60px;
+  //     opacity: 5%;
+  // }
+  .introduction__background {
+    position: relative;
+  }
+  //   icons on the introduction section
+  .introduction__icon {
+    width: 40px;
+    height: 40px;
+  }
+//   image on the introduction section
+.introduction__img{
+    height: 400px;
+}
 
-    .demo {
-        position: relative;
-    }
+  i {
+    color: black;
+  }
 
-    // .demo::after{
-    //     content: ' ';
-    //     display: block;
-    //     position: absolute;
-    //     background-color: #AB987A;
-    //     border-radius: 50%;
-    //     right: -20px;
-    //     top: 15px;
-    //     width: 60px;
-    //     height: 60px;
-    //     opacity: 5%;
-    // }
-    .introduction__background {
-        position: relative;
-    }
+  span {
+    font-size: $FontSize;
+  }
 
-    .introduction__img {
-        width: 40px;
-        height: 40px;
-    }
+  strong {
+    font-size: $TitleFontSize;
+  }
 
-    i {
-        color: black;
-    }
-
-    span {
-        font-size: $FontSize;
-    }
-
-    strong {
-        font-size: $TitleFontSize;
-    }
-
-    button {
-        @include mainButton($BackgroundColor: unset, $TextColor: $MainColor, $BtnBorder: 2px solid $MainColor, $BtnWidth: 200px, $BtnHeight:50px);
-
-    }
+  button {
+    @include mainButton(
+      $BackgroundColor: unset,
+      $TextColor: $MainColor,
+      $BtnBorder: 2px solid $MainColor,
+      $BtnWidth: 200px,
+      $BtnHeight: 50px
+    );
+  }
 }
