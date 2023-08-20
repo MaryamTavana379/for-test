@@ -306,6 +306,14 @@ hr {
 // slider on the product section
 .product__swiper{
   margin-top: 24px;
+  // swiper wrapper 
+  .product__swiper--wrapper{
+    align-items: center;
+  }
+  // next and prev button on the product slider section
+  .product__swiperbtn{
+    color: black;
+  }
 }
 // header production section
 .products__header {
