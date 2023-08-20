@@ -16,9 +16,9 @@
     <title>Vite + Vue</title>
   </head>
   <body>
-    <main class="container">
-      <!-- hero section -->
-      <section class="hero">
+    <div class="container">
+      <!-- header  -->
+      <header class="hero">
         <!-- navbar menu -->
         <div class="navigation">
           <!-- rightside items on the navbar  -->
@@ -61,75 +61,96 @@
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
-      </section>
-      <!-- this section is after the hero section -->
-      <section class="introduction">
-        <!-- this section is for icons -->
-        <div class="introduction__container">
-          <ul class="introduction__list">
-            <li class="introduction__items">
-              <div class="demo">
-                <div class="introduction__background">
-                  <img
-                    class="introduction__icon"
-                    src="./src/assets/icon/all_inclusive.png"
-                  />
+      </header>
+       <!-- main  -->
+      <main>
+        <!-- this section is after the hero section -->
+        <section class="introduction">
+          <!-- this section is for icons -->
+          <div class="introduction__container">
+            <ul class="introduction__list">
+              <li class="introduction__items">
+                <div class="demo">
+                  <div class="introduction__background">
+                    <img
+                      class="introduction__icon"
+                      src="./src/assets/icon/all_inclusive.png"
+                    />
+                  </div>
                 </div>
-              </div>
-              <span class="introduction__span">
-                <strong class="introduction__num"> +20 </strong>
-                سال تجربه
-              </span>
-            </li>
-            <li class="introduction__items">
-              <img
-                class="introduction__icon"
-                src="./src/assets/icon/Vector.png"
-              /><span class="introduction__span"
-                ><strong class="introduction__num"> +20 </strong> سال تجربه
-              </span>
-            </li>
-            <li class="introduction__items">
-              <img class="introduction__icon" src="./src/assets/icon/Group.png" /><span
-                class="introduction__span"
-                ><strong class="introduction__num"> +20 </strong> سال تجربه
-              </span>
-            </li>
+                <span class="introduction__span">
+                  <strong class="introduction__num"> +20 </strong>
+                  سال تجربه
+                </span>
+              </li>
+              <li class="introduction__items">
+                <img
+                  class="introduction__icon"
+                  src="./src/assets/icon/Vector.png"
+                /><span class="introduction__span"
+                  ><strong class="introduction__num"> +20 </strong> سال تجربه
+                </span>
+              </li>
+              <li class="introduction__items">
+                <img
+                  class="introduction__icon"
+                  src="./src/assets/icon/Group.png"
+                /><span class="introduction__span"
+                  ><strong class="introduction__num"> +20 </strong> سال تجربه
+                </span>
+              </li>
 
-            <li class="introduction__items">
-              <img class="introduction__icon" src="./src/assets/icon/Vector (1).png" /><span
-                class="introduction__span"
-                ><strong class="introduction__num"> +20 </strong> سال تجربه
-              </span>
-            </li>
-          </ul>
-          <button class="introduction__btn">درباره ما</button>
-        </div>
+              <li class="introduction__items">
+                <img
+                  class="introduction__icon"
+                  src="./src/assets/icon/Vector (1).png"
+                /><span class="introduction__span"
+                  ><strong class="introduction__num"> +20 </strong> سال تجربه
+                </span>
+              </li>
+            </ul>
+            <button class="introduction__btn">درباره ما</button>
+          </div>
 
-        <!-- this section is used for image -->
-        <div class="introduction__container">
-          <img
-            class="introduction__img"
-            src="./src/assets/pic/introduction.png"
-            alt="pic1"
-          />
-        </div>
-      </section>
-      <!-- products section -->
-      <section class="products">
-        <head class="products__header">
-          <p class="products__title"> کالکشن لوکس </p>
-          <hr class="swiper__line" />
-          <h1 class="products__subtitle"> محصولات </h1>
-          <button class="btn swiper__btn"> مشاهده همه </button>
-        </head>
-      </section>
-    </main>
+          <!-- this section is used for image -->
+          <div class="introduction__container">
+            <img
+              class="introduction__img"
+              src="./src/assets/pic/introduction.png"
+              alt="pic1"
+            />
+          </div>
+        </section>
+        <!-- products section -->
+        <section class="products">
+          <!-- header of products collection -->
+          <header class="products__header">
+            <p class="products__title">کالکشن لوکس</p>
+            <hr class="products__line" />
+            <h1 class="products__subtitle">محصولات</h1>
+            <button class="btn products__btn">مشاهده همه</button>
+          </header>
+          <!-- slider for showing products -->
+          <div class="swiper mySwiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+       
+        </section>
+      </main>
+    </div>
     <script type="module" src="./src/main.js"></script>
-    
- 
-    <script>
 
-    </script>
+    <script></script>
   </body>
 </html>

@@ -11,6 +11,7 @@ $EnFontfamily: "YekanBakh-EnNum";
 $XXLargeFontsize: 72px;
 $XLargeFontsize: 56px;
 $LargeFontsize: 32px;
+$Fontsize: 24px;
 $MediumFontsize: 18px;
 $SmallFontsize: 16px;
 // font weights
@@ -45,12 +46,14 @@ $DefaultPadding: 0;
   $Display: flex,
   $AlignItem: center,
   $Direction: column,
-  $JustifyContent: center
+  $JustifyContent: center,
+  $Lineheight: auto
 ) {
   display: $Display !important ;
   align-items: $AlignItem;
   flex-direction: $Direction;
   justify-content: $JustifyContent;
+  line-height: $Lineheight;
 }
 //navbar menu
 @mixin navlist(
@@ -71,11 +74,9 @@ $DefaultPadding: 0;
 @mixin Items(
   $Color: #ccc2c2,
   $Decoration: $Decoration,
-  $FontFamily: $TextFontFamily,
   $FontWeight: 300,
   $FontSize: $SmallFontsize
 ) {
-  font-family: $FontFamily;
   font-weight: $FontWeight;
   font-size: $SmallFontsize;
   color: $Color;
@@ -98,6 +99,27 @@ $DefaultPadding: 0;
   font-size: $FontSize;
   font-weight: $FontWeight;
   border: $BtnBorder;
+  font-family: $TextFontFamily;
+}
+// btn without background
+@mixin whiteButton(
+  $BackgroundColor: white,
+  $TextColor: $MainColor,
+  $BtnBorder: 2px solid $MainColor,
+  $BtnWidth: 245px,
+  $BtnHeight: 55px,
+  $FontSize: 20px,
+  $Fontweight: $MediumFontweight
+  
+) {
+  background-color: $BackgroundColor;
+  color: $TextColor;
+  border: $BtnBorder;
+  width: $BtnWidth;
+  height: $BtnHeight;
+  font-size: $FontSize;
+  font-weight: $Fontweight;
+  font-family: $TextFontFamily;
 }
 //swiper slider
 @mixin slider(
@@ -120,15 +142,17 @@ $DefaultPadding: 0;
   background-repeat: $Repeat;
 }
 // all the line under text in the page
-@mixin hr($Width: 10%, $Border: 1px solid $MainColor) {
+@mixin hr($Width: 10%, $Border: 1px solid $MainColor, $Margin: 32px) {
   width: $Width;
   border: $Border;
+  margin: $Margin;
 }
 
 body,
 html {
   direction: rtl;
   margin: $DefaultMargin;
+  font-family: $TextFontFamily;
   font-size: $SmallFontsize;
   overflow-x: hidden;
 
@@ -143,6 +167,7 @@ section {
 // hero section
 .hero {
   height: 720px;
+  margin-bottom: 100px;
 }
 
 // navbar menu section
@@ -204,7 +229,7 @@ section {
 }
 .swiper__subtitle {
   margin: $DefaultMargin;
-  font-size: $LargeFontsize;
+  font-size: $XLargeFontsize;
   font-weight: $LightFontweight;
 }
 // the hr tag under the subtitle on each slide
@@ -261,7 +286,6 @@ hr {
 
   //the text on the introduction section
   span {
-    font-family: $TextFontFamily;
     font-size: $LargeFontsize;
     font-weight: $RegularFontweight;
   }
@@ -273,16 +297,32 @@ hr {
   }
   //button on the itroduction section
   button {
-    @include mainButton(
-      $BackgroundColor: unset,
-      $TextColor: $MainColor,
-      $BtnBorder: 2px solid $MainColor,
-      $BtnWidth: 200px,
-      $BtnHeight: 50px
-    );
+    @include whiteButton();
   }
   //   image on the introduction section
   .introduction__img {
     height: 400px;
+  }
+}
+
+// header production section
+.products__header {
+  @include centerFlex($Lineheight: 0px);
+  // title on the header of product section
+  .products__title {
+    font-size: $Fontsize;
+    font-weight: $LightFontweight;
+    color: $MainColor;
+  }
+  // line under the text
+  .products__line {
+    @include hr($Border: 1px solid black, $Width: 80px, $Margin: 16px);
+  }
+  .products__subtitle {
+    font-size: 64px;
+    font-weight: 400;
+  }
+  .products__btn {
+    @include whiteButton();
   }
 }
