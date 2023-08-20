@@ -41,7 +41,12 @@ $DefaultPadding: 0;
   justify-content: $Justify-content;
   margin-bottom: 100px;
 }
-@mixin centerFlex($Display: flex, $AlignItem: center, $Direction: column, $JustifyContent: center) {
+@mixin centerFlex(
+  $Display: flex,
+  $AlignItem: center,
+  $Direction: column,
+  $JustifyContent: center
+) {
   display: $Display !important ;
   align-items: $AlignItem;
   flex-direction: $Direction;
@@ -215,28 +220,24 @@ hr {
     $FontWeight: 700
   );
 }
-//ul list on the introduction section
+//introduction section
 .introduction {
   @include display($Justify-content: space-around);
-
+  // right side items on the introduction section
   .introduction__container {
     @include navlist($Direction: column, $Align: none);
     width: 50%;
   }
-
+  //ul list
   ul {
     line-height: 80px;
     margin: $DefaultMargin;
     padding: $DefaultPadding;
   }
-
+  //items in the list
   li {
     display: $Display;
     align-items: center;
-  }
-
-  .demo {
-    position: relative;
   }
 
   // .demo::after{
@@ -251,35 +252,26 @@ hr {
   //     height: 60px;
   //     opacity: 5%;
   // }
-  .introduction__background {
-    position: relative;
-  }
+
   //   icons on the introduction section
   .introduction__icon {
     width: 40px;
     height: 40px;
   }
-  //   image on the introduction section
-  .introduction__img {
-    height: 400px;
-  }
 
-  i {
-    color: black;
-  }
-
+  //the text on the introduction section
   span {
     font-family: $TextFontFamily;
     font-size: $LargeFontsize;
     font-weight: $RegularFontweight;
   }
-
+  //just numbers
   strong {
     font-family: $FaFontfamily;
     font-size: $XLargeFontsize;
     font-weight: $BoldFontweight;
   }
-
+  //button on the itroduction section
   button {
     @include mainButton(
       $BackgroundColor: unset,
@@ -288,5 +280,9 @@ hr {
       $BtnWidth: 200px,
       $BtnHeight: 50px
     );
+  }
+  //   image on the introduction section
+  .introduction__img {
+    height: 400px;
   }
 }
