@@ -1,6 +1,7 @@
 @import url(font.scss);
 
 // colors
+$BackgroundColor: whitesmoke;
 $MainColor: #ab987a;
 $TextColor: white;
 // fonts setting
@@ -103,14 +104,13 @@ $DefaultPadding: 0;
 }
 // btn without background
 @mixin whiteButton(
-  $BackgroundColor: white,
+  $BackgroundColor: $BackgroundColor,
   $TextColor: $MainColor,
   $BtnBorder: 2px solid $MainColor,
   $BtnWidth: 245px,
   $BtnHeight: 55px,
   $FontSize: 20px,
   $Fontweight: $MediumFontweight
-  
 ) {
   background-color: $BackgroundColor;
   color: $TextColor;
@@ -124,16 +124,11 @@ $DefaultPadding: 0;
 //swiper slider
 @mixin slider(
   $Align: center,
-  $Direction: ltr,
   $Height: 100%,
-  $FontWeight: 400
 ) {
   width: $Width;
   text-align: $Align;
   color: $TextColor;
-  font-size: $XLargeFontsize;
-  font-weight: $FontWeight;
-  direction: $Direction;
   height: $Height;
 }
 //each slide on the swiper
@@ -155,6 +150,7 @@ html {
   font-family: $TextFontFamily;
   font-size: $SmallFontsize;
   overflow-x: hidden;
+  background-color: $BackgroundColor;
 
   li {
     list-style: none;
@@ -224,6 +220,8 @@ section {
 }
 // titles on the sildes
 .swiper__title {
+  font-size: $XLargeFontsize;
+  font-weight: $MediumFontweight;
   margin: $DefaultMargin;
   font-weight: $MediumFontweight;
 }
@@ -305,6 +303,10 @@ hr {
   }
 }
 
+// slider on the product section
+.product__swiper{
+  margin-top: 24px;
+}
 // header production section
 .products__header {
   @include centerFlex($Lineheight: 0px);
@@ -324,5 +326,26 @@ hr {
   }
   .products__btn {
     @include whiteButton();
+  }
+}
+
+//card on the product section slider
+.products__card {
+  color: black;
+  text-align: right;
+  .card__img{
+    width: 100%;
+  }
+  .card__title {
+    font-size: $LargeFontsize;
+    font-weight: $RegularFontweight;
+    margin: $DefaultMargin;
+    margin-top: 16px;
+  }
+  .card__subtitle{
+    font-size: 20px;
+    font-weight: $LightFontweight;
+    color: $MainColor;
+    margin: $DefaultMargin;
   }
 }

@@ -11,11 +11,14 @@ new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
- new Swiper(".mySwiper1", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+ new Swiper(".product__swiper", {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
+
+ 
 });
