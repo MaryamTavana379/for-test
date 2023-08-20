@@ -1,7 +1,7 @@
 @import url(font.scss);
 
 // colors
-$BackgroundColor: whitesmoke;
+$BackgroundColor: unset;
 $MainColor: #ab987a;
 $TextColor: white;
 // fonts setting
@@ -120,6 +120,7 @@ $DefaultPadding: 0;
   font-size: $FontSize;
   font-weight: $Fontweight;
   font-family: $TextFontFamily;
+  margin-top: 48px;
 }
 //swiper slider
 @mixin slider(
@@ -310,6 +311,7 @@ hr {
   .product__swiper--wrapper{
     align-items: center;
   }
+  
   // next and prev button on the product slider section
   .product__swiperbtn{
     color: black;
@@ -323,14 +325,19 @@ hr {
     font-size: $Fontsize;
     font-weight: $LightFontweight;
     color: $MainColor;
+    margin: $DefaultMargin;
+    margin-top: 40px;
+
   }
   // line under the text
   .products__line {
-    @include hr($Border: 1px solid black, $Width: 80px, $Margin: 16px);
+    @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
   }
   .products__subtitle {
     font-size: 64px;
     font-weight: 400;
+    margin: $DefaultMargin;
+    margin-top: 24px
   }
   .products__btn {
     @include whiteButton();
@@ -357,3 +364,25 @@ hr {
     margin: $DefaultMargin;
   }
 }
+
+
+// exhibition section
+.exhibition{
+  background-color: #101A30;
+  .exhibition__swiper{
+    padding: 50px;
+  }
+  // the line under the text
+  .exhibition__line{
+    @include hr($Border: 1px solid white ,$Margin: $DefaultMargin, $Width: 80px)
+  }
+  // sub title on the exhibition section
+  .exhibition__subtitle{
+    color: white;
+  }
+  // wrapper on the exhibition section slider
+  .exhibition__swiper--wrapper{
+    align-items: center;
+  }
+}
+
