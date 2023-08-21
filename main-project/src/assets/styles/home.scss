@@ -120,13 +120,10 @@ $DefaultPadding: 0;
   font-size: $FontSize;
   font-weight: $Fontweight;
   font-family: $TextFontFamily;
-  margin-top: 48px;
+  margin-top: 40px;
 }
 //swiper slider
-@mixin slider(
-  $Align: center,
-  $Height: 100%,
-) {
+@mixin slider($Align: center, $Height: 100%) {
   width: $Width;
   text-align: $Align;
   color: $TextColor;
@@ -296,7 +293,7 @@ hr {
   }
   //button on the itroduction section
   button {
-    @include whiteButton();
+    @include whiteButton($BtnWidth: 205px);
   }
   //   image on the introduction section
   .introduction__img {
@@ -305,15 +302,15 @@ hr {
 }
 
 // slider on the product section
-.product__swiper{
+.product__swiper {
   margin-top: 24px;
-  // swiper wrapper 
-  .product__swiper--wrapper{
+  // swiper wrapper
+  .product__swiper--wrapper {
     align-items: center;
   }
-  
+
   // next and prev button on the product slider section
-  .product__swiperbtn{
+  .product__swiperbtn {
     color: black;
   }
 }
@@ -327,7 +324,6 @@ hr {
     color: $MainColor;
     margin: $DefaultMargin;
     margin-top: 40px;
-
   }
   // line under the text
   .products__line {
@@ -337,7 +333,7 @@ hr {
     font-size: 64px;
     font-weight: 400;
     margin: $DefaultMargin;
-    margin-top: 24px
+    margin-top: 24px;
   }
   .products__btn {
     @include whiteButton();
@@ -348,7 +344,7 @@ hr {
 .products__card {
   color: black;
   text-align: right;
-  .card__img{
+  .card__img {
     width: 100%;
   }
   .card__title {
@@ -357,7 +353,7 @@ hr {
     margin: $DefaultMargin;
     margin-top: 16px;
   }
-  .card__subtitle{
+  .card__subtitle {
     font-size: 20px;
     font-weight: $LightFontweight;
     color: $MainColor;
@@ -365,24 +361,105 @@ hr {
   }
 }
 
-
 // exhibition section
-.exhibition{
-  background-color: #101A30;
-  .exhibition__swiper{
-    padding: 50px;
+.exhibition {
+  background-color: #101a30;
+  .exhibition__swiper {
+    padding: 50px 0;
   }
   // the line under the text
-  .exhibition__line{
-    @include hr($Border: 1px solid white ,$Margin: $DefaultMargin, $Width: 80px)
+  .exhibition__line {
+    @include hr($Border: 1px solid white, $Margin: 24px, $Width: 80px);
   }
   // sub title on the exhibition section
-  .exhibition__subtitle{
+  .exhibition__subtitle {
     color: white;
   }
   // wrapper on the exhibition section slider
-  .exhibition__swiper--wrapper{
+  .exhibition__swiper--wrapper {
     align-items: center;
+  }
+  .exhibition__swiperbtn {
+    color: white;
+  }
+  .exhibition__swiper__slide {
+    transition-duration: 10ms !important;
+    transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
+      scale(1.25) !important;
   }
 }
 
+// blog section
+
+.blog__container {
+  display: grid;
+  justify-content: center;
+  gap: 14px 24px;
+
+  .blog__item1 {
+    grid-row: 1;
+    grid-column: 2 / span 3;
+  }
+  .blog__item2 {
+    grid-row: 1 / span 4;
+    grid-column: 1;
+  }
+  // the container for each image tag on the blog item classes
+  .grid__item,
+  .img__container {
+    position: relative;
+  }
+  // the container for text on the image tag
+  .txt__container {
+    position: absolute;
+    bottom: 0;
+    padding: 40px 20px;
+    color: #f5f5f5;
+    font-weight: $RegularFontweight;
+  }
+
+  // first line on the blog images
+  .blog__img__txt1 {
+    font-size: 14px;
+    margin: 0;
+  }
+  // second line on the blog images
+
+  .blog__img__txt2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .blog__img__link {
+    font-size: $SmallFontsize;
+    color: $MainColor;
+  }
+
+  .blog__item4 {
+    border: 1px solid $MainColor;
+    width: 288px;
+    height: 288px;
+    text-align: center;
+    // the text on the first line of item4
+    .blog__p {
+      font-size: $Fontsize;
+      font-weight: $LightFontweight;
+      color: $MainColor;
+      margin-top: 48px;
+    }
+    // the bold blog word
+    .blog__h4 {
+      font-size: 64px;
+      font-weight: $MediumFontweight;
+      color: $MainColor;
+      margin: auto;
+    }
+    // a tag for go to blog
+    .blog__link {
+      font-size: 20px;
+      font-weight: $MediumFontweight;
+      color: black;
+      text-decoration: $Decoration;
+      border-bottom: 1px solid black;
+    }
+  }
+}
