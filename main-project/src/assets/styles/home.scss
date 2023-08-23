@@ -463,3 +463,26 @@ hr {
     }
   }
 }
+
+// about us section
+.contactus__container{
+  background-image: url(../pic/aboutus.png);
+  text-align: center;
+  padding: 130px;
+  p{
+    font-size: $LargeFontsize;
+    font-weight: $LightFontweight;
+    color: $MainColor;
+    margin: $DefaultMargin;
+  }
+  h3{
+    font-size: 48px ;
+    font-weight: $RegularFontweight;
+    color: white;
+    margin: $DefaultMargin;
+    margin-bottom: 28px;
+  }
+  .cotactus__btn{
+    @include mainButton($BtnWidth:219px, $BtnHeight:55px, $FontSize:20px, $FontWeight: $MediumFontweight )
+  }
+}
