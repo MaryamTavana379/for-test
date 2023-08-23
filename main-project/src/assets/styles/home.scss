@@ -167,7 +167,7 @@ section {
 // navbar menu section
 .navigation {
   @include display($MaxWidth: auto);
-  position: fixed;
+  position: absolute;
   z-index: 9;
 }
 
@@ -465,24 +465,155 @@ hr {
 }
 
 // about us section
-.contactus__container{
+.contactus__container {
   background-image: url(../pic/aboutus.png);
   text-align: center;
   padding: 130px;
-  p{
+  p {
     font-size: $LargeFontsize;
     font-weight: $LightFontweight;
     color: $MainColor;
     margin: $DefaultMargin;
   }
-  h3{
-    font-size: 48px ;
+  h3 {
+    font-size: 48px;
     font-weight: $RegularFontweight;
     color: white;
     margin: $DefaultMargin;
     margin-bottom: 28px;
   }
-  .cotactus__btn{
-    @include mainButton($BtnWidth:219px, $BtnHeight:55px, $FontSize:20px, $FontWeight: $MediumFontweight )
+  .cotactus__btn {
+    @include mainButton(
+      $BtnWidth: 219px,
+      $BtnHeight: 55px,
+      $FontSize: 20px,
+      $FontWeight: $MediumFontweight
+    );
+  }
+}
+
+// social media section
+.socialmedia__container {
+  text-align: center;
+  p {
+    font-size: $Fontsize;
+    font-weight: $LightFontweight;
+  }
+  .socialmedia__icon {
+    display: $Display;
+    align-items: center;
+    justify-content: center;
+  }
+  .icno__item {
+    padding-left: 30px;
+  }
+  a {
+    text-decoration: $Decoration;
+    color: $MainColor;
+    display: $Display;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f8f2e8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+  }
+  span {
+    color: black;
+    font-size: 12px;
+    font-weight: $RegularFontweight;
+  }
+}
+
+// footer section
+footer {
+  background-color: #172036;
+  padding: 80px 0 10px;
+  p {
+    font-size: $SmallFontsize;
+    font-weight: $RegularFontweight;
+    margin: $DefaultMargin;
+    color: white;
+    width: 310px;
+  }
+
+  // container of the list
+  .footer__container {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-bottom: 80px;
+    // items on the list
+    .footer__list {
+      padding: $DefaultPadding;
+      margin: $DefaultMargin;
+      // titles of each items
+      .listfooter__title {
+        font-size: $Fontsize;
+        font-weight: $MediumFontweight;
+        margin: $DefaultMargin;
+      }
+      // second title on the second column
+      .product__title {
+        margin-top: 16px;
+      }
+      // items on the list
+      li {
+        font-size: $SmallFontsize;
+        font-weight: $RegularFontweight;
+        margin-top: 8px;
+      }
+      // hr tags
+      hr {
+        margin: 0 !important;
+        margin-bottom: 16px !important;
+      }
+      .quickaccess__hr {
+        @include hr($Width: 80px);
+      }
+      .footerblog__hr {
+        @include hr($Width: 24px);
+      }
+      .footerproduct__hr {
+        @include hr($Width: 40px);
+      }
+      .chanel__hr {
+        @include hr($Width: 96px);
+      }
+    }
+    // address column on the footer
+    .footeraddress__list {
+      .footer__address {
+        margin: 40px 0;
+        width: 310px;
+      }
+    }
+
+    // logo in the footer
+    // logo container
+    .footerdiv__logo {
+      width: 80px;
+      height: 80px;
+      background-color: white;
+      border-radius: 50%;
+      margin-bottom: 24px;
+      img {
+        display: flex;
+        margin: auto;
+        padding: 10px;
+      }
+    }
+  }
+  //  the line after the lists
+  .footer__hr {
+    @include hr($Width: 90%, $Margin: auto);
+  }
+
+  // the last text on the footer
+  .last__text{
+    text-align: center;
+    margin: 24px auto;
+
   }
 }
