@@ -19,9 +19,10 @@ new Swiper(".mySwiper", {
 });
 // product section slider
 new Swiper(".product__swiper", {
-  slidesPerView: 4,
+  slidesPerView: 3.5,
   spaceBetween: 30,
-  centeredSlides: true,
+  centeredSlides: false,
+
 
   navigation: {
     nextEl: ".swiper-button-next",

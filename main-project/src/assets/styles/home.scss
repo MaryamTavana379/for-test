@@ -1,7 +1,7 @@
 @import url(font.scss);
 
 // colors
-$BackgroundColor: unset;
+$BackgroundColor: whitesmoke;
 $MainColor: #ab987a;
 $TextColor: white;
 // fonts setting
@@ -149,6 +149,9 @@ html {
   font-size: $SmallFontsize;
   overflow-x: hidden;
   background-color: $BackgroundColor;
+  a {
+    text-decoration: $Decoration;
+  }
 
   li {
     list-style: none;
@@ -246,11 +249,10 @@ hr {
   @include display($Justify-content: space-around);
   // right side items on the introduction section
   .introduction__container {
-    @include navlist($Direction: column, $Align: none, $Width:45%);
+    @include navlist($Direction: column, $Align: none, $Width: 45%);
   }
   // container for image on the introduction section
-  .introductionimg__container{
-
+  .introductionimg__container {
     position: relative;
     width: 55%;
   }
@@ -267,7 +269,7 @@ hr {
   }
 
   // background-color of icons
-  .introduction__background{
+  .introduction__background {
     background: rgba(171, 152, 122, 0.1);
     width: 70px;
     height: 70px;
@@ -302,7 +304,7 @@ hr {
     width: 100%;
   }
   // border on the image
-  .img__border{
+  .img__border {
     width: 645px;
     height: 448px;
     border: 1px solid #ab987a;
@@ -317,6 +319,10 @@ hr {
   // swiper wrapper
   .product__swiper--wrapper {
     align-items: center;
+    // transform: translate3d(0px, 0px, 0px) !important;
+  }
+  .product__swiper__slide {
+    width: 392px;
   }
 
   // next and prev button on the product slider section
@@ -346,7 +352,7 @@ hr {
     margin-top: 24px;
   }
   .products__btn {
-    @include whiteButton();
+    @include whiteButton($BackgroundColor: unset);
   }
 }
 
@@ -411,7 +417,7 @@ hr {
     grid-column: 2 / span 3;
   }
   .blog__item2 {
-    grid-row: 1 / span 4;
+    grid-row: 1 / span 2;
     grid-column: 1;
   }
   // the container for each image tag on the blog item classes
