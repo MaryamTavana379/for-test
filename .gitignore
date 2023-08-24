@@ -1,4 +1,5 @@
 node_modules
-$ !cat .vscode/.gitignore
+.vscode
+!cat .vscode/.gitignore
 
 *
