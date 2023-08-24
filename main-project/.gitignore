@@ -15,7 +15,6 @@ dist-ssr
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-$ !cat .vscode/.gitignore*
 .idea
 .DS_Store
 *.suo
