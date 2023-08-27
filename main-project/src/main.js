@@ -5,7 +5,6 @@ import "swiper/css/pagination";
 import "swiper/css";
 import Swiper from "swiper/bundle";
 
-
 // hero section slider
 new Swiper(".mySwiper", {
   autoplay: {
@@ -23,7 +22,6 @@ new Swiper(".product__swiper", {
   spaceBetween: 30,
   centeredSlides: false,
 
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -32,18 +30,18 @@ new Swiper(".product__swiper", {
 
 // exhibition section slider
 new Swiper(".exhibition__swiper", {
-  slidesPerView: 2,
-  spaceBetween: 10,
+  slidesPerView: 1.5,
+  spaceBetween: 50,
   effect: "coverflow",
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 0,
-    stretch: 0,
+    // stretch: 0,
     depth: 100,
     modifier: 1,
+    slideShadows: false,
   },
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -54,21 +52,9 @@ new Swiper(".exhibition__swiper", {
   },
 
   breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 1,
-      spaceBetween: 100,
-    },
-    1024: {
-      slidesPerView: 1,
-      spaceBetween: 30,
-    },
     1500: {
-      slidesPerView: 1.5,
-      spaceBetween: 30,
+      slidesPerView: 2,
+      spaceBetween: 300,
     },
   },
 });

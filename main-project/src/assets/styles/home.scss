@@ -63,7 +63,6 @@ $DefaultPadding: 0;
   $Direction: row,
   $Gap: 2rem,
   $Padding: $DefaultPadding
-  
 ) {
   display: $Display;
   align-items: $Align;
@@ -140,7 +139,6 @@ $DefaultPadding: 0;
   width: $Width;
   border: $Border;
   margin: $Margin;
-  
 }
 
 body,
@@ -162,7 +160,7 @@ html {
 section {
   margin-bottom: 100px;
 }
-.fa{
+.fa {
   color: $MainColor;
 }
 
@@ -183,12 +181,12 @@ section {
 .nav__list--right {
   @include navlist();
 }
-.logo__container{
+.logo__container {
   display: $Display;
   align-items: center;
 }
 //logo on the navbar menu
-.nav__logo{
+.nav__logo {
   width: 64px;
   height: 64px;
 }
@@ -377,6 +375,9 @@ hr {
   .card__img {
     width: 100%;
   }
+  .card__img:hover {
+    border: 3px solid $MainColor;
+  }
   .card__title {
     font-size: $LargeFontsize;
     font-weight: $RegularFontweight;
@@ -389,11 +390,9 @@ hr {
     color: $MainColor;
     margin: $DefaultMargin;
   }
+  
 }
 
-  .card__img:hover{
-    border: 3px solid $MainColor;
-  }
 
 
 // exhibition section
@@ -408,19 +407,54 @@ hr {
   }
   // sub title on the exhibition section
   .exhibition__subtitle {
-    color: white;
+    color: #ffffff;
   }
+
   // wrapper on the exhibition section slider
   .exhibition__swiper--wrapper {
     align-items: center;
+    transition-duration: 2000ms !important;
   }
   .exhibition__swiperbtn {
     color: white;
   }
   .exhibition__swiper__slide {
-    transition-duration: 10ms !important;
+    width: 600px !important;
+    img {
+      width: 100%;
+    }
+  
+  }
+  .swiper-slide-active {
     transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
-      scale(1.25) !important;
+      scale(1) !important;
+      justify-content: center;
+      width: 800px !important;
+    img {
+     width: 100%;
+      opacity: 1;
+    }
+  }
+  .swiper-slide-next{
+    justify-content: flex-start;
+    opacity: 0.5;
+  }
+  .swiper-slide-prev{
+    justify-content: flex-end;
+    opacity: 0.5;
+  }
+  // bullet on the swiper pagination
+  .swiper-pagination-bullet{
+    background-color: $WhiteColor;
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+  }
+  //active bullet
+  .swiper-pagination-bullet-active{
+    background-color: $MainColor;
+    width: 48px;
+    border-radius: 7px;
   }
 }
 
@@ -499,7 +533,7 @@ hr {
   }
 }
 // contact us section tag
-.contactus{
+.contactus {
   margin-bottom: 0;
 }
 // about us section
