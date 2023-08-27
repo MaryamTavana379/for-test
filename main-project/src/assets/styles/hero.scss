@@ -1,0 +1,89 @@
+// hero section
+.hero {
+    height: 720px;
+    margin-bottom: 100px;
+  }
+  
+  // navbar menu section
+  .navigation {
+    @include display($MaxWidth: auto);
+    position: absolute;
+    z-index: 9;
+  }
+  
+  // nav list in the navbar menu section
+  .nav__list--right {
+    @include navlist();
+  }
+  .logo__container {
+    display: $Display;
+    align-items: center;
+  }
+  //logo on the navbar menu
+  .nav__logo {
+    width: 64px;
+    height: 64px;
+  }
+  // button and search icon in the navbar menu
+  .nav__list--left {
+    @include navlist($Direction: row-reverse, $Width: 30%);
+  }
+  
+  // button in the navbar menu
+  .btn {
+    @include mainButton();
+  }
+  
+  // items in the navbar menu
+  .nav__item {
+    @include Items();
+  }
+  // home
+  .active {
+    text-decoration: underline !important;
+    color: white;
+  }
+  // swiper container
+  .swiper {
+    @include slider();
+  }
+  // swiper slide
+  .swiper__slide1 {
+    @include swiperSlide();
+  }
+  .swiper__slide2 {
+    @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
+  }
+  .swiper__slide3 {
+    @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
+  }
+  
+  // items on the each slide
+  .swiper__slider {
+    @include centerFlex();
+  }
+  // titles on the sildes
+  .swiper__title {
+    font-size: $XLargeFontsize;
+    font-weight: $MediumFontweight;
+    margin: $DefaultMargin;
+    font-weight: $MediumFontweight;
+  }
+  .swiper__subtitle {
+    margin: $DefaultMargin;
+    font-size: $XLargeFontsize;
+    font-weight: $LightFontweight;
+  }
+  // the hr tag under the subtitle on each slide
+  hr {
+    @include hr();
+  }
+  // button on the slides
+  .swiper__btn {
+    @include mainButton(
+      $BtnWidth: 200px,
+      $BtnHeight: 59px,
+      $FontSize: 24px,
+      $FontWeight: 700
+    );
+  }
