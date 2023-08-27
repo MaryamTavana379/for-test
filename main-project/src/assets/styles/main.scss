@@ -1,14 +1,15 @@
 // 1. variables and mixin
-@import "variables";
-@import "mixin";
+@import "base/variables";
+@import "base/mixin";
 
 // 2. fonts
-@import "font";
+@import "base/font";
 
 // 3. sections
-@import "hero";
-@import "introduction";
-@import "product";
+@import "sections/hero";
+@import "sections/introduction";
+@import "sections/product";
+@import "sections/exhibition";
 
 
 
@@ -42,68 +43,7 @@ section {
 
 
 
-// exhibition section
-.exhibition {
-  background-color: #101a30;
-  .exhibition__swiper {
-    padding: 50px 0;
-  }
-  // the line under the text
-  .exhibition__line {
-    @include hr($Border: 1px solid white, $Margin: 24px, $Width: 80px);
-  }
-  // sub title on the exhibition section
-  .exhibition__subtitle {
-    color: #ffffff;
-  }
 
-  // wrapper on the exhibition section slider
-  .exhibition__swiper--wrapper {
-    align-items: center;
-    transition-duration: 2000ms !important;
-  }
-  .exhibition__swiperbtn {
-    color: white;
-  }
-  .exhibition__swiper__slide {
-    width: 600px !important;
-    img {
-      width: 100%;
-    }
-  
-  }
-  .swiper-slide-active {
-    transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
-      scale(1) !important;
-      justify-content: center;
-      width: 800px !important;
-    img {
-     width: 100%;
-      opacity: 1;
-    }
-  }
-  .swiper-slide-next{
-    justify-content: flex-start;
-    opacity: 0.5;
-  }
-  .swiper-slide-prev{
-    justify-content: flex-end;
-    opacity: 0.5;
-  }
-  // bullet on the swiper pagination
-  .swiper-pagination-bullet{
-    background-color: $WhiteColor;
-    opacity: 1;
-    width: 12px;
-    height: 12px;
-  }
-  //active bullet
-  .swiper-pagination-bullet-active{
-    background-color: $MainColor;
-    width: 48px;
-    border-radius: 7px;
-  }
-}
 
 // blog section
 
