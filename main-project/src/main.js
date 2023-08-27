@@ -1,4 +1,4 @@
-import "./assets/styles/home.scss";
+import "./assets/styles/main.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
