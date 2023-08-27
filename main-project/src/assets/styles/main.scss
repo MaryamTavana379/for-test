@@ -8,6 +8,7 @@
 // 3. sections
 @import "hero";
 @import "introduction";
+@import "product";
 
 
 
@@ -38,73 +39,6 @@ section {
 
 
 
-// slider on the product section
-.product__swiper {
-  margin-top: 24px;
-  // swiper wrapper
-  .product__swiper--wrapper {
-    align-items: center;
-    // transform: translate3d(0px, 0px, 0px) !important;
-  }
-  .product__swiper__slide {
-    width: 392px;
-  }
-
-  // next and prev button on the product slider section
-  .product__swiperbtn {
-    color: black;
-  }
-}
-// header production section
-.products__header {
-  @include centerFlex($Lineheight: 0px);
-  // title on the header of product section
-  .products__title {
-    font-size: $Fontsize;
-    font-weight: $LightFontweight;
-    color: $MainColor;
-    margin: $DefaultMargin;
-    margin-top: 40px;
-  }
-  // line under the text
-  .products__line {
-    @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
-  }
-  .products__subtitle {
-    font-size: 64px;
-    font-weight: 400;
-    margin: $DefaultMargin;
-    margin-top: 24px;
-  }
-  .products__btn {
-    @include whiteButton($BackgroundColor: unset);
-  }
-}
-
-//card on the product section slider
-.products__card {
-  color: black;
-  text-align: right;
-  .card__img {
-    width: 100%;
-  }
-  .card__img:hover {
-    border: 3px solid $MainColor;
-  }
-  .card__title {
-    font-size: $LargeFontsize;
-    font-weight: $RegularFontweight;
-    margin: $DefaultMargin;
-    margin-top: 16px;
-  }
-  .card__subtitle {
-    font-size: 20px;
-    font-weight: $LightFontweight;
-    color: $MainColor;
-    margin: $DefaultMargin;
-  }
-  
-}
 
 
 
