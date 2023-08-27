@@ -162,6 +162,9 @@ html {
 section {
   margin-bottom: 100px;
 }
+.fa{
+  color: $MainColor;
+}
 
 // hero section
 .hero {
@@ -495,7 +498,10 @@ hr {
     }
   }
 }
-
+// contact us section tag
+.contactus{
+  margin-bottom: 0;
+}
 // about us section
 .contactus__container {
   background-image: url(../pic/aboutus.png);
@@ -527,6 +533,7 @@ hr {
 // social media section
 .socialmedia__container {
   text-align: center;
+  margin: 40px;
   p {
     font-size: $Fontsize;
     font-weight: $LightFontweight;
