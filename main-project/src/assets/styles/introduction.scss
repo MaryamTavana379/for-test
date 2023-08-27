@@ -1,0 +1,68 @@
+//introduction section
+.introduction {
+  @include display($Justify-content: space-around);
+  // right side items on the introduction section
+  .introduction__container {
+    @include navlist($Direction: column, $Align: none, $Width: 45%);
+  }
+  // container for image on the introduction section
+  .introductionimg__container {
+    position: relative;
+    width: 55%;
+  }
+  //ul list
+  ul {
+    line-height: 80px;
+    margin: $DefaultMargin;
+    padding: $DefaultPadding;
+  }
+  //items in the list
+  li {
+    display: $Display;
+    align-items: center;
+  }
+
+  // background-color of icons
+  .introduction__background {
+    background: rgba(171, 152, 122, 0.1);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  //   icons on the introduction section
+  .introduction__icon {
+    width: 40px;
+    height: 40px;
+    padding: 15px;
+  }
+
+  //the text on the introduction section
+  span {
+    font-size: $LargeFontsize;
+    font-weight: $RegularFontweight;
+    margin-right: 24px;
+  }
+  //just numbers
+  strong {
+    font-family: $FaFontfamily;
+    font-size: $XLargeFontsize;
+    font-weight: $BoldFontweight;
+  }
+  //button on the itroduction section
+  button {
+    @include whiteButton($BtnWidth: 205px);
+  }
+  //   image on the introduction section
+  .introduction__img {
+    height: 500px;
+    width: 100%;
+  }
+  // border on the image
+  .img__border {
+    width: 645px;
+    height: 448px;
+    border: 1px solid #ab987a;
+    position: absolute;
+    margin: 25px 35px;
+  }
+}
