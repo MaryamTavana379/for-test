@@ -10,10 +10,9 @@
 @import "sections/introduction";
 @import "sections/product";
 @import "sections/exhibition";
-
-
-
-
+@import "sections/blog";
+@import "sections/contactus";
+@import "sections/footer";
 
 body,
 html {
@@ -23,256 +22,22 @@ html {
   font-size: $SmallFontsize;
   overflow-x: hidden;
   background-color: $BackgroundColor;
+  // all a tag in the page
   a {
     text-decoration: $Decoration;
   }
+  // all li tag in the page
 
   li {
     list-style: none;
   }
 }
+
+// all section tags on the page
 section {
   margin-bottom: 100px;
 }
+// all font awsome icon on the page
 .fa {
   color: $MainColor;
-}
-
-
-
-
-
-
-
-
-// blog section
-
-.blog__container {
-  display: grid;
-  justify-content: center;
-  gap: 14px 24px;
-
-  .blog__item1 {
-    grid-row: 1;
-    grid-column: 2 / span 3;
-  }
-  .blog__item2 {
-    grid-row: 1 / span 2;
-    grid-column: 1;
-  }
-  // the container for each image tag on the blog item classes
-  .grid__item,
-  .img__container {
-    position: relative;
-  }
-  // the container for text on the image tag
-  .txt__container {
-    position: absolute;
-    bottom: 0;
-    padding: 40px 20px;
-    color: #f5f5f5;
-    font-weight: $RegularFontweight;
-  }
-
-  // first line on the blog images
-  .blog__img__txt1 {
-    font-size: 14px;
-    margin: 0;
-  }
-  // second line on the blog images
-
-  .blog__img__txt2 {
-    font-size: 20px;
-    margin: 0;
-  }
-  .blog__img__link {
-    font-size: $SmallFontsize;
-    color: $MainColor;
-  }
-
-  .blog__item4 {
-    border: 1px solid $MainColor;
-    width: 288px;
-    height: 288px;
-    text-align: center;
-    // the text on the first line of item4
-    .blog__p {
-      font-size: $Fontsize;
-      font-weight: $LightFontweight;
-      color: $MainColor;
-      margin-top: 48px;
-    }
-    // the bold blog word
-    .blog__h4 {
-      font-size: 64px;
-      font-weight: $MediumFontweight;
-      color: $MainColor;
-      margin: auto;
-    }
-    // a tag for go to blog
-    .blog__link {
-      font-size: 20px;
-      font-weight: $MediumFontweight;
-      color: black;
-      text-decoration: $Decoration;
-      border-bottom: 1px solid black;
-    }
-  }
-}
-// contact us section tag
-.contactus {
-  margin-bottom: 0;
-}
-// about us section
-.contactus__container {
-  background-image: url(../pic/aboutus.png);
-  text-align: center;
-  padding: 130px;
-  p {
-    font-size: $LargeFontsize;
-    font-weight: $LightFontweight;
-    color: $MainColor;
-    margin: $DefaultMargin;
-  }
-  h3 {
-    font-size: 48px;
-    font-weight: $RegularFontweight;
-    color: white;
-    margin: $DefaultMargin;
-    margin-bottom: 28px;
-  }
-  .cotactus__btn {
-    @include mainButton(
-      $BtnWidth: 219px,
-      $BtnHeight: 55px,
-      $FontSize: 20px,
-      $FontWeight: $MediumFontweight
-    );
-  }
-}
-
-// social media section
-.socialmedia__container {
-  text-align: center;
-  margin: 40px;
-  p {
-    font-size: $Fontsize;
-    font-weight: $LightFontweight;
-  }
-  .socialmedia__icon {
-    display: $Display;
-    align-items: center;
-    justify-content: center;
-  }
-  .icno__item {
-    padding-left: 30px;
-  }
-  a {
-    text-decoration: $Decoration;
-    color: $MainColor;
-    display: $Display;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #f8f2e8;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 24px;
-  }
-  span {
-    color: black;
-    font-size: 12px;
-    font-weight: $RegularFontweight;
-  }
-}
-
-// footer section
-footer {
-  background-color: #172036;
-  padding: 80px 0 10px;
-  p {
-    font-size: $SmallFontsize;
-    font-weight: $RegularFontweight;
-    margin: $DefaultMargin;
-    color: white;
-    width: 310px;
-  }
-
-  // container of the list
-  .footer__container {
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    margin-bottom: 80px;
-    // items on the list
-    .footer__list {
-      padding: $DefaultPadding;
-      margin: $DefaultMargin;
-      // titles of each items
-      .listfooter__title {
-        font-size: $Fontsize;
-        font-weight: $MediumFontweight;
-        margin: $DefaultMargin;
-      }
-      // second title on the second column
-      .product__title {
-        margin-top: 16px;
-      }
-      // items on the list
-      li {
-        font-size: $SmallFontsize;
-        font-weight: $RegularFontweight;
-        margin-top: 8px;
-      }
-      // hr tags
-      hr {
-        margin: 0 !important;
-        margin-bottom: 16px !important;
-      }
-      .quickaccess__hr {
-        @include hr($Width: 80px);
-      }
-      .footerblog__hr {
-        @include hr($Width: 24px);
-      }
-      .footerproduct__hr {
-        @include hr($Width: 40px);
-      }
-      .chanel__hr {
-        @include hr($Width: 96px);
-      }
-    }
-    // address column on the footer
-    .footeraddress__list {
-      .footer__address {
-        margin: 40px 0;
-        width: 310px;
-      }
-    }
-
-    // logo in the footer
-    // logo container
-    .footerdiv__logo {
-      width: 80px;
-      height: 80px;
-      background-color: white;
-      border-radius: 50%;
-      margin-bottom: 24px;
-      img {
-        display: flex;
-        margin: auto;
-        padding: 10px;
-      }
-    }
-  }
-  //  the line after the lists
-  .footer__hr {
-    @include hr($Width: 90%, $Margin: auto);
-  }
-
-  // the last text on the footer
-  .last__text {
-    text-align: center;
-    margin: 24px auto;
-  }
 }

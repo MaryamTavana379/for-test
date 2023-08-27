@@ -1,0 +1,74 @@
+// blog section
+
+.blog__container {
+  display: grid;
+  justify-content: center;
+  gap: 14px 24px;
+
+  .blog__item1 {
+    grid-row: 1;
+    grid-column: 2 / span 3;
+  }
+  .blog__item2 {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+  }
+  // the container for each image tag on the blog item classes
+  .grid__item,
+  .img__container {
+    position: relative;
+  }
+  // the container for text on the image tag
+  .txt__container {
+    position: absolute;
+    bottom: 0;
+    padding: 40px 20px;
+    color: #f5f5f5;
+    font-weight: $RegularFontweight;
+  }
+
+  // first line on the blog images
+  .blog__img__txt1 {
+    font-size: 14px;
+    margin: 0;
+  }
+  // second line on the blog images
+
+  .blog__img__txt2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .blog__img__link {
+    font-size: $SmallFontsize;
+    color: $MainColor;
+  }
+
+  .blog__item4 {
+    border: 1px solid $MainColor;
+    width: 288px;
+    height: 288px;
+    text-align: center;
+    // the text on the first line of item4
+    .blog__p {
+      font-size: $Fontsize;
+      font-weight: $LightFontweight;
+      color: $MainColor;
+      margin-top: 48px;
+    }
+    // the bold blog word
+    .blog__h4 {
+      font-size: 64px;
+      font-weight: $MediumFontweight;
+      color: $MainColor;
+      margin: auto;
+    }
+    // a tag for go to blog
+    .blog__link {
+      font-size: 20px;
+      font-weight: $MediumFontweight;
+      color: black;
+      text-decoration: $Decoration;
+      border-bottom: 1px solid black;
+    }
+  }
+}
