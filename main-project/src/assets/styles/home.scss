@@ -3,7 +3,7 @@
 // colors
 $BackgroundColor: whitesmoke;
 $MainColor: #ab987a;
-$TextColor: white;
+$WhiteColor: white;
 // fonts setting
 $TextFontFamily: "YekanBakh";
 $FaFontfamily: "YekanBakh-FaNum";
@@ -33,7 +33,7 @@ $DefaultPadding: 0;
 @mixin display(
   $Display: flex,
   $Width: 100%,
-  $Justify-content: space-between,
+  $Justify-content: space-evenly,
   $MaxWidth: 1302px
 ) {
   max-width: $MaxWidth;
@@ -59,17 +59,18 @@ $DefaultPadding: 0;
 //navbar menu
 @mixin navlist(
   $Align: center,
-  $Width: 50%,
-  $Content: space-evenly,
+  $Width: 30%,
   $Direction: row,
+  $Gap: 2rem,
   $Padding: $DefaultPadding
+  
 ) {
   display: $Display;
-  justify-content: $Content;
   align-items: $Align;
   width: $Width;
   padding: $Padding;
   flex-direction: $Direction;
+  gap: $Gap;
 }
 // items on the navbar and
 @mixin Items(
@@ -86,7 +87,7 @@ $DefaultPadding: 0;
 //for all the btn on the page
 @mixin mainButton(
   $BackgroundColor: $MainColor,
-  $TextColor: $TextColor,
+  $WhiteColor: $WhiteColor,
   $BtnWidth: 124px,
   $BtnHeight: 41px,
   $FontSize: $SmallFontsize,
@@ -94,7 +95,7 @@ $DefaultPadding: 0;
   $BtnBorder: none
 ) {
   background-color: $BackgroundColor;
-  color: $TextColor;
+  color: $WhiteColor;
   width: $BtnWidth;
   height: $BtnHeight;
   font-size: $FontSize;
@@ -126,7 +127,7 @@ $DefaultPadding: 0;
 @mixin slider($Align: center, $Height: 100%) {
   width: $Width;
   text-align: $Align;
-  color: $TextColor;
+  color: $WhiteColor;
   height: $Height;
 }
 //each slide on the swiper
@@ -139,6 +140,7 @@ $DefaultPadding: 0;
   width: $Width;
   border: $Border;
   margin: $Margin;
+  
 }
 
 body,
@@ -178,13 +180,22 @@ section {
 .nav__list--right {
   @include navlist();
 }
+.logo__container{
+  display: $Display;
+  align-items: center;
+}
+//logo on the navbar menu
+.nav__logo{
+  width: 64px;
+  height: 64px;
+}
 // button and search icon in the navbar menu
 .nav__list--left {
   @include navlist($Direction: row-reverse, $Width: 30%);
 }
 //fontawsome search icon
 .fa-search {
-  color: $TextColor;
+  color: $MainColor;
 }
 // button in the navbar menu
 .btn {
@@ -376,6 +387,11 @@ hr {
     margin: $DefaultMargin;
   }
 }
+
+  .card__img:hover{
+    border: 3px solid $MainColor;
+  }
+
 
 // exhibition section
 .exhibition {
