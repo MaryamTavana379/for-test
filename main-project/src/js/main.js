@@ -1,9 +1,11 @@
-import "./assets/styles/main.scss";
+import "../assets/styles/main.scss";
+import "./hamburger.js";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import Swiper from "swiper/bundle";
+
 
 // hero section slider
 new Swiper(".mySwiper", {
@@ -58,3 +60,5 @@ new Swiper(".exhibition__swiper", {
     },
   },
 });
+
+

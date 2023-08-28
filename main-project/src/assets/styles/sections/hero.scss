@@ -1,89 +1,149 @@
 // hero section
 .hero {
-    height: 720px;
-    margin-bottom: 100px;
-  }
-  
-  // navbar menu section
-  .navigation {
-    @include display($MaxWidth: auto);
-    position: absolute;
-    z-index: 9;
-  }
-  
-  // nav list in the navbar menu section
-  .nav__list--right {
-    @include navlist();
-  }
-  .logo__container {
-    display: $Display;
-    align-items: center;
-  }
-  //logo on the navbar menu
-  .nav__logo {
-    width: 64px;
-    height: 64px;
-  }
-  // button and search icon in the navbar menu
-  .nav__list--left {
-    @include navlist($Direction: row-reverse, $Width: 30%);
-  }
-  
-  // button in the navbar menu
-  .btn {
-    @include mainButton();
-  }
-  
-  // items in the navbar menu
-  .nav__item {
-    @include Items();
-  }
+  height: 720px;
+  margin-bottom: 100px;
+}
+
+// navbar menu section
+.navigation {
+  @include display($MaxWidth: auto);
+  position: absolute;
+  z-index: 9;
+}
+
+// nav list in the navbar menu section
+.nav__list--right {
+  @include navlist();
   // home
   .active {
-    text-decoration: underline !important;
+    text-decoration: underline;
     color: white;
   }
-  // swiper container
-  .swiper {
-    @include slider();
+}
+.hamburger {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: $MainColor;
+}
+.logo__container {
+  display: $Display;
+  align-items: center;
+}
+//logo on the navbar menu
+.nav__logo {
+  width: 64px;
+  height: 64px;
+}
+// button and search icon in the navbar menu
+.nav__list--left {
+  @include navlist($Direction: row-reverse, $Width: 30%);
+}
+
+// button in the navbar menu
+.btn {
+  @include mainButton();
+}
+
+// items in the navbar menu
+.nav__item {
+  @include Items();
+}
+
+// swiper container
+.swiper {
+  @include slider();
+}
+// swiper slide
+.swiper__slide1 {
+  @include swiperSlide();
+}
+.swiper__slide2 {
+  @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
+}
+.swiper__slide3 {
+  @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
+}
+
+// items on the each slide
+.swiper__slider {
+  @include centerFlex();
+}
+// titles on the sildes
+.swiper__title {
+  font-size: $XLargeFontsize;
+  font-weight: $MediumFontweight;
+  margin: $DefaultMargin;
+  font-weight: $MediumFontweight;
+}
+.swiper__subtitle {
+  margin: $DefaultMargin;
+  font-size: $XLargeFontsize;
+  font-weight: $LightFontweight;
+}
+// the hr tag under the subtitle on each slide
+hr {
+  @include hr();
+}
+// button on the slides
+.swiper__btn {
+  @include mainButton(
+    $BtnWidth: 200px,
+    $BtnHeight: 59px,
+    $FontSize: 24px,
+    $FontWeight: 700
+  );
+}
+
+$breackpiont-tablet: 768px;
+@media (max-width: $breackpiont-tablet) {
+
+  /* Style the navigation menu */
+  .nav__list--right {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    flex-direction: column;
+    //style items on the hamburger
+    .nav__item {
+      color: $SecondaryColor !important;
+      text-decoration: none;
+    }
   }
-  // swiper slide
-  .swiper__slide1 {
-    @include swiperSlide();
+  // when click on humbarger btn
+  .nav__list--right.active {
+    right: 0;
+    align-items: flex-start;
+    margin: 0rem 0rem;
+    background-color: white;
+    padding: 4rem 1rem;
+    height: 100%;
+    color: $SecondaryColor;
   }
-  .swiper__slide2 {
-    @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
+  // humbarger btn
+  .hamburger {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
   }
-  .swiper__slide3 {
-    @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
+  // about lines on the humbarger class
+  // first tag
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
   }
-  
-  // items on the each slide
-  .swiper__slider {
-    @include centerFlex();
+  //second tag
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
   }
-  // titles on the sildes
-  .swiper__title {
-    font-size: $XLargeFontsize;
-    font-weight: $MediumFontweight;
-    margin: $DefaultMargin;
-    font-weight: $MediumFontweight;
+  // third tag
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
-  .swiper__subtitle {
-    margin: $DefaultMargin;
-    font-size: $XLargeFontsize;
-    font-weight: $LightFontweight;
-  }
-  // the hr tag under the subtitle on each slide
-  hr {
-    @include hr();
-  }
-  // button on the slides
-  .swiper__btn {
-    @include mainButton(
-      $BtnWidth: 200px,
-      $BtnHeight: 59px,
-      $FontSize: 24px,
-      $FontWeight: 700
-    );
-  }
+}
