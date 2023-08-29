@@ -66,3 +66,53 @@
     margin: 25px 35px;
   }
 }
+
+// *******************************************************media queris ******************************************************* //
+
+@media (max-width: $breakpoint-desktop3) and (min-width: 1000px) {
+  .introduction {
+    max-width: 808px;
+    // list item
+    .introduction__container{
+      gap: 1rem;
+    }
+    ul{
+      line-height: 60px;
+    }
+    // backgound of icons
+    .introduction__background{
+      width: 50px;
+      height: 50px;
+    }
+    // icons on the section
+    .introduction__icon {
+      width: 30px;
+      height: 30px;
+      padding: 10px;
+    }
+    // text next to the numbers
+    span{
+      font-size: $resp_LargeFontsize;
+    }
+    // numbers
+    strong{
+      font-size: $resp_XLargeFontsize;
+    }
+    // about us button
+    button{
+     
+      @include whiteButton($BtnWidth: 130px, $BtnHeight: 40px, $FontSize: 18px);
+      margin-top: 0;
+    }
+    // border of image
+    .img__border {
+      width: 392px;
+      height: 298px;
+      margin: 15px 25px;
+    }
+    // image
+    .introduction__img {
+      height: 330px;
+    }
+  }
+}

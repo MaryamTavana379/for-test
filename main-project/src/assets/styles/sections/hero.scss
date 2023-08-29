@@ -105,17 +105,17 @@ hr {
 
 // desktop sizes
 @media (min-width: $breakpoint-desktop3) and (max-width: 1400px) {
-  .hero{
+  .hero {
     height: auto;
   }
-  .swiper{
+  .swiper {
     height: auto;
   }
   // righ items on the navbar
   .nav__list--right {
     width: 35%;
   }
-  .swiper__title{
+  .swiper__title {
     margin-top: 7rem;
   }
 }
@@ -269,10 +269,10 @@ hr {
   // swiper titles on the hero section
   .swiper__title {
     margin-top: 4rem;
-    font-size: $Mobile_XLargeFontsize;
+    font-size: $resp_XLargeFontsize;
   }
   .swiper__subtitle {
-    font-size: $Mobile_XLargeFontsize;
+    font-size: $resp_XLargeFontsize;
   }
   // hr tag on the hero slides
   .swiper__line {
