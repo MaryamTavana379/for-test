@@ -69,18 +69,28 @@
 
 // *******************************************************media queris ******************************************************* //
 
+//1.desktop
+@media (max-width: $breakpoint-desktop2) and (min-width: 1030px) {
+  .introduction {
+    max-width: 1224px;
+    // border around image
+    .img__border {
+      width: 602px;
+    }
+  }
+}
 @media (max-width: $breakpoint-desktop3) and (min-width: 1000px) {
   .introduction {
     max-width: 808px;
     // list item
-    .introduction__container{
+    .introduction__container {
       gap: 1rem;
     }
-    ul{
+    ul {
       line-height: 60px;
     }
     // backgound of icons
-    .introduction__background{
+    .introduction__background {
       width: 50px;
       height: 50px;
     }
@@ -91,16 +101,15 @@
       padding: 10px;
     }
     // text next to the numbers
-    span{
+    span {
       font-size: $resp_LargeFontsize;
     }
     // numbers
-    strong{
+    strong {
       font-size: $resp_XLargeFontsize;
     }
     // about us button
-    button{
-     
+    button {
       @include whiteButton($BtnWidth: 130px, $BtnHeight: 40px, $FontSize: 18px);
       margin-top: 0;
     }
@@ -113,6 +122,37 @@
     // image
     .introduction__img {
       height: 330px;
+    }
+  }
+}
+
+// 2.Tablet
+@media (max-width: 900px) {
+  .introduction {
+    flex-direction: column;
+
+    // list items container
+    .introduction__container {
+      width: 100%;
+      align-items: center;
+      gap: 0;
+    }
+    // about us button on the list
+    button{
+      margin-top: 2rem;
+    }
+
+    // image container
+    .introductionimg__container{
+      width: 100%;
+      margin: 2rem;
+    }
+    // border around the image
+    .img__border{
+      width: 631px;
+    }
+    .introduction__img{
+      width: auto;
     }
   }
 }
