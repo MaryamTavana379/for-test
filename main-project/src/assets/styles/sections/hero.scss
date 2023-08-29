@@ -48,7 +48,7 @@
 
 // button in the navbar menu
 .nav__btn {
-  @include mainButton( $Margin: 0);
+  @include mainButton($Margin: 0);
 }
 
 // items in the navbar menu
@@ -105,14 +105,23 @@ hr {
 
 // desktop sizes
 @media (min-width: $breakpoint-desktop3) and (max-width: 1400px) {
+  .hero{
+    height: auto;
+  }
+  .swiper{
+    height: auto;
+  }
   // righ items on the navbar
   .nav__list--right {
     width: 35%;
   }
+  .swiper__title{
+    margin-top: 7rem;
+  }
 }
 // tablet sizes
 @media (min-width: 600px) and (max-width: 1000px) {
-  .hero{
+  .hero {
     height: auto;
   }
   // navigation section
@@ -170,18 +179,18 @@ hr {
   }
 
   // swiper slide text on the hero section
-  .swiper__title{
+  .swiper__title {
     margin-top: 5rem;
   }
   // swiper button on the hero section
-  .swiper__btn{
-    @include mainButton($Margin: 16px)
+  .swiper__btn {
+    @include mainButton($Margin: 16px);
   }
 }
 
 // mobile sizes
 @media (max-width: 500px) {
-  .hero{
+  .hero {
     height: auto;
   }
   // navigation section
@@ -233,13 +242,13 @@ hr {
   }
 
   // pinoox logo on the navbar
-  .nav__logo{
+  .nav__logo {
     width: 44px;
     height: 44px;
   }
 
   // left item on the navbar
-  .nav__list--left{
+  .nav__list--left {
     gap: 0;
   }
 
@@ -249,30 +258,29 @@ hr {
     color: $MainColor;
   }
   //swiper wrapper
-  .swiper{
+  .swiper {
     height: auto;
   }
-  .swiperbtn__next, .swiperbtn__prev{
+  .swiperbtn__next,
+  .swiperbtn__prev {
     display: none !important;
   }
 
   // swiper titles on the hero section
-  .swiper__title{
+  .swiper__title {
     margin-top: 4rem;
     font-size: $Mobile_XLargeFontsize;
   }
-  .swiper__subtitle{
+  .swiper__subtitle {
     font-size: $Mobile_XLargeFontsize;
   }
   // hr tag on the hero slides
-  .swiper__line{
+  .swiper__line {
     @include hr($Width: 50%, $Margin: 0px);
-   
   }
   // button on the hero section swiper
-  .swiper__btn{
+  .swiper__btn {
     @include mainButton();
     margin: 16px;
   }
-  
 }
