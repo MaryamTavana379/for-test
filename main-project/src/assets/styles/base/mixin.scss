@@ -60,7 +60,8 @@
   $BtnHeight: 41px,
   $FontSize: $SmallFontsize,
   $FontWeight: 400,
-  $BtnBorder: none
+  $BtnBorder: none,
+  $Margin: 32px
 ) {
   background-color: $BackgroundColor;
   color: $WhiteColor;
@@ -70,6 +71,7 @@
   font-weight: $FontWeight;
   border: $BtnBorder;
   font-family: $TextFontFamily;
+  margin: $Margin;
 }
 // btn without background
 @mixin whiteButton(
@@ -104,7 +106,7 @@
   background-repeat: $Repeat;
 }
 // all the line under text in the page
-@mixin hr($Width: 10%, $Border: 1px solid $MainColor, $Margin: 32px) {
+@mixin hr($Width: 10%, $Border: 1px solid $MainColor, $Margin: 0) {
   width: $Width;
   border: $Border;
   margin: $Margin;

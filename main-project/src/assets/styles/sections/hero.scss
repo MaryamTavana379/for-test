@@ -47,8 +47,8 @@
 }
 
 // button in the navbar menu
-.btn {
-  @include mainButton();
+.nav__btn {
+  @include mainButton( $Margin: 0);
 }
 
 // items in the navbar menu
@@ -101,9 +101,25 @@ hr {
   );
 }
 
-$breackpiont-tablet: 768px;
-@media (max-width: $breackpiont-tablet) {
+// *******************************************************media queris ******************************************************* //
 
+// desktop sizes
+@media (min-width: $breakpoint-desktop3) and (max-width: 1400px) {
+  // righ items on the navbar
+  .nav__list--right {
+    width: 35%;
+  }
+}
+// tablet sizes
+@media (min-width: 600px) and (max-width: 1000px) {
+  .hero{
+    height: auto;
+  }
+  // navigation section
+  .navigation {
+    justify-content: flex-end;
+    gap: 120px;
+  }
   /* Style the navigation menu */
   .nav__list--right {
     position: fixed;
@@ -131,7 +147,7 @@ $breackpiont-tablet: 768px;
     display: block;
     position: fixed;
     right: 1rem;
-    top: 1rem;
+    top: 1.5rem;
   }
   // about lines on the humbarger class
   // first tag
@@ -146,4 +162,117 @@ $breackpiont-tablet: 768px;
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+  // contact us button on the navbar
+  .nav__btn {
+    background: unset;
+    color: $MainColor;
+  }
+
+  // swiper slide text on the hero section
+  .swiper__title{
+    margin-top: 5rem;
+  }
+  // swiper button on the hero section
+  .swiper__btn{
+    @include mainButton($Margin: 16px)
+  }
+}
+
+// mobile sizes
+@media (max-width: 500px) {
+  .hero{
+    height: auto;
+  }
+  // navigation section
+  .navigation {
+    justify-content: flex-end;
+    gap: 50px;
+  }
+  /* Style the navigation menu */
+  .nav__list--right {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    flex-direction: column;
+    //style items on the hamburger
+    .nav__item {
+      color: $SecondaryColor !important;
+      text-decoration: none;
+    }
+  }
+  // when click on humbarger btn
+  .nav__list--right.active {
+    right: 0;
+    align-items: flex-start;
+    margin: 0rem 0rem;
+    background-color: white;
+    padding: 4rem 1rem;
+    height: 100%;
+    color: $SecondaryColor;
+  }
+  // humbarger btn
+  .hamburger {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    top: 1.5rem;
+  }
+  // about lines on the humbarger class
+  // first tag
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  //second tag
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  // third tag
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  // pinoox logo on the navbar
+  .nav__logo{
+    width: 44px;
+    height: 44px;
+  }
+
+  // left item on the navbar
+  .nav__list--left{
+    gap: 0;
+  }
+
+  // contact us button on the navbar
+  .nav__btn {
+    background: unset;
+    color: $MainColor;
+  }
+  //swiper wrapper
+  .swiper{
+    height: auto;
+  }
+  .swiperbtn__next, .swiperbtn__prev{
+    display: none !important;
+  }
+
+  // swiper titles on the hero section
+  .swiper__title{
+    margin-top: 4rem;
+    font-size: $Mobile_XLargeFontsize;
+  }
+  .swiper__subtitle{
+    font-size: $Mobile_XLargeFontsize;
+  }
+  // hr tag on the hero slides
+  .swiper__line{
+    @include hr($Width: 50%, $Margin: 0px);
+   
+  }
+  // button on the hero section swiper
+  .swiper__btn{
+    @include mainButton();
+    margin: 16px;
+  }
+  
 }
