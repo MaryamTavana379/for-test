@@ -1,6 +1,7 @@
 //introduction section
 .introduction {
   @include display($Justify-content: space-around);
+  max-width: clamp(10vw, 100%, 85vw);
 
   // right side items on the introduction section
   .introduction__container {
@@ -64,7 +65,7 @@
     height: 448px;
     border: 1px solid #ab987a;
     position: absolute;
-    margin: 25px 35px;
+    margin: 25px 29px;
   }
 }
 
@@ -73,16 +74,15 @@
 //1.desktop
 @media (max-width: $breakpoint-desktop2) and (min-width: 1210px) {
   .introduction {
-    max-width: fit-content;
     // border around image
     .img__border {
-      width: 602px;
+      width: 626px;
     }
   }
 }
 @media (max-width: 1200px) and (min-width: 1000px) {
   .introduction {
-    max-width: 808px;
+    font-size: 14px;
     // list item
     .introduction__container {
       gap: 1rem;
@@ -109,7 +109,7 @@
     }
     // border of image
     .img__border {
-      width: 392px;
+      width: 413px;
       height: 298px;
       margin: 15px 25px;
     }
@@ -124,7 +124,7 @@
 @media (max-width: 900px) and (min-width: 600px) {
   .introduction {
     flex-direction: column;
-
+    font-size: 14px;
     // list items container
     .introduction__container {
       width: 100%;
@@ -154,7 +154,7 @@
 @media (max-width: 500px) {
   .introduction {
     flex-direction: column;
-
+    font-size: 8px;
     // list items container
     .introduction__container {
       width: 100%;

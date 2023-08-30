@@ -1,7 +1,7 @@
 // hero section
 .hero {
   font-weight: 100;
-  height: 720px;
+  // height: 720px;
   margin-bottom: 100px;
 }
 
@@ -76,6 +76,15 @@
 .swiper__slider {
   @include centerFlex();
 }
+// the container of items on the swiper
+.swiper__item__container {
+  display: flex;
+  flex-direction: column;
+  padding: 13rem;
+  /* justify-content: center; */
+  align-items: center;
+}
+
 // titles on the sildes
 .swiper__title {
   font-size: 3.5em;
@@ -89,12 +98,12 @@
 }
 // the hr tag under the subtitle on each slide
 hr {
-  @include hr();
+  @include hr($Width:63%);
 }
 // button on the slides
 .swiper__btn {
   @include mainButton(
-    $BtnWidth: 200px,
+    $BtnWidth: 250px,
     $BtnHeight: 59px,
     $FontSize: 1.5em,
     $FontWeight: 700
@@ -114,6 +123,10 @@ hr {
   // righ items on the navbar
   .nav__list--right {
     width: 35%;
+  }
+  // the container of items on the swiper
+  .swiper__item__container{
+    padding: 7rem;
   }
   .swiper__title {
     margin-top: 7rem;
@@ -177,7 +190,9 @@ hr {
     background: unset;
     color: $MainColor;
   }
-
+  .swiper__item__container{
+    padding: 10rem;
+  }
   // swiper slide text on the hero section
   .swiper__title {
     margin-top: 5rem;
@@ -265,6 +280,9 @@ hr {
   .swiperbtn__next,
   .swiperbtn__prev {
     display: none !important;
+  }
+  .swiper__item__container{
+    padding: 5rem;
   }
 
   // swiper titles on the hero section
