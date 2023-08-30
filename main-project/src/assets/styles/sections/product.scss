@@ -20,7 +20,7 @@
     @include centerFlex($Lineheight: 0px);
     // title on the header of product section
     .products__title {
-      font-size: $Fontsize;
+      font-size: 1.5em;
       font-weight: $LightFontweight;
       color: $MainColor;
       margin: $DefaultMargin;
@@ -31,7 +31,7 @@
       @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
     }
     .products__subtitle {
-      font-size: 64px;
+      font-size: 4em;
       font-weight: 400;
       margin: $DefaultMargin;
       margin-top: 24px;
@@ -52,13 +52,13 @@
       border: 3px solid $MainColor;
     }
     .card__title {
-      font-size: $LargeFontsize;
+      font-size: 2em;
       font-weight: $RegularFontweight;
       margin: $DefaultMargin;
       margin-top: 16px;
     }
     .card__subtitle {
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: $LightFontweight;
       color: $MainColor;
       margin: $DefaultMargin;

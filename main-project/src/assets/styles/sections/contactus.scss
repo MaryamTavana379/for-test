@@ -8,13 +8,13 @@
     text-align: center;
     padding: 130px;
     p {
-      font-size: $LargeFontsize;
+      font-size: 2em;
       font-weight: $LightFontweight;
       color: $MainColor;
       margin: $DefaultMargin;
     }
     h3 {
-      font-size: 48px;
+      font-size: 3em;
       font-weight: $RegularFontweight;
       color: white;
       margin: $DefaultMargin;
@@ -24,7 +24,7 @@
       @include mainButton(
         $BtnWidth: 219px,
         $BtnHeight: 55px,
-        $FontSize: 20px,
+        $FontSize: 1.25em,
         $FontWeight: $MediumFontweight,
         $Margin:0px,
       );
@@ -36,7 +36,7 @@
     text-align: center;
     margin: 40px;
     p {
-      font-size: $Fontsize;
+      font-size: 1.5em;
       font-weight: $LightFontweight;
     }
     .socialmedia__icon {
@@ -57,11 +57,11 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      font-size: 24px;
+      font-size: 1.5em;
     }
     span {
       color: black;
-      font-size: 12px;
+      font-size: 0.75em;
       font-weight: $RegularFontweight;
     }
   }

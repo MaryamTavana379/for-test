@@ -1,5 +1,6 @@
 // hero section
 .hero {
+  font-weight: 100;
   height: 720px;
   margin-bottom: 100px;
 }
@@ -77,14 +78,13 @@
 }
 // titles on the sildes
 .swiper__title {
-  font-size: $XLargeFontsize;
+  font-size: 3.5em;
   font-weight: $MediumFontweight;
   margin: $DefaultMargin;
-  font-weight: $MediumFontweight;
 }
 .swiper__subtitle {
   margin: $DefaultMargin;
-  font-size: $XLargeFontsize;
+  font-size: 3.5em;
   font-weight: $LightFontweight;
 }
 // the hr tag under the subtitle on each slide
@@ -96,7 +96,7 @@ hr {
   @include mainButton(
     $BtnWidth: 200px,
     $BtnHeight: 59px,
-    $FontSize: 24px,
+    $FontSize: 1.5em,
     $FontWeight: 700
   );
 }
@@ -192,6 +192,7 @@ hr {
 @media (max-width: 500px) {
   .hero {
     height: auto;
+    font-size: 12px;
   }
   // navigation section
   .navigation {
@@ -269,10 +270,6 @@ hr {
   // swiper titles on the hero section
   .swiper__title {
     margin-top: 4rem;
-    font-size: $resp_XLargeFontsize;
-  }
-  .swiper__subtitle {
-    font-size: $resp_XLargeFontsize;
   }
   // hr tag on the hero slides
   .swiper__line {

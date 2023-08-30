@@ -29,17 +29,17 @@
 
   // first line on the blog images
   .blog__img__txt1 {
-    font-size: 14px;
+    font-size: 0.875em;
     margin: 0;
   }
   // second line on the blog images
 
   .blog__img__txt2 {
-    font-size: 20px;
+    font-size: 1.25em;
     margin: 0;
   }
   .blog__img__link {
-    font-size: $SmallFontsize;
+    font-size: 1em;
     color: $MainColor;
   }
 
@@ -50,21 +50,21 @@
     text-align: center;
     // the text on the first line of item4
     .blog__p {
-      font-size: $Fontsize;
+      font-size: 1.5em;
       font-weight: $LightFontweight;
       color: $MainColor;
       margin-top: 48px;
     }
     // the bold blog word
     .blog__h4 {
-      font-size: 64px;
+      font-size: 4em;
       font-weight: $MediumFontweight;
       color: $MainColor;
       margin: auto;
     }
     // a tag for go to blog
     .blog__link {
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: $MediumFontweight;
       color: black;
       text-decoration: $Decoration;

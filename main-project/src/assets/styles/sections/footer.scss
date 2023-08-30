@@ -3,7 +3,7 @@ footer {
   background-color: #172036;
   padding: 80px 0 10px;
   p {
-    font-size: $SmallFontsize;
+    font-size: 1em;
     font-weight: $RegularFontweight;
     margin: $DefaultMargin;
     color: white;
@@ -22,7 +22,7 @@ footer {
       margin: $DefaultMargin;
       // titles of each items
       .listfooter__title {
-        font-size: $Fontsize;
+        font-size: 1.5em;
         font-weight: $MediumFontweight;
         margin: $DefaultMargin;
       }
@@ -32,7 +32,7 @@ footer {
       }
       // items on the list
       li {
-        font-size: $SmallFontsize;
+        font-size: 1em;
         font-weight: $RegularFontweight;
         margin-top: 8px;
       }

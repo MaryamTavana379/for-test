@@ -45,10 +45,10 @@
   $Color: #ccc2c2,
   $Decoration: $Decoration,
   $FontWeight: 300,
-  $FontSize: $SmallFontsize
+  $FontSize: 1em
 ) {
   font-weight: $FontWeight;
-  font-size: $SmallFontsize;
+  font-size: $FontSize;
   color: $Color;
   text-decoration: $Decoration;
 }
@@ -58,7 +58,7 @@
   $WhiteColor: $WhiteColor,
   $BtnWidth: 124px,
   $BtnHeight: 41px,
-  $FontSize: $SmallFontsize,
+  $FontSize: 1em,
   $FontWeight: 400,
   $BtnBorder: none,
   $Margin: 32px
@@ -80,7 +80,7 @@
   $BtnBorder: 2px solid $MainColor,
   $BtnWidth: 245px,
   $BtnHeight: 55px,
-  $FontSize: 20px,
+  $FontSize: 1.25em,
   $Fontweight: $MediumFontweight
 ) {
   background-color: $BackgroundColor;

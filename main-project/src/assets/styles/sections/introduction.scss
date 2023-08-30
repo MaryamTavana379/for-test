@@ -1,6 +1,7 @@
 //introduction section
 .introduction {
   @include display($Justify-content: space-around);
+
   // right side items on the introduction section
   .introduction__container {
     @include navlist($Direction: column, $Align: none, $Width: 45%);
@@ -8,7 +9,7 @@
   // container for image on the introduction section
   .introductionimg__container {
     position: relative;
-    width: 55%;
+    width: auto;
   }
   //ul list
   ul {
@@ -38,14 +39,14 @@
 
   //the text on the introduction section
   span {
-    font-size: $LargeFontsize;
+    font-size: 2em;
     font-weight: $RegularFontweight;
     margin-right: 24px;
   }
   //just numbers
   strong {
     font-family: $FaFontfamily;
-    font-size: $XLargeFontsize;
+    font-size: 1.75em;
     font-weight: $BoldFontweight;
   }
   //button on the itroduction section
@@ -100,17 +101,10 @@
       height: 30px;
       padding: 10px;
     }
-    // text next to the numbers
-    span {
-      font-size: $resp_LargeFontsize;
-    }
-    // numbers
-    strong {
-      font-size: $resp_XLargeFontsize;
-    }
+
     // about us button
     button {
-      @include whiteButton($BtnWidth: 130px, $BtnHeight: 40px, $FontSize: 18px);
+      @include whiteButton($BtnWidth: 130px, $BtnHeight: 40px, $FontSize: 1.125em);
       margin-top: 0;
     }
     // border of image
@@ -177,13 +171,7 @@
       height: 30px;
       padding: 10px;
     }
-    span {
-      font-size: $resp_LargeFontsize;
-    }
 
-    strong {
-      font-size: $resp_XLargeFontsize;
-    }
     // about us button on the list
     button {
       margin-top: 2rem;
@@ -197,7 +185,7 @@
     // border around the image
     .img__border {
       width: -webkit-fill-available;
-      height:  -webkit-fill-available;
+      height: -webkit-fill-available;
     }
     .introduction__img {
       width: 100%;
