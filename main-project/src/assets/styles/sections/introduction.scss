@@ -104,7 +104,11 @@
 
     // about us button
     button {
-      @include whiteButton($BtnWidth: 130px, $BtnHeight: 40px, $FontSize: 1.125em);
+      @include whiteButton(
+        $BtnWidth: 130px,
+        $BtnHeight: 40px,
+        $FontSize: 1.125em
+      );
       margin-top: 0;
     }
     // border of image
@@ -124,12 +128,34 @@
 @media (max-width: 900px) and (min-width: 600px) {
   .introduction {
     flex-direction: column;
-    font-size: 14px;
+    font-size: 12px;
+    max-width: none;
     // list items container
     .introduction__container {
       width: 100%;
       align-items: center;
       gap: 0;
+    }
+    // ul list 
+    .introduction__list{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 5rem;
+    }
+    // items on the list
+    .introduction__items{
+      width: 50%;
+    }
+    // background of icons
+    .introduction__background {
+      width: 60px;
+      height: 60px;
+    }
+    // icons
+    .introduction__icon {
+      width: 40px;
+      height: 40px;
+      padding: 11px;
     }
     // about us button on the list
     button {
@@ -139,11 +165,12 @@
     // image container
     .introductionimg__container {
       width: auto;
-      margin: 2rem;
+      margin: 3rem 5rem;
     }
     // border around the image
     .img__border {
-      width: 631px;
+      width: 548px;
+      height: 381px;
     }
     .introduction__img {
       width: 100%;
@@ -151,30 +178,48 @@
     }
   }
 }
+// mobile
 @media (max-width: 500px) {
   .introduction {
     flex-direction: column;
-    font-size: 8px;
+    font-size: 6px;
+    max-width: none;
     // list items container
     .introduction__container {
       width: 100%;
       align-items: center;
       gap: 0;
     }
+    // list of items
+    .introduction__list{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 1rem;
+    }
+    // items
+    .introduction__items{
+      width: 50%;
+    }
     // background of icons
     .introduction__background {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
     }
     .introduction__icon {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
       padding: 10px;
+    }
+    // span tag for number
+    .introduction__span{
+      margin-right: 1rem;
     }
 
     // about us button on the list
     button {
-      margin-top: 2rem;
+      margin-top: 1rem;
+      width: 119px;
+      height: 33px;
     }
 
     // image container
@@ -191,5 +236,21 @@
       width: 100%;
       height: auto;
     }
+  }
+}
+
+@media (max-width: 350px) {
+  // ul list 
+  .introduction__list{
+    flex-wrap: nowrap !important;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    line-height: 60px !important;
+
+  }
+
+  .introduction__items{
+    width: 60% !important;
   }
 }
