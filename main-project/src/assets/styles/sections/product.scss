@@ -47,6 +47,7 @@
     text-align: right;
     .card__img {
       width: 100%;
+      border: 3px solid $WhiteColor;
     }
     .card__img:hover {
       border: 3px solid $MainColor;
