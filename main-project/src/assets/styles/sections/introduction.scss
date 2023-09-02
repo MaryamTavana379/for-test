@@ -129,7 +129,7 @@
 @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet){
   .introduction {
     flex-direction: column;
-    font-size: 12px;
+    font-size: $tablet-fontsize;
     max-width: none;
     // list items container
     .introduction__container {
@@ -161,6 +161,8 @@
     // about us button on the list
     button {
       margin-top: 2rem;
+      width: 180px;
+      height: 45px;
     }
 
     // image container
@@ -183,7 +185,7 @@
 @media (max-width: $breakpoint-mobile) {
   .introduction {
     flex-direction: column;
-    font-size: 6px;
+    font-size: $mobile-fontsize;
     max-width: none;
     // list items container
     .introduction__container {
@@ -214,6 +216,7 @@
     // span tag for number
     .introduction__span{
       margin-right: 1rem;
+      font-size: 1.25em;
     }
 
     // about us button on the list
@@ -221,7 +224,6 @@
       margin-top: 1rem;
       width: 119px;
       height: 33px;
-      font-size: 1em;
     }
 
     // image container

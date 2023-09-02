@@ -66,18 +66,28 @@
   }
 }
 
-
 // *******************************************************media queris ******************************************************* //
-@media (max-width: $breakpoint-tablet){
-  .products{
+//extra tablet
+@media (max-width: $breakpoint-tablet) {
+  .products {
     font-size: $tablet-fontsize;
-    .products__btn{
+    .products__btn {
       width: 185px;
       height: 45px;
     }
-    
   }
+}
 
-
-
+//phone
+@media (max-width: $breakpoint-mobile) {
+  .products {
+    font-size: $mobile-fontsize;
+    .products__btn {
+      width: 160px;
+      height: 40px;
+    }
+    .product__swiperbtn::after{
+      font-size: 3em;
+    }
+  }
 }

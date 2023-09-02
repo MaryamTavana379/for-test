@@ -28,14 +28,22 @@ new Swiper(".product__swiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    1024:{
+    1024: {
       slidesPerView: 3.5,
-      spaceBetween:30
-
+      spaceBetween: 30,
+    },
+    900: {
+      slidesPerView: 3.5,
     },
     768: {
-      slidesPerView: 2.5,
-      spaceBetween: 30,
+      slidesPerView: 2.75,
+    },
+    426:{
+      slidesPerView: 2.25
+    },
+    320: {
+      slidesPerView: 1.5,
+      centeredSlides: true,
     },
   },
 });
