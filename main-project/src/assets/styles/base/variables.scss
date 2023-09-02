@@ -33,8 +33,11 @@ $DefaultPadding: 0;
 $breakpoint-TV: 1201px;
 $breakpoint-largescreen:1200px;// large laptop
 $breakpoint-smallscreen: 992px; // small laptop
-$breakpoint-tablet: 768px; //tablet
+$breakpoint-tablet: 991px; //tablet for setting by max-width
 $breakpoint-mobile: 600px; //mobile
+
+//Font sizes
+$tablet-fontsize: 12px;
     
 
 

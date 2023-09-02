@@ -73,7 +73,7 @@
 // *******************************************************media queris ******************************************************* //
 
 //1.desktop
-@media (max-width: $breakpoint-largescreen) and (min-width: 1210px) {
+@media (min-width: $breakpoint-largescreen) {
   .introduction {
     // border around image
     .img__border {

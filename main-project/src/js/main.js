@@ -6,7 +6,6 @@ import "swiper/css/pagination";
 import "swiper/css";
 import Swiper from "swiper/bundle";
 
-
 // hero section slider
 new Swiper(".mySwiper", {
   // autoplay: {
@@ -20,13 +19,24 @@ new Swiper(".mySwiper", {
 });
 // product section slider
 new Swiper(".product__swiper", {
-  slidesPerView: 3.5,
+  slidesPerView: 4.5,
   spaceBetween: 30,
   centeredSlides: false,
 
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    1024:{
+      slidesPerView: 3.5,
+      spaceBetween:30
+
+    },
+    768: {
+      slidesPerView: 2.5,
+      spaceBetween: 30,
+    },
   },
 });
 
@@ -60,5 +70,3 @@ new Swiper(".exhibition__swiper", {
     },
   },
 });
-
-

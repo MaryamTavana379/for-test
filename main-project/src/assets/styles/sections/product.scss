@@ -1,69 +1,83 @@
 // slider on the product section
 .product__swiper {
-    margin-top: 24px;
-    // swiper wrapper
-    .product__swiper--wrapper {
-      align-items: center;
-      // transform: translate3d(0px, 0px, 0px) !important;
-    }
-    .product__swiper__slide {
-      width: 392px;
-    }
-  
-    // next and prev button on the product slider section
-    .product__swiperbtn {
-      color: black;
-    }
+  margin-top: 24px;
+  // swiper wrapper
+  .product__swiper--wrapper {
+    align-items: center;
+    // transform: translate3d(0px, 0px, 0px) !important;
   }
-  // header production section
-  .products__header {
-    @include centerFlex($Lineheight: 0px);
-    // title on the header of product section
-    .products__title {
-      font-size: 1.5em;
-      font-weight: $LightFontweight;
-      color: $MainColor;
-      margin: $DefaultMargin;
-      margin-top: 40px;
-    }
-    // line under the text
-    .products__line {
-      @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
-    }
-    .products__subtitle {
-      font-size: 4em;
-      font-weight: 400;
-      margin: $DefaultMargin;
-      margin-top: 24px;
-    }
-    .products__btn {
-      @include whiteButton($BackgroundColor: unset);
-    }
+  .product__swiper__slide {
+    width: 392px;
   }
-  
-  //card on the product section slider
-  .products__card {
+
+  // next and prev button on the product slider section
+  .product__swiperbtn {
     color: black;
-    text-align: right;
-    .card__img {
-      width: 100%;
-      border: 3px solid $WhiteColor;
-    }
-    .card__img:hover {
-      border: 3px solid $MainColor;
-    }
-    .card__title {
-      font-size: 2em;
-      font-weight: $RegularFontweight;
-      margin: $DefaultMargin;
-      margin-top: 16px;
-    }
-    .card__subtitle {
-      font-size: 1.25em;
-      font-weight: $LightFontweight;
-      color: $MainColor;
-      margin: $DefaultMargin;
+  }
+}
+// header production section
+.products__header {
+  @include centerFlex($Lineheight: 0px);
+  // title on the header of product section
+  .products__title {
+    font-size: 1.5em;
+    font-weight: $LightFontweight;
+    color: $MainColor;
+    margin: $DefaultMargin;
+    margin-top: 40px;
+  }
+  // line under the text
+  .products__line {
+    @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
+  }
+  .products__subtitle {
+    font-size: 4em;
+    font-weight: 400;
+    margin: $DefaultMargin;
+    margin-top: 24px;
+  }
+  .products__btn {
+    @include whiteButton($BackgroundColor: unset);
+  }
+}
+
+//card on the product section slider
+.products__card {
+  color: black;
+  text-align: right;
+  .card__img {
+    width: 100%;
+    border: 3px solid $WhiteColor;
+  }
+  .card__img:hover {
+    border: 3px solid $MainColor;
+  }
+  .card__title {
+    font-size: 2em;
+    font-weight: $RegularFontweight;
+    margin: $DefaultMargin;
+    margin-top: 16px;
+  }
+  .card__subtitle {
+    font-size: 1.25em;
+    font-weight: $LightFontweight;
+    color: $MainColor;
+    margin: $DefaultMargin;
+  }
+}
+
+
+// *******************************************************media queris ******************************************************* //
+@media (max-width: $breakpoint-tablet){
+  .products{
+    font-size: $tablet-fontsize;
+    .products__btn{
+      width: 185px;
+      height: 45px;
     }
     
   }
-  
+
+
+
+}
