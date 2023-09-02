@@ -44,6 +44,7 @@
     font-weight: $RegularFontweight;
     margin-right: 24px;
   }
+
   //just numbers
   strong {
     font-family: $FaFontfamily;
@@ -72,7 +73,7 @@
 // *******************************************************media queris ******************************************************* //
 
 //1.desktop
-@media (max-width: $breakpoint-desktop2) and (min-width: 1210px) {
+@media (max-width: $breakpoint-largescreen) and (min-width: 1210px) {
   .introduction {
     // border around image
     .img__border {
@@ -80,7 +81,7 @@
     }
   }
 }
-@media (max-width: 1200px) and (min-width: 1000px) {
+@media  (min-width: $breakpoint-smallscreen) {
   .introduction {
     font-size: 14px;
     // list item
@@ -123,9 +124,9 @@
     }
   }
 }
-
+//todo : check this part again
 // 2.Tablet
-@media (max-width: 900px) and (min-width: 600px) {
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet){
   .introduction {
     flex-direction: column;
     font-size: 12px;
@@ -179,7 +180,7 @@
   }
 }
 // mobile
-@media (max-width: 500px) {
+@media (max-width: $breakpoint-mobile) {
   .introduction {
     flex-direction: column;
     font-size: 6px;
@@ -220,6 +221,7 @@
       margin-top: 1rem;
       width: 119px;
       height: 33px;
+      font-size: 1em;
     }
 
     // image container
@@ -254,3 +256,4 @@
     width: 60% !important;
   }
 }
+
