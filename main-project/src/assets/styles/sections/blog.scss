@@ -146,3 +146,14 @@
     }
   }
 }
+
+// 4.mobile
+@media (max-width:$breakpoint-mobile){
+  .blog{
+    font-size: 10px;
+    .blog__container{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
