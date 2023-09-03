@@ -30,14 +30,15 @@ $DefaultPadding: 0;
 
 // media query 
 //breackpoints
-$breakpoint-TV: 1201px;
-$breakpoint-largescreen:1200px;// large laptop
-$breakpoint-smallscreen: 992px; // small laptop
-$breakpoint-tablet: 991px; //tablet for setting by max-width
-$breakpoint-mobile: 600px; //mobile
+$breakpoint-largescreen:1200px;// large laptop for setting by min-width
+$breakpoint-smallscreen: 1200px; // small laptop for setting by max-width
+$breakpoint-tablet: 993px; //tablet for setting by max-width
+$breakpoint-largemobile: 767px; //for small tablet & large mobile max-width
+
+$breakpoint-mobile: 426px; //mobile for max-width
 
 //Font sizes
-$tablet-fontsize: 12px;
+$smallscreen-fontsize: 12px;
 $mobile-fontsize: 10px;
     
 

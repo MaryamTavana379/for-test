@@ -67,13 +67,21 @@
 }
 
 // *******************************************************media queris ******************************************************* //
+@media (max-width: $breakpoint-smallscreen) {
+  .products {
+    font-size: $smallscreen-fontsize;
+    .products__btn {
+      width: 195px;
+      height: 45px;
+    }
+  }
+}
 //extra tablet
 @media (max-width: $breakpoint-tablet) {
   .products {
-    font-size: $tablet-fontsize;
     .products__btn {
-      width: 185px;
-      height: 45px;
+      width: 170px;
+      height: 40px;
     }
   }
 }
@@ -86,7 +94,7 @@
       width: 160px;
       height: 40px;
     }
-    .product__swiperbtn::after{
+    .product__swiperbtn::after {
       font-size: 3em;
     }
   }

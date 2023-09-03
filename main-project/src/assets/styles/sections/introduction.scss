@@ -81,7 +81,7 @@
     }
   }
 }
-@media  (min-width: $breakpoint-smallscreen) {
+@media (max-width: $breakpoint-smallscreen) {
   .introduction {
     font-size: 14px;
     // list item
@@ -126,10 +126,10 @@
 }
 //todo : check this part again
 // 2.Tablet
-@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet) {
   .introduction {
     flex-direction: column;
-    font-size: $tablet-fontsize;
+    font-size: $smallscreen-fontsize;
     max-width: none;
     // list items container
     .introduction__container {
@@ -137,14 +137,14 @@
       align-items: center;
       gap: 0;
     }
-    // ul list 
-    .introduction__list{
+    // ul list
+    .introduction__list {
       display: flex;
       flex-wrap: wrap;
       padding: 0 5rem;
     }
     // items on the list
-    .introduction__items{
+    .introduction__items {
       width: 50%;
     }
     // background of icons
@@ -181,7 +181,31 @@
     }
   }
 }
-// mobile
+// 3.largemobile
+@media (max-width: $breakpoint-largemobile) {
+  .introduction {
+    font-size: $mobile-fontsize;
+    // background of icons
+    .introduction__background {
+      width: 50px;
+      height: 50px;
+    }
+    // icons
+    .introduction__icon{
+      width: 30px;
+      height: 30px;
+    }
+    .img__border {
+      width: 404px;
+      height: 293px;
+    }
+    // span tag for number
+    .introduction__span {
+      font-size: 1.5em;
+    }
+  }
+}
+// 4.mobile
 @media (max-width: $breakpoint-mobile) {
   .introduction {
     flex-direction: column;
@@ -194,13 +218,13 @@
       gap: 0;
     }
     // list of items
-    .introduction__list{
+    .introduction__list {
       display: flex;
       flex-wrap: wrap;
       padding: 0 1rem;
     }
     // items
-    .introduction__items{
+    .introduction__items {
       width: 50%;
     }
     // background of icons
@@ -214,7 +238,7 @@
       padding: 10px;
     }
     // span tag for number
-    .introduction__span{
+    .introduction__span {
       margin-right: 1rem;
       font-size: 1.25em;
     }
@@ -244,18 +268,16 @@
 }
 
 @media (max-width: 350px) {
-  // ul list 
-  .introduction__list{
+  // ul list
+  .introduction__list {
     flex-wrap: nowrap !important;
     flex-direction: column;
     width: 100%;
     align-items: center;
     line-height: 60px !important;
-
   }
 
-  .introduction__items{
+  .introduction__items {
     width: 60% !important;
   }
 }
-

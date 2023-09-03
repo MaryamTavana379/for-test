@@ -31,7 +31,7 @@
     transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
       scale(1) !important;
     justify-content: center;
-    width: 800px !important;
+    // width: 800px !important;
     img {
       width: 100%;
       opacity: 1;
@@ -57,5 +57,32 @@
     background-color: $MainColor;
     width: 48px;
     border-radius: 7px;
+  }
+}
+
+
+// *******************************************************media queris ******************************************************* //
+
+//smal screen
+@media (max-width: $breakpoint-smallscreen){
+  .exhibition{
+    font-size: $smallscreen-fontsize;
+    //button on the title
+    .products__btn{
+      width: 180px;
+      height: 40px;
+    }
+    // .swiper-slide-active{
+    //   width: 700px !important;
+    // }
+    // bullet under the slider
+    .swiper-pagination-bullet{
+      width: 10px;
+      height: 10px;
+    }
+    // active bullet
+    .swiper-pagination-bullet-active{
+      width: 45px;
+    }
   }
 }

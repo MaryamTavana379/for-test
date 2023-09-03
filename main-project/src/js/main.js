@@ -38,8 +38,8 @@ new Swiper(".product__swiper", {
     768: {
       slidesPerView: 2.75,
     },
-    426:{
-      slidesPerView: 2.25
+    426: {
+      slidesPerView: 2.25,
     },
     320: {
       slidesPerView: 1.5,
@@ -50,17 +50,25 @@ new Swiper(".product__swiper", {
 
 // exhibition section slider
 new Swiper(".exhibition__swiper", {
-  slidesPerView: 1.5,
-  spaceBetween: 50,
   effect: "coverflow",
+  grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
+  spaceBetween:100,
   coverflowEffect: {
     rotate: 0,
-    // stretch: 0,
+    stretch: 0,
     depth: 100,
     modifier: 1,
     slideShadows: false,
+  },
+  breakpoints:{
+    992:{
+      spaceBetween: 100
+    },
+    768:{
+      spaceBetween:50
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",
@@ -69,12 +77,5 @@ new Swiper(".exhibition__swiper", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-  },
-
-  breakpoints: {
-    1500: {
-      slidesPerView: 2,
-      spaceBetween: 300,
-    },
   },
 });

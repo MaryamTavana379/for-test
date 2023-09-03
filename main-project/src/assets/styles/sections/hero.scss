@@ -113,7 +113,7 @@ hr {
 // *******************************************************media queris ******************************************************* //
 
 // desktop sizes
-@media (max-width: 1400px) and (width >= $breakpoint-TV)  {
+@media (max-width: 1400px) {
   .hero {
     height: auto;
   }
