@@ -145,31 +145,73 @@
 }
 
 // 4.mobile
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: 500px) {
   .blog {
     font-size: 10px;
     .blog__container {
+      gap: 5px 10px;
       display: flex;
       flex-wrap: wrap;
+      .img__container {
+        width: 360px;
+      }
+      .img__container3 {
+        width: 174px;
+        height: 174px;
+      }
+      .blog__item4 {
+        width: 174px;
+        height: 172px;
+        .blog__p {
+          margin-top: 23px;
+        }
+      }
     }
   }
 }
-
-// 5.small mobile
+//5.small mobile 376px
+@media (max-width: 376px) {
+  .blog {
+    .blog__container {
+      .img__container {
+        width: 310px;
+      }
+      .img__container3 {
+        width: 149px;
+        height: 149px;
+      }
+      .blog__item4 {
+        width: 149px;
+        height: 147px;
+        .blog__p {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}
+// 6.very small mobile 320px
 @media (max-width: 321px) {
   .blog {
     .blog__container {
-      gap: 5px 10px;
-      .img__container{
-        width: 280px;
+      .img__container {
+        width: 260px;
       }
-      .img__container3,
+      .img__container3 {
+        width: 125px;
+        height: 125px;
+      }
+      //first text
       .blog__item4 {
-        width: 135px;
-        height: 135px;
+        width: 125px;
+        height: 125px;
+        .blog__p {
+          margin-top: 10px;
+        }
       }
+
       //blog text
-      .blog__h4{
+      .blog__h4 {
         font-size: 3em;
       }
     }

@@ -1,68 +1,85 @@
 // contact us section tag
 .contactus {
-    margin-bottom: 0;
+  margin-bottom: 0;
+}
+// contact us section
+.contactus__container {
+  background-image: url(../pic/aboutus.png);
+  text-align: center;
+  padding: 130px;
+  p {
+    font-size: 2em;
+    font-weight: $LightFontweight;
+    color: $MainColor;
+    margin: $DefaultMargin;
   }
-  // contact us section
-  .contactus__container {
-    background-image: url(../pic/aboutus.png);
-    text-align: center;
-    padding: 130px;
-    p {
-      font-size: 2em;
-      font-weight: $LightFontweight;
-      color: $MainColor;
-      margin: $DefaultMargin;
-    }
-    h3 {
-      font-size: 3em;
-      font-weight: $RegularFontweight;
-      color: white;
-      margin: $DefaultMargin;
-      margin-bottom: 28px;
-    }
-    .cotactus__btn {
-      @include mainButton(
-        $BtnWidth: 219px,
-        $BtnHeight: 55px,
-        $FontSize: 1.25em,
-        $FontWeight: $MediumFontweight,
-        $Margin:0px,
-      );
+  h3 {
+    font-size: 3em;
+    font-weight: $RegularFontweight;
+    color: white;
+    margin: $DefaultMargin;
+    margin-bottom: 28px;
+  }
+  .contactus__btn {
+    @include mainButton(
+      $BtnWidth: 219px,
+      $BtnHeight: 55px,
+      $FontSize: 1.25em,
+      $FontWeight: $MediumFontweight,
+      $Margin: 0px
+    );
+  }
+}
+
+// social media section
+.socialmedia__container {
+  text-align: center;
+  margin: 40px;
+  p {
+    font-size: 1.5em;
+    font-weight: $LightFontweight;
+  }
+  .socialmedia__icon {
+    display: $Display;
+    align-items: center;
+    justify-content: center;
+  }
+  .icno__item {
+    padding-left: 30px;
+  }
+  a {
+    text-decoration: $Decoration;
+    color: $MainColor;
+    display: $Display;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f8f2e8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5em;
+  }
+  span {
+    color: black;
+    font-size: 0.75em;
+    font-weight: $RegularFontweight;
+  }
+}
+
+// *******************************************************media queris ******************************************************* //
+// 1.smal laptop
+@media (max-width: $breakpoint-smallscreen) {
+  .contactus {
+    font-size: $smallscreen-fontsize;
+    .contactus__container {
+      h3 {
+        margin-bottom: 15px;
+      }
+
+      .contactus__btn {
+        width: 140px;
+        height: 40px;
+      }
     }
   }
-  
-  // social media section
-  .socialmedia__container {
-    text-align: center;
-    margin: 40px;
-    p {
-      font-size: 1.5em;
-      font-weight: $LightFontweight;
-    }
-    .socialmedia__icon {
-      display: $Display;
-      align-items: center;
-      justify-content: center;
-    }
-    .icno__item {
-      padding-left: 30px;
-    }
-    a {
-      text-decoration: $Decoration;
-      color: $MainColor;
-      display: $Display;
-      flex-direction: column;
-      justify-content: center;
-      background-color: #f8f2e8;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.5em;
-    }
-    span {
-      color: black;
-      font-size: 0.75em;
-      font-weight: $RegularFontweight;
-    }
-  }
-  
+}
