@@ -44,7 +44,7 @@
     align-items: center;
     justify-content: center;
   }
-  .icno__item {
+  .icon__item {
     padding-left: 30px;
   }
   a {
@@ -53,7 +53,7 @@
     display: $Display;
     flex-direction: column;
     justify-content: center;
-    background-color: #f8f2e8;
+    background-color: rgb(171, 152, 122, 10%);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -77,8 +77,64 @@
       }
 
       .contactus__btn {
-        width: 140px;
+        width: 150px;
         height: 40px;
+      }
+    }
+  }
+}
+
+//2. phones
+@media (max-width: $breakpoint-largemobile) {
+  .contactus {
+    font-size: $mobile-fontsize;
+    // container of this section
+    .contactus__container {
+      padding: 100px;
+      background-repeat: round;
+    }
+
+    // socialmedia container
+    .socialmedia__container {
+      .socialmedia__icon {
+        justify-content: space-evenly;
+        // icons
+        .icon__item {
+          padding-left: 0;
+          // icon's background
+          a {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 3.phone in 375 size
+@media (max-width: 376px) {
+  .contactus {
+    .contactus__container {
+      padding: 80px;
+    }
+  }
+}
+
+// 4.phone in 321 size
+@media (max-width: 321px) {
+  .contactus {
+    .contactus__container {
+      padding: 55px;
+    }
+    .socialmedia__container {
+      .socialmedia__icon {
+        .icon__item {
+          a {
+            width: 30px;
+            height: 30px;
+            font-size: 1.5em;
+          }
+        }
       }
     }
   }
