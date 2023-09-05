@@ -1,17 +1,13 @@
 //introduction section
 .introduction {
   @include display($Justify-content: space-around);
-  max-width: clamp(10vw, 100%, 85vw);
+  width: clamp(10vw, 100%, 85vw);
 
   // right side items on the introduction section
   .introduction__container {
     @include navlist($Direction: column, $Align: none, $Width: 45%);
   }
-  // container for image on the introduction section
-  .introductionimg__container {
-    position: relative;
-    width: auto;
-  }
+
   //ul list
   ul {
     line-height: 80px;
@@ -55,32 +51,39 @@
   button {
     @include whiteButton($BtnWidth: 205px);
   }
+  // container for image on the introduction section
+  .introductionimg__container {
+    position: relative;
+    width: auto;
+  }
+  // container for box
+  .introduction__box {
+    position: relative;
+    width: clamp(200px, 100%, 700px);
+    // width: 100%;
+    height: 100%;
+  }
   //   image on the introduction section
   .introduction__img {
-    height: 500px;
+    height: 100%;
     width: 100%;
   }
   // border on the image
   .img__border {
-    width: 645px;
-    height: 448px;
+    width: 90%;
+    height: 90%;
     border: 1px solid #ab987a;
     position: absolute;
-    margin: 25px 29px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
   }
 }
 
 // *******************************************************media queris ******************************************************* //
-
-//1.desktop
-@media (min-width: $breakpoint-largescreen) and (max-width: 1490px) {
-  .introduction {
-    // border around image
-    .img__border {
-      width: 626px;
-    }
-  }
-}
+// 1. laptop 1200
 @media (max-width: $breakpoint-smallscreen) {
   .introduction {
     font-size: 14px;
@@ -110,17 +113,13 @@
         $BtnHeight: 40px,
         $FontSize: 1.125em
       );
-      margin-top: 0;
+      margin-top: 2rem;
     }
-    // border of image
-    .img__border {
-      width: 413px;
-      height: 298px;
-      margin: 15px 25px;
-    }
-    // image
-    .introduction__img {
-      height: 330px;
+    // box for image and border box
+    .introduction__box {
+      position: relative;
+      width: 500px;
+      height: 350px;
     }
   }
 }
@@ -130,18 +129,18 @@
   .introduction {
     flex-direction: column;
     font-size: $smallscreen-fontsize;
-    max-width: none;
+    width: auto;
     // list items container
     .introduction__container {
       width: 100%;
       align-items: center;
-      gap: 0;
     }
     // ul list
     .introduction__list {
       display: flex;
       flex-wrap: wrap;
       padding: 0 5rem;
+      row-gap: 1rem;
     }
     // items on the list
     .introduction__items {
@@ -149,13 +148,13 @@
     }
     // background of icons
     .introduction__background {
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
     }
     // icons
     .introduction__icon {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       padding: 11px;
     }
     // about us button on the list
@@ -163,21 +162,18 @@
       margin-top: 2rem;
       width: 180px;
       height: 45px;
+      font-size: 1.5em;
     }
 
     // image container
     .introductionimg__container {
       width: auto;
-      margin: 3rem 5rem;
-    }
-    // border around the image
-    .img__border {
-      width: 556px;
-      height: 401px;
-    }
-    .introduction__img {
-      width: 100%;
-      height: auto;
+      margin: 3rem auto;
+      //box for image and border image
+      .introduction__box {
+        width: 605px;
+        height: 405px;
+      }
     }
   }
 }
@@ -191,17 +187,20 @@
       height: 50px;
     }
     // icons
-    .introduction__icon{
+    .introduction__icon {
       width: 30px;
       height: 30px;
     }
-    .img__border {
-      width: 404px;
-      height: 293px;
-    }
+
     // span tag for number
     .introduction__span {
       font-size: 1.5em;
+    }
+    .introductionimg__container {
+      .introduction__box {
+        width: auto;
+        height: 250px;
+      }
     }
   }
 }
@@ -211,17 +210,18 @@
     flex-direction: column;
     font-size: $mobile-fontsize;
     max-width: none;
+    margin-bottom: 50px;
     // list items container
     .introduction__container {
       width: 100%;
       align-items: center;
-      gap: 0;
     }
     // list of items
     .introduction__list {
       display: flex;
       flex-wrap: wrap;
       padding: 0 1rem;
+      row-gap: 0;
     }
     // items
     .introduction__items {
@@ -254,15 +254,6 @@
     .introductionimg__container {
       width: auto;
       margin: 2rem;
-    }
-    // border around the image
-    .img__border {
-      width: -webkit-fill-available;
-      height: -webkit-fill-available;
-    }
-    .introduction__img {
-      width: 100%;
-      height: auto;
     }
   }
 }

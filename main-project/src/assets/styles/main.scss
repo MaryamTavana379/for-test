@@ -35,9 +35,15 @@ html {
 
 // all section tags on the page
 section {
-  margin-bottom: 100px;
+  margin-bottom: 100px ;
 }
 // all font awsome icon on the page
 .fa {
   color: $MainColor;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  section {
+    margin-bottom: 50px;
+  }
 }

@@ -43,10 +43,9 @@
     display: $Display;
     align-items: center;
     justify-content: center;
+    gap: 40px;
   }
-  .icon__item {
-    padding-left: 30px;
-  }
+
   a {
     text-decoration: $Decoration;
     color: $MainColor;
@@ -71,14 +70,23 @@
 @media (max-width: $breakpoint-smallscreen) {
   .contactus {
     font-size: $smallscreen-fontsize;
+
     .contactus__container {
+      // second text on the picture
+      background-repeat: round;
+      padding: 70px;
       h3 {
         margin-bottom: 15px;
       }
-
+      //contact us btn
       .contactus__btn {
         width: 150px;
         height: 40px;
+      }
+    }
+    .socialmedia__container {
+      .socialmedia__icon {
+        gap: 30px;
       }
     }
   }
@@ -90,7 +98,6 @@
     font-size: $mobile-fontsize;
     // container of this section
     .contactus__container {
-      padding: 100px;
       background-repeat: round;
     }
 
@@ -98,13 +105,8 @@
     .socialmedia__container {
       .socialmedia__icon {
         justify-content: space-evenly;
-        // icons
-        .icon__item {
-          padding-left: 0;
-          // icon's background
-          a {
-            font-size: 2em;
-          }
+        a {
+          font-size: 2em;
         }
       }
     }
