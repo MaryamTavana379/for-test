@@ -91,6 +91,33 @@ footer {
 }
 
 // *******************************************************media queris ******************************************************* //
+// 1. xlarge screen and Tv
+@media (min-width: $breakpoint-xlargescreen) {
+  .footer {
+    font-size: $XLargecsreen-fontsize;
+    .footer__container{
+      // logo's div
+      .footerdiv__logo{
+        width: 120px;
+        height: 120px;
+        // logo on the div
+        img{
+          width: 60%;
+        }
+      }
+    }
+    // line under the list
+    .footer__hr{
+      width: 92%;
+    }
+    // text on the bottom
+    p{
+      width: 25%;
+    }
+    
+  }
+}
+// 2.smal laptop
 @media (max-width: $breakpoint-smallscreen) {
   .footer {
     font-size: $smallscreen-fontsize;
@@ -118,7 +145,7 @@ footer {
     }
   }
 }
-
+// 3. tablet
 @media (max-width: $breakpoint-tablet) {
   .footer {
     font-size: $tablet-fontsize;
@@ -136,7 +163,7 @@ footer {
     }
   }
 }
-
+// 4. mobile
 @media (max-width: $breakpoint-mobile) {
   .footer {
     font-size: $mobile-fontsize;
@@ -159,7 +186,7 @@ footer {
     }
   }
 }
-
+// 5. small mobile
 @media (max-width: 376px) {
   .footer {
     .footer__container {
@@ -178,7 +205,7 @@ footer {
     }
   }
 }
-
+//6. very smll mobile
 @media (max-width: 321px) {
   .footer {
     .footer__container {

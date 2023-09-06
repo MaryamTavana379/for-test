@@ -79,6 +79,44 @@
 }
 
 // *******************************************************media queris ******************************************************* //
+@media (min-width: $breakpoint-xlargescreen) {
+  .blog {
+    font-size: $XLargecsreen-fontsize;
+    .blog__container {
+      gap: 20px 20px;
+      .grid__item {
+        //all image container
+        .img__container {
+          width: 35vw;
+          img {
+            width: 100%;
+          }
+        }
+        .img__container3 {
+          width: 437px;
+          height: 437px;
+          img{
+            height: 100%;
+          }
+        }
+      }
+      .blog__item2{
+        height: 39vh;
+        .img__container{
+          height: 100%;
+          img{
+            height: 100%;
+          }
+        }
+      }
+
+      .blog__item4 {
+        width: 437px;
+        height: 437px;
+      }
+    }
+  }
+}
 //1.large laptop
 @media (max-width: $breakpoint-largescreen) {
   .blog {

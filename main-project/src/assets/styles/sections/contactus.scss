@@ -66,7 +66,30 @@
 }
 
 // *******************************************************media queris ******************************************************* //
-// 1.smal laptop
+// 1. xlarge pc and TV
+@media (min-width: $breakpoint-xlargescreen) {
+  .contactus {
+    font-size: $XLargecsreen-fontsize;
+    .contactus__container {
+      background-size: cover;
+      padding: 300px;
+      .contactus__btn{
+        width: 305px;
+        height: 85px;
+      }
+    }
+
+    // social media section
+    .socialmedia__container {
+      a {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+}
+
+// 2.smal laptop
 @media (max-width: $breakpoint-smallscreen) {
   .contactus {
     font-size: $smallscreen-fontsize;
@@ -92,7 +115,7 @@
   }
 }
 
-//2. phones
+//3. phones
 @media (max-width: $breakpoint-largemobile) {
   .contactus {
     font-size: $mobile-fontsize;
@@ -113,7 +136,7 @@
   }
 }
 
-// 3.phone in 375 size
+// 4.small phone
 @media (max-width: 376px) {
   .contactus {
     .contactus__container {
@@ -122,7 +145,7 @@
   }
 }
 
-// 4.phone in 321 size
+// 5. very small phone
 @media (max-width: 321px) {
   .contactus {
     .contactus__container {
