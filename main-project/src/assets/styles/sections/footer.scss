@@ -98,8 +98,10 @@ footer {
       justify-content: space-evenly;
       margin-bottom: 50px;
       // address column on the footer
+      .address__container {
+        width: 30%;
+      }
       .footeraddress__list {
-        width: min-content;
         //pinoox logo container
         .footer__logo__box {
           width: 30%;
@@ -111,6 +113,24 @@ footer {
           margin: 40px 0;
           width: 80%;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .footer {
+    font-size: $tablet-fontsize;
+
+    .footer__container {
+      // address section
+      .address__container {
+        width: 30%;
+      }
+      // logo list section
+      .footerdiv__logo {
+        width: 70px;
+        height: 70px;
       }
     }
   }
