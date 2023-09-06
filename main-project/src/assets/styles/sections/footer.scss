@@ -58,7 +58,7 @@ footer {
     .footeraddress__list {
       .footer__address {
         margin: 40px 0;
-        width: 310px;
+        width: 85%;
       }
     }
 
@@ -90,4 +90,28 @@ footer {
 }
 
 // *******************************************************media queris ******************************************************* //
-
+@media (max-width: $breakpoint-smallscreen) {
+  .footer {
+    font-size: $smallscreen-fontsize;
+    // container of all footer
+    .footer__container {
+      justify-content: space-evenly;
+      margin-bottom: 50px;
+      // address column on the footer
+      .footeraddress__list {
+        width: min-content;
+        //pinoox logo container
+        .footer__logo__box {
+          width: 30%;
+          img {
+            width: 100%;
+          }
+        }
+        .footer__address {
+          margin: 40px 0;
+          width: 80%;
+        }
+      }
+    }
+  }
+}

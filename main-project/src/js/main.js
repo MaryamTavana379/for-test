@@ -29,8 +29,8 @@ new Swiper(".product__swiper", {
   },
   breakpoints: {
     1024: {
-      slidesPerView: 3.5,
-      spaceBetween: 30,
+      slidesPerView: 3.25,
+      spaceBetween: 20,
     },
     900: {
       slidesPerView: 3.5,
