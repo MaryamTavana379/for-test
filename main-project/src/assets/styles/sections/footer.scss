@@ -13,6 +13,7 @@ footer {
   // container of the list
   .footer__container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     color: white;
     margin-bottom: 80px;
@@ -131,6 +132,62 @@ footer {
       .footerdiv__logo {
         width: 70px;
         height: 70px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .footer {
+    font-size: $mobile-fontsize;
+    .footer__container {
+      margin-right: 4rem;
+      row-gap: 3rem;
+      .listfooter__container {
+        width: 50%;
+      }
+      // icon container
+      .logo__container {
+        width: 100%;
+      }
+      // icons
+      .footerlogo__list {
+        display: flex;
+        gap: 40px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .footer {
+    .footer__container {
+      margin-right: 3rem;
+      //logo's container
+      .footerlogo__list {
+        gap: 45px;
+        .footerdiv__logo {
+          width: 65px;
+          height: 65px;
+          img {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 321px) {
+  .footer {
+    .footer__container {
+      .footerlogo__list {
+        gap: 25px;
+        .footerdiv__logo {
+          width: 60px;
+          height: 60px;
+        }
       }
     }
   }
