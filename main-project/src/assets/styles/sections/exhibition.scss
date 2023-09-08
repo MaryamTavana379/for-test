@@ -23,13 +23,14 @@
   }
   .exhibition__swiper__slide {
     width: 600px !important;
+
     img {
       width: 100%;
     }
   }
   .swiper-slide-active {
     transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
-      scale(1) !important;
+      scale(1.25) !important;
     justify-content: center;
     // width: 800px !important;
     img {
@@ -60,15 +61,62 @@
   }
 }
 
-
 // *******************************************************media queris ******************************************************* //
+//1. tv
+@media (min-width: $breakpoint-xlargescreen) {
+  .exhibition {
+    font-size: $XLargecsreen-fontsize;
+    //header
+    .products__header {
+      //header title
+      .products__title {
+        margin-top: 80px;
+      }
+      // exhibition text
+      .exhibition__line {
+        margin: 44px;
+      }
+      // exhibition subtitle
+      .products__subtitle {
+        margin-top: 44px;
+      }
+      .products__btn {
+        margin-top: 80px;
+        width: 345px;
+        height: 85px;
+      }
+    }
+    .exhibition__swiper {
+      padding: 300px 0;
+      // before and after slides
+      .exhibition__swiper__slide {
+        transform: translate3d(0px, 0px, -133.333px) rotateX(0deg) rotateY(0deg)
+          scale(1.75) !important;
+      }
+      //active slides
+      .swiper-slide-active {
+        transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
+          scale(2.25) !important ;
+      }
 
-//smal screen
-@media (max-width: $breakpoint-smallscreen){
-  .exhibition{
+      .swiper-pagination-bullet {
+        width: 22px;
+        height: 22px;
+      }
+      .swiper-pagination-bullet-active {
+        width: 88px;
+        border-radius: 14px;
+      }
+    }
+  }
+}
+
+//2. smal screen
+@media (max-width: $breakpoint-smallscreen) {
+  .exhibition {
     font-size: $smallscreen-fontsize;
     //button on the title
-    .products__btn{
+    .products__btn {
       width: 180px;
       height: 40px;
     }
@@ -76,13 +124,31 @@
     //   width: 700px !important;
     // }
     // bullet under the slider
-    .swiper-pagination-bullet{
+    .swiper-pagination-bullet {
       width: 10px;
       height: 10px;
     }
     // active bullet
-    .swiper-pagination-bullet-active{
+    .swiper-pagination-bullet-active {
       width: 45px;
+    }
+  }
+}
+
+//3. tablet
+@media (max-width: $breakpoint-tablet) {
+  .exhibition {
+    .exhibition__swiper {
+      // before and after slides
+      .exhibition__swiper__slide {
+        transform: translate3d(0px, 0px, -133.333px) rotateX(0deg) rotateY(0deg)
+          scale(0.75) !important;
+      }
+      //active slides
+      .swiper-slide-active {
+        transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
+          scale(1) !important ;
+      }
     }
   }
 }

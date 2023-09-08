@@ -28,6 +28,10 @@ new Swiper(".product__swiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
+    1440: {
+      slidesPerView: 4.25,
+      spaceBetween: 30,
+    },
     1024: {
       slidesPerView: 3.25,
       spaceBetween: 20,
@@ -54,7 +58,7 @@ new Swiper(".exhibition__swiper", {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
-  spaceBetween:100,
+  spaceBetween: 100,
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
@@ -62,13 +66,23 @@ new Swiper(".exhibition__swiper", {
     modifier: 1,
     slideShadows: false,
   },
-  breakpoints:{
-    992:{
-      spaceBetween: 100
+  breakpoints: {
+    1900: {
+      // slidesPerView: 1 ,
+      spaceBetween: 800,
     },
-    768:{
-      spaceBetween:50
-    }
+    1440: {
+      spaceBetween: 200,
+    },
+    1024: {
+      spaceBetween:120,
+    },
+    992: {
+      spaceBetween: 100,
+    },
+    768: {
+      spaceBetween: 0,
+    },
   },
   navigation: {
     nextEl: ".swiper-button-next",
