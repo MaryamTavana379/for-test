@@ -3,9 +3,7 @@
   $Display: flex,
   $Width: 100%,
   $Justify-content: space-evenly,
-  $MaxWidth: 1302px
 ) {
-  max-width: $MaxWidth;
   margin: auto;
   display: $Display;
   width: $Width;

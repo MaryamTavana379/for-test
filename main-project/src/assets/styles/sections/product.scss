@@ -67,6 +67,34 @@
 }
 
 // *******************************************************media queris ******************************************************* //
+//1. TV
+@media (min-width: $breakpoint-xlargescreen){
+  .products{
+    font-size: $XLargecsreen-fontsize;
+     //header
+     .products__header {
+      //header title
+      .products__title {
+        margin-top: 80px;
+      }
+      // product text
+      .exhibition__line {
+        margin: 44px;
+      }
+      // product subtitle
+      .products__subtitle {
+        margin-top: 44px;
+      }
+      // product button
+      .products__btn {
+        margin-top: 80px;
+        width: 345px;
+        height: 85px;
+      }
+    }
+  }
+}
+//2. large screen
 @media (max-width: $breakpoint-smallscreen) {
   .products {
     font-size: $smallscreen-fontsize;
@@ -76,7 +104,7 @@
     }
   }
 }
-//extra tablet
+//3. extra tablet
 @media (max-width: $breakpoint-tablet) {
   .products {
     .products__btn {
@@ -86,7 +114,7 @@
   }
 }
 
-//phone
+//4. phone
 @media (max-width: $breakpoint-mobile) {
   .products {
     font-size: $mobile-fontsize;

@@ -7,7 +7,7 @@
 
 // navbar menu section
 .navigation {
-  @include display($MaxWidth: auto);
+  @include display();
   position: absolute;
   z-index: 9;
 }
@@ -60,6 +60,10 @@
 // swiper container
 .swiper {
   @include slider();
+ 
+  .swiperbtn__next, .swiperbtn__prev{
+    color: white
+  }
 }
 // swiper slide
 .swiper__slide1 {
@@ -81,7 +85,6 @@
   display: flex;
   flex-direction: column;
   padding: 13rem;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -111,9 +114,30 @@ hr {
 }
 
 // *******************************************************media queris ******************************************************* //
-
-// desktop sizes
-@media (max-width: 1400px) {
+//1. TV
+@media (min-width: $breakpoint-xlargescreen){
+  .hero{
+    font-size: $XLargecsreen-fontsize;
+    // pinoox logo
+    .nav__logo{
+      width: 100px;
+      height: 100px;
+    }
+    .nav__btn{
+      width: 224px;
+      height: 60px;
+    }
+    .swiper__item__container{
+      padding: 22rem;
+    }
+    .swiper__btn{
+      width: 350px;
+      height: 80px;
+    }
+  }
+}
+// 2. desktop 
+@media (max-width: $breakpoint-largescreen) {
   .hero {
     height: auto;
   }
@@ -132,7 +156,7 @@ hr {
     margin-top: 7rem;
   }
 }
-// tablet sizes
+// 3. tablet 
 @media (max-width: $breakpoint-tablet) and (min-width: 600px)  {
   .hero {
     height: auto;
@@ -203,7 +227,7 @@ hr {
   }
 }
 
-// mobile sizes
+//4.  mobile 
 @media (max-width: 600px) {
   .hero {
     height: auto;
@@ -300,6 +324,7 @@ hr {
     margin: 16px;
   }
 }
+
 @media (max-width: 380px) {
   .swiper__item__container{
     padding: 3rem;
