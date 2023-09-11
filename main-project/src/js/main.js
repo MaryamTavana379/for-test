@@ -18,7 +18,7 @@ new Swiper(".mySwiper", {
   },
 });
 // product section slider
-new Swiper(".product__swiper", {
+new Swiper(".products__swiper", {
   slidesPerView: 4.5,
   spaceBetween: 30,
   centeredSlides: false,

@@ -54,59 +54,58 @@
       @include Items();
     }
   }
-}
-
-// swiper container
-.swiper {
-  @include slider();
-  // items on the each slide
-  .swiper__slide {
-    @include centerFlex();
-    // the container of items on the swiper
-    .swiper__slide__container {
-      display: flex;
-      flex-direction: column;
-      padding: 13rem;
-      align-items: center;
-      // titles on the sildes
-      .swiper__title {
-        font-size: 3.5em;
-        font-weight: $MediumFontweight;
-        margin: $DefaultMargin;
-      }
-      .swiper__subtitle {
-        margin: $DefaultMargin;
-        font-size: 3.5em;
-        font-weight: $LightFontweight;
-      }
-      // the hr tag under the subtitle on each slide
-      hr {
-        @include hr($Width: 63%);
-      }
-      // button on the slides
-      .swiper__btn {
-        @include mainButton(
-          $BtnWidth: 250px,
-          $BtnHeight: 59px,
-          $FontSize: 1.5em,
-          $FontWeight: 700
-        );
+  // swiper container
+  .swiper {
+    @include slider();
+    // items on the each slide
+    .swiper__slide {
+      @include centerFlex();
+      // the container of items on the swiper
+      .swiper__slide__container {
+        display: flex;
+        flex-direction: column;
+        padding: 13rem;
+        align-items: center;
+        // titles on the sildes
+        .swiper__title {
+          font-size: 3.5em;
+          font-weight: $MediumFontweight;
+          margin: $DefaultMargin;
+        }
+        .swiper__subtitle {
+          margin: $DefaultMargin;
+          font-size: 3.5em;
+          font-weight: $LightFontweight;
+        }
+        // the hr tag under the subtitle on each slide
+        hr {
+          @include hr($Width: 63%);
+        }
+        // button on the slides
+        .swiper__btn {
+          @include mainButton(
+            $BtnWidth: 250px,
+            $BtnHeight: 59px,
+            $FontSize: 1.5em,
+            $FontWeight: 700
+          );
+        }
       }
     }
-  }
-  // swiper slide
-  .swiper__slide1 {
-    @include swiperSlide();
-  }
-  .swiper__slide2 {
-    @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
-  }
-  .swiper__slide3 {
-    @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
-  }
-  .swiperbtn__next,
-  .swiperbtn__prev {
-    color: white;
+    // swiper slide
+    .swiper__slide1 {
+      @include swiperSlide();
+    }
+    .swiper__slide2 {
+      @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
+    }
+    .swiper__slide3 {
+      @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
+    }
+    .swiperbtn__next,
+    .swiperbtn__prev {
+      color: white;
+    }
   }
 }
 
@@ -115,21 +114,32 @@
 @media (min-width: $breakpoint-xlargescreen) {
   .hero {
     font-size: $XLargecsreen-fontsize;
-    // pinoox logo
-    .nav__logo {
-      width: 100px;
-      height: 100px;
+    .nav {
+      // pinoox logo
+      .nav__logo {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      //search and phone icons
+      .nav__list--left {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
     }
-    .nav__btn {
-      width: 224px;
-      height: 60px;
-    }
-    .swiper__item__container {
-      padding: 22rem;
-    }
-    .swiper__btn {
-      width: 350px;
-      height: 80px;
+    .swiper {
+      .swiper__slide {
+        .swiper__slide__container {
+          padding: 22rem;
+          .swiper__btn {
+            width: 350px;
+            height: 80px;
+          }
+        }
+      }
     }
   }
 }
@@ -137,20 +147,24 @@
 @media (max-width: $breakpoint-largescreen) {
   .hero {
     height: auto;
-  }
-  .swiper {
-    height: auto;
-  }
-  // righ items on the navbar
-  .nav__list--right {
-    width: 35%;
-  }
-  // the container of items on the swiper
-  .swiper__item__container {
-    padding: 7rem;
-  }
-  .swiper__title {
-    margin-top: 7rem;
+    .nav {
+      // righ items on the navbar
+      .nav__list--right {
+        width: 35%;
+      }
+    }
+
+    .swiper {
+      height: auto;
+      // the container of items on the swiper
+      .swiper__slide__container {
+        padding: 7rem;
+        //titles on each slides
+        .swiper__title {
+          margin-top: 7rem;
+        }
+      }
+    }
   }
 }
 // 3. tablet
@@ -158,7 +172,7 @@
   .hero {
     height: auto;
     // navigation section
-    .navigation {
+    .nav {
       justify-content: flex-end;
       gap: 120px;
       /* Style the navigation menu */
@@ -192,22 +206,30 @@
         top: 1.5rem;
       }
       // about lines on the humbarger class
-      // first tag
-      .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
+
+      .hamburger.active {
+        // first tag
+        .bar:nth-child(2) {
+          opacity: 0;
+        }
+        //second tag
+        .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        // third tag
+
+        .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
       }
-      //second tag
-      .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-      }
-      // third tag
-      .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-      }
-      // contact us button on the navbar
-      .nav__btn {
-        background: unset;
-        color: $MainColor;
+      // left item on the navbar
+      .nav__list--left {
+        gap: 0;
+        justify-content: space-evenly;
+        img {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
 
@@ -232,7 +254,7 @@
     font-size: 12px;
     margin-bottom: 50px;
     // navigation section
-    .navigation {
+    .nav {
       top: 24px;
       gap: 65px;
       // hamburger menu
@@ -249,15 +271,6 @@
         img {
           width: 40px;
           height: 40px;
-        }
-      }
-      // left item on the navbar
-      .nav__list--left {
-        gap: 0;
-        justify-content: space-evenly;
-        img{
-          width: 15px;
-          height: 15px;
         }
       }
     }

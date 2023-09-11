@@ -1,92 +1,93 @@
-// slider on the product section
-.product__swiper {
-  margin-top: 24px;
-  // swiper wrapper
-  .product__swiper--wrapper {
-    align-items: center;
-    // transform: translate3d(0px, 0px, 0px) !important;
+.products {
+  // header production section
+  .products__header {
+    @include centerFlex($Lineheight: 0px);
+    // title on the header of product section
+    .header__title {
+      font-size: 1.5em;
+      font-weight: $LightFontweight;
+      color: $MainColor;
+      margin: $DefaultMargin;
+      margin-top: 40px;
+    }
+    // line under the text
+    .header__line {
+      @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
+    }
+    .header__subtitle {
+      font-size: 4em;
+      font-weight: 400;
+      margin: $DefaultMargin;
+      margin-top: 24px;
+    }
+    .header__btn {
+      @include whiteButton($BackgroundColor: unset);
+    }
   }
-  .product__swiper__slide {
-    width: 392px;
-  }
-
-  // next and prev button on the product slider section
-  .product__swiperbtn {
-    color: black;
-  }
-}
-// header production section
-.products__header {
-  @include centerFlex($Lineheight: 0px);
-  // title on the header of product section
-  .products__title {
-    font-size: 1.5em;
-    font-weight: $LightFontweight;
-    color: $MainColor;
-    margin: $DefaultMargin;
-    margin-top: 40px;
-  }
-  // line under the text
-  .products__line {
-    @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
-  }
-  .products__subtitle {
-    font-size: 4em;
-    font-weight: 400;
-    margin: $DefaultMargin;
+  // slider on the product section
+  .products__swiper {
     margin-top: 24px;
-  }
-  .products__btn {
-    @include whiteButton($BackgroundColor: unset);
-  }
-}
+    // swiper wrapper
+    .products__swiper--wrapper {
+      align-items: center;
+      //each slide
+      .products__swiper__slide {
+        width: 392px;
+        //card on the product section slider
+        .products__card {
+          color: black;
+          text-align: right;
+          .card__img {
+            width: 100%;
+            border: 3px solid $WhiteColor;
+          }
+          .card__img:hover {
+            border: 3px solid $MainColor;
+          }
+          .card__title {
+            font-size: 2em;
+            font-weight: $RegularFontweight;
+            margin: $DefaultMargin;
+            margin-top: 16px;
+          }
+          .card__subtitle {
+            font-size: 1.25em;
+            font-weight: $LightFontweight;
+            color: $MainColor;
+            margin: $DefaultMargin;
+          }
+        }
+      }
+    }
 
-//card on the product section slider
-.products__card {
-  color: black;
-  text-align: right;
-  .card__img {
-    width: 100%;
-    border: 3px solid $WhiteColor;
-  }
-  .card__img:hover {
-    border: 3px solid $MainColor;
-  }
-  .card__title {
-    font-size: 2em;
-    font-weight: $RegularFontweight;
-    margin: $DefaultMargin;
-    margin-top: 16px;
-  }
-  .card__subtitle {
-    font-size: 1.25em;
-    font-weight: $LightFontweight;
-    color: $MainColor;
-    margin: $DefaultMargin;
+    // next and prev button on the product slider section
+    .products__swiperbtn {
+      color: black;
+    }
   }
 }
 
 // *******************************************************media queris ******************************************************* //
 //1. TV
-@media (min-width: $breakpoint-xlargescreen){
-  .products{
+@media (min-width: $breakpoint-xlargescreen) {
+  .products {
     font-size: $XLargecsreen-fontsize;
-     //header
-     .products__header {
+    //header
+    .products__header {
       //header title
-      .products__title {
+      .header__title {
         margin-top: 80px;
       }
       // product text
-      .exhibition__line {
+      .header__line {
         margin: 44px;
       }
       // product subtitle
-      .products__subtitle {
+      .header__subtitle {
         margin-top: 44px;
       }
       // product button
-      .products__btn {
+      .header__btn {
         margin-top: 80px;
         width: 345px;
         height: 85px;
@@ -98,18 +99,22 @@
 @media (max-width: $breakpoint-smallscreen) {
   .products {
     font-size: $smallscreen-fontsize;
-    .products__btn {
-      width: 195px;
-      height: 45px;
+    .products__header {
+      .header__btn {
+        width: 195px;
+        height: 45px;
+      }
     }
   }
 }
 //3. extra tablet
 @media (max-width: $breakpoint-tablet) {
   .products {
-    .products__btn {
-      width: 170px;
-      height: 40px;
+    .products__header {
+      .header__btn {
+        width: 170px;
+        height: 40px;
+      }
     }
   }
 }
@@ -118,10 +123,13 @@
 @media (max-width: $breakpoint-mobile) {
   .products {
     font-size: $mobile-fontsize;
-    .products__btn {
-      width: 160px;
-      height: 40px;
+    .products__header {
+      .header__btn {
+        width: 160px;
+        height: 40px;
+      }
     }
+
     .product__swiperbtn::after {
       font-size: 3em;
     }
