@@ -6,47 +6,44 @@
   // right side items on the introduction section
   .introduction__container {
     @include navlist($Direction: column, $Align: none, $Width: 45%);
+    //ul list
+    ul {
+      line-height: 80px;
+      margin: $DefaultMargin;
+      padding: $DefaultPadding;
+      //items in the list
+      li {
+        display: $Display;
+        align-items: center;
+        // background-color of icons
+        .items__background {
+          background: rgba(171, 152, 122, 0.1);
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          //   icons on the introduction section
+          .introduction__icon {
+            width: 40px;
+            height: 40px;
+            padding: 15px;
+          }
+        }
+        //the text on the introduction section
+        span {
+          font-size: 2em;
+          font-weight: $RegularFontweight;
+          margin-right: 24px;
+          //just numbers
+          strong {
+            font-family: $FaFontfamily;
+            font-size: 1.75em;
+            font-weight: $BoldFontweight;
+          }
+        }
+      }
+    }
   }
 
-  //ul list
-  ul {
-    line-height: 80px;
-    margin: $DefaultMargin;
-    padding: $DefaultPadding;
-  }
-  //items in the list
-  li {
-    display: $Display;
-    align-items: center;
-  }
-
-  // background-color of icons
-  .introduction__background {
-    background: rgba(171, 152, 122, 0.1);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-  }
-  //   icons on the introduction section
-  .introduction__icon {
-    width: 40px;
-    height: 40px;
-    padding: 15px;
-  }
-
-  //the text on the introduction section
-  span {
-    font-size: 2em;
-    font-weight: $RegularFontweight;
-    margin-right: 24px;
-  }
-
-  //just numbers
-  strong {
-    font-family: $FaFontfamily;
-    font-size: 1.75em;
-    font-weight: $BoldFontweight;
-  }
   //button on the itroduction section
   button {
     @include whiteButton($BtnWidth: 205px);
@@ -85,36 +82,35 @@
 // *******************************************************media queris ******************************************************* //
 //1. TV
 @media (min-width: $breakpoint-xlargescreen) {
-  .introduction{
+  .introduction {
     font-size: $XLargecsreen-fontsize;
     width: clamp(10vw, 100%, 92vw);
-    // list 
-    ul{
+    // list
+    ul {
       line-height: 150px;
       // background of icons
-      .introduction__background{
+      .items__background {
         width: 100px;
         height: 100px;
       }
       //icons
-      .introduction__icon{
+      .introduction__icon {
         width: 70px;
         height: 70px;
       }
     }
     // button on list
-    button{
+    button {
       width: 305px;
       height: 85px;
     }
     // container of img
-    .introductionimg__container{
+    .introductionimg__container {
       width: 50%;
       // image box
-      .introduction__box{
+      .introduction__box {
         width: clamp(200px, 100%, 100vw);
       }
-
     }
   }
 }
@@ -130,7 +126,7 @@
       line-height: 60px;
     }
     // backgound of icons
-    .introduction__background {
+    .items__background {
       width: 50px;
       height: 50px;
     }
@@ -178,11 +174,11 @@
       row-gap: 1rem;
     }
     // items on the list
-    .introduction__items {
+    .list__items {
       width: 50%;
     }
     // background of icons
-    .introduction__background {
+    .items__background {
       width: 55px;
       height: 55px;
     }
@@ -217,7 +213,7 @@
   .introduction {
     font-size: $mobile-fontsize;
     // background of icons
-    .introduction__background {
+    .items__background {
       width: 50px;
       height: 50px;
     }
@@ -259,11 +255,11 @@
       row-gap: 0;
     }
     // items
-    .introduction__items {
+    .list__items {
       width: 50%;
     }
     // background of icons
-    .introduction__background {
+    .items__background {
       width: 40px;
       height: 40px;
     }
@@ -303,7 +299,7 @@
     line-height: 60px !important;
   }
 
-  .introduction__items {
+  .list__items {
     width: 60% !important;
   }
 }

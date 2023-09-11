@@ -1,142 +1,139 @@
 // hero section
 .hero {
   font-weight: 100;
-  // height: 720px;
   margin-bottom: 100px;
-}
 
-// navbar menu section
-.navigation {
-  @include display();
-  position: absolute;
-  z-index: 9;
-}
+  // navbar menu section
+  .navigation {
+    @include display();
+    position: absolute;
+    z-index: 9;
+    // nav list in the navbar menu section
+    .nav__list--right {
+      @include navlist();
+      // home
+      .active {
+        border-bottom: 1px solid $MainColor;
+        color: white;
+      }
+    }
+    // hamburger menu
+    .hamburger {
+      display: none;
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: $MainColor;
+      }
+    }
+    // pinoox logo on the navbar menu
+    .nav__logo {
+      display: $Display;
+      align-items: center;
+      //logo on the navbar menu
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    // button and search icon in the navbar menu
+    .nav__list--left {
+      @include navlist($Direction: row-reverse, $Width: 30%);
+      // button in the navbar menu
 
-// nav list in the navbar menu section
-.nav__list--right {
-  @include navlist();
-  // home
-  .active {
-    text-decoration: underline;
-    color: white;
+      button {
+        @include mainButton($Margin: 0);
+      }
+    }
+    // items in the navbar menu
+    .nav__item {
+      @include Items();
+    }
   }
-}
-.hamburger {
-  display: none;
-}
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: $MainColor;
-}
-.logo__container {
-  display: $Display;
-  align-items: center;
-}
-//logo on the navbar menu
-.nav__logo {
-  width: 64px;
-  height: 64px;
-}
-// button and search icon in the navbar menu
-.nav__list--left {
-  @include navlist($Direction: row-reverse, $Width: 30%);
-}
-
-// button in the navbar menu
-.nav__btn {
-  @include mainButton($Margin: 0);
-}
-
-// items in the navbar menu
-.nav__item {
-  @include Items();
 }
 
 // swiper container
 .swiper {
   @include slider();
- 
-  .swiperbtn__next, .swiperbtn__prev{
-    color: white
+  // items on the each slide
+  .swiper__slide {
+    @include centerFlex();
+    // the container of items on the swiper
+    .swiper__slide__container {
+      display: flex;
+      flex-direction: column;
+      padding: 13rem;
+      align-items: center;
+      // titles on the sildes
+      .swiper__title {
+        font-size: 3.5em;
+        font-weight: $MediumFontweight;
+        margin: $DefaultMargin;
+      }
+      .swiper__subtitle {
+        margin: $DefaultMargin;
+        font-size: 3.5em;
+        font-weight: $LightFontweight;
+      }
+      // the hr tag under the subtitle on each slide
+      hr {
+        @include hr($Width: 63%);
+      }
+      // button on the slides
+      .swiper__btn {
+        @include mainButton(
+          $BtnWidth: 250px,
+          $BtnHeight: 59px,
+          $FontSize: 1.5em,
+          $FontWeight: 700
+        );
+      }
+    }
   }
-}
-// swiper slide
-.swiper__slide1 {
-  @include swiperSlide();
-}
-.swiper__slide2 {
-  @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
-}
-.swiper__slide3 {
-  @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
-}
-
-// items on the each slide
-.swiper__slider {
-  @include centerFlex();
-}
-// the container of items on the swiper
-.swiper__item__container {
-  display: flex;
-  flex-direction: column;
-  padding: 13rem;
-  align-items: center;
-}
-
-// titles on the sildes
-.swiper__title {
-  font-size: 3.5em;
-  font-weight: $MediumFontweight;
-  margin: $DefaultMargin;
-}
-.swiper__subtitle {
-  margin: $DefaultMargin;
-  font-size: 3.5em;
-  font-weight: $LightFontweight;
-}
-// the hr tag under the subtitle on each slide
-hr {
-  @include hr($Width:63%);
-}
-// button on the slides
-.swiper__btn {
-  @include mainButton(
-    $BtnWidth: 250px,
-    $BtnHeight: 59px,
-    $FontSize: 1.5em,
-    $FontWeight: 700
-  );
+  // swiper slide
+  .swiper__slide1 {
+    @include swiperSlide();
+  }
+  .swiper__slide2 {
+    @include swiperSlide($BackgroungImg: url(../pic/2.jpg));
+  }
+  .swiper__slide3 {
+    @include swiperSlide($BackgroungImg: url(../pic/3.jpg));
+  }
+  .swiperbtn__next,
+  .swiperbtn__prev {
+    color: white;
+  }
 }
 
 // *******************************************************media queris ******************************************************* //
 //1. TV
-@media (min-width: $breakpoint-xlargescreen){
-  .hero{
+@media (min-width: $breakpoint-xlargescreen) {
+  .hero {
     font-size: $XLargecsreen-fontsize;
     // pinoox logo
-    .nav__logo{
+    .nav__logo {
       width: 100px;
       height: 100px;
     }
-    .nav__btn{
+    .nav__btn {
       width: 224px;
       height: 60px;
     }
-    .swiper__item__container{
+    .swiper__item__container {
       padding: 22rem;
     }
-    .swiper__btn{
+    .swiper__btn {
       width: 350px;
       height: 80px;
     }
   }
 }
-// 2. desktop 
+// 2. desktop
 @media (max-width: $breakpoint-largescreen) {
   .hero {
     height: auto;
@@ -149,189 +146,167 @@ hr {
     width: 35%;
   }
   // the container of items on the swiper
-  .swiper__item__container{
+  .swiper__item__container {
     padding: 7rem;
   }
   .swiper__title {
     margin-top: 7rem;
   }
 }
-// 3. tablet 
-@media (max-width: $breakpoint-tablet) and (min-width: 600px)  {
+// 3. tablet
+@media (max-width: $breakpoint-tablet) {
   .hero {
     height: auto;
-  }
-  // navigation section
-  .navigation {
-    justify-content: flex-end;
-    gap: 120px;
-  }
-  /* Style the navigation menu */
-  .nav__list--right {
-    position: fixed;
-    right: -100%;
-    top: 0;
-    flex-direction: column;
-    //style items on the hamburger
-    .nav__item {
-      color: $SecondaryColor !important;
-      text-decoration: none;
-    }
-  }
-  // when click on humbarger btn
-  .nav__list--right.active {
-    right: 0;
-    align-items: flex-start;
-    margin: 0rem 0rem;
-    background-color: white;
-    padding: 4rem 1rem;
-    height: 100%;
-    color: $SecondaryColor;
-  }
-  // humbarger btn
-  .hamburger {
-    display: block;
-    position: fixed;
-    right: 1rem;
-    top: 1.5rem;
-  }
-  // about lines on the humbarger class
-  // first tag
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  //second tag
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  // third tag
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+    // navigation section
+    .navigation {
+      justify-content: flex-end;
+      gap: 120px;
+      /* Style the navigation menu */
+      .nav__list--right {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        flex-direction: column;
+        //style items on the hamburger
+        .nav__item {
+          color: $SecondaryColor !important;
+          text-decoration: none;
+        }
+      }
+      // when click on humbarger btn
+      .nav__list--right.active {
+        right: 0;
+        align-items: flex-start;
+        margin: 0rem 0rem;
+        background-color: white;
+        padding: 4rem 1rem;
+        height: 100%;
+        color: $SecondaryColor;
+      }
 
-  // contact us button on the navbar
-  .nav__btn {
-    background: unset;
-    color: $MainColor;
-  }
-  .swiper__item__container{
-    padding: 10rem;
-  }
-  // swiper slide text on the hero section
-  .swiper__title {
-    margin-top: 5rem;
-  }
-  // swiper button on the hero section
-  .swiper__btn {
-    @include mainButton($Margin: 16px);
+      // humbarger btn
+      .hamburger {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1.5rem;
+      }
+      // about lines on the humbarger class
+      // first tag
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      //second tag
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      // third tag
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      // contact us button on the navbar
+      .nav__btn {
+        background: unset;
+        color: $MainColor;
+      }
+    }
+
+    .swiper__slide__container {
+      padding: 10rem;
+      // swiper slide text on the hero section
+      .swiper__title {
+        margin-top: 5rem;
+      }
+      // swiper button on the hero section
+      .swiper__btn {
+        @include mainButton($Margin: 16px);
+      }
+    }
   }
 }
 
-//4.  mobile 
+//4.  mobile
 @media (max-width: 600px) {
   .hero {
     height: auto;
     font-size: 12px;
     margin-bottom: 50px;
-  }
-  // navigation section
-  .navigation {
-    justify-content: flex-end;
-    gap: 50px;
-  }
-  /* Style the navigation menu */
-  .nav__list--right {
-    position: fixed;
-    right: -100%;
-    top: 0;
-    flex-direction: column;
-    //style items on the hamburger
-    .nav__item {
-      color: $SecondaryColor !important;
-      text-decoration: none;
+    // navigation section
+    .navigation {
+      top: 24px;
+      gap: 65px;
+      // hamburger menu
+      .hamburger {
+        right: 2rem;
+        top: 12px;
+        .bar {
+          width: 18px;
+          height: 2px;
+        }
+      }
+      // pinoox logo on the navbar
+      .nav__logo {
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      // left item on the navbar
+      .nav__list--left {
+        gap: 0;
+        justify-content: space-evenly;
+        img{
+          width: 15px;
+          height: 15px;
+        }
+      }
     }
   }
-  // when click on humbarger btn
-  .nav__list--right.active {
-    right: 0;
-    align-items: flex-start;
-    margin: 0rem 0rem;
-    background-color: white;
-    padding: 4rem 1rem;
-    height: 100%;
-    color: $SecondaryColor;
-  }
-  // humbarger btn
-  .hamburger {
-    display: block;
-    position: fixed;
-    right: 1rem;
-    top: 1.5rem;
-  }
-  // about lines on the humbarger class
-  // first tag
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  //second tag
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  // third tag
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
 
-  // pinoox logo on the navbar
-  .nav__logo {
-    width: 44px;
-    height: 44px;
-  }
-
-  // left item on the navbar
-  .nav__list--left {
-    gap: 0;
-  }
-
-  // contact us button on the navbar
-  .nav__btn {
-    background: unset;
-    color: $MainColor;
-  }
   //swiper wrapper
   .swiper {
     height: auto;
-  }
-  .swiperbtn__next,
-  .swiperbtn__prev {
-    display: none !important;
-  }
-  .swiper__item__container{
-    padding: 5rem;
-  }
+    .swiper__slide {
+      .swiper__slide__container {
+        padding: 5rem;
+        // swiper titles on the hero section
+        .swiper__title {
+          margin-top: 4rem;
+        }
+        // hr tag on the hero slides
+        .swiper__line {
+          @include hr($Width: 50%, $Margin: 0px);
+        }
+        // button on the hero section swiper
+        .swiper__btn {
+          @include mainButton();
+          margin: 16px;
+        }
+      }
+    }
 
-  // swiper titles on the hero section
-  .swiper__title {
-    margin-top: 4rem;
-  }
-  // hr tag on the hero slides
-  .swiper__line {
-    @include hr($Width: 50%, $Margin: 0px);
-  }
-  // button on the hero section swiper
-  .swiper__btn {
-    @include mainButton();
-    margin: 16px;
+    .swiperbtn__next,
+    .swiperbtn__prev {
+      display: none !important;
+    }
   }
 }
 
 @media (max-width: 380px) {
-  .swiper__item__container{
-    padding: 3rem;
+  .swiper {
+    .swiper__slide {
+      .swiper__slide__container {
+        padding: 3rem;
+      }
+    }
   }
 }
-@media (max-width: 320px){
-  .swiper__item__container{
-    padding: 2rem;
+@media (max-width: 320px) {
+  .swiper {
+    .swiper__slide {
+      .swiper__slide__container {
+        padding: 2rem;
+      }
+    }
   }
 }
