@@ -1,0 +1,24 @@
+.products__header {
+    @include centerFlex($Lineheight: 0px);
+    // title on the header of product section
+    .header__title {
+      font-size: 1.5em;
+      font-weight: $LightFontweight;
+      color: $MainColor;
+      margin: $DefaultMargin;
+      margin-top: 40px;
+    }
+    // line under the text
+    .header__line {
+      @include hr($Border: 1px solid black, $Width: 80px, $Margin: 24px);
+    }
+    .header__subtitle {
+      font-size: 4em;
+      font-weight: 400;
+      margin: $DefaultMargin;
+      margin-top: 24px;
+    }
+    .header__btn {
+      @include whiteButton($BackgroundColor: unset);
+    }
+  }

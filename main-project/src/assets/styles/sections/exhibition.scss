@@ -1,63 +1,65 @@
 // exhibition section
 .exhibition {
   background-color: #101a30;
+
+  .products__header {
+    // the line under the text
+    .header__line {
+      @include hr($Border: 1px solid white, $Margin: 24px, $Width: 80px);
+    }
+    // sub title on the exhibition section
+    .header__subtitle {
+      color: #ffffff;
+    }
+  }
   .exhibition__swiper {
     padding: 50px 0;
-  }
-  // the line under the text
-  .exhibition__line {
-    @include hr($Border: 1px solid white, $Margin: 24px, $Width: 80px);
-  }
-  // sub title on the exhibition section
-  .exhibition__subtitle {
-    color: #ffffff;
-  }
+    // wrapper on the exhibition section slider
+    .exhibition__swiper--wrapper {
+      align-items: center;
+      transition-duration: 2000ms !important;
+      .exhibition__swiper__slide {
+        width: 600px !important;
 
-  // wrapper on the exhibition section slider
-  .exhibition__swiper--wrapper {
-    align-items: center;
-    transition-duration: 2000ms !important;
-  }
-  .exhibition__swiperbtn {
-    color: white;
-  }
-  .exhibition__swiper__slide {
-    width: 600px !important;
-
-    img {
-      width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .swiper-slide-active {
+        transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
+          scale(1.25) !important;
+        justify-content: center;
+        // width: 800px !important;
+        img {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+      .swiper-slide-next {
+        justify-content: flex-start;
+        opacity: 0.5;
+      }
+      .swiper-slide-prev {
+        justify-content: flex-end;
+        opacity: 0.5;
+      }
     }
-  }
-  .swiper-slide-active {
-    transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
-      scale(1.25) !important;
-    justify-content: center;
-    // width: 800px !important;
-    img {
-      width: 100%;
+    .exhibition__swiperbtn {
+      color: white;
+    }
+    // bullet on the swiper pagination
+    .swiper-pagination-bullet {
+      background-color: $WhiteColor;
       opacity: 1;
+      width: 12px;
+      height: 12px;
     }
-  }
-  .swiper-slide-next {
-    justify-content: flex-start;
-    opacity: 0.5;
-  }
-  .swiper-slide-prev {
-    justify-content: flex-end;
-    opacity: 0.5;
-  }
-  // bullet on the swiper pagination
-  .swiper-pagination-bullet {
-    background-color: $WhiteColor;
-    opacity: 1;
-    width: 12px;
-    height: 12px;
-  }
-  //active bullet
-  .swiper-pagination-bullet-active {
-    background-color: $MainColor;
-    width: 48px;
-    border-radius: 7px;
+    //active bullet
+    .swiper-pagination-bullet-active {
+      background-color: $MainColor;
+      width: 48px;
+      border-radius: 7px;
+    }
   }
 }
 
@@ -69,18 +71,18 @@
     //header
     .products__header {
       //header title
-      .products__title {
+      .header__title {
         margin-top: 80px;
       }
       // exhibition text
-      .exhibition__line {
+      .header__line {
         margin: 44px;
       }
       // exhibition subtitle
-      .products__subtitle {
+      .header__subtitle {
         margin-top: 44px;
       }
-      .products__btn {
+      .header__btn {
         margin-top: 80px;
         width: 345px;
         height: 85px;
@@ -88,15 +90,17 @@
     }
     .exhibition__swiper {
       padding: 300px 0;
-      // before and after slides
-      .exhibition__swiper__slide {
-        transform: translate3d(0px, 0px, -133.333px) rotateX(0deg) rotateY(0deg)
-          scale(1.75) !important;
-      }
-      //active slides
-      .swiper-slide-active {
-        transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
-          scale(2.25) !important ;
+      .exhibition__swiper--wrapper {
+        // before and after slides
+        .exhibition__swiper__slide {
+          transform: translate3d(0px, 0px, -133.333px) rotateX(0deg)
+            rotateY(0deg) scale(1.75) !important;
+        }
+        //active slides
+        .swiper-slide-active {
+          transform: translate3d(0px, 0px, -103.025px) rotateX(0deg)
+            rotateY(0deg) scale(2.25) !important ;
+        }
       }
 
       .swiper-pagination-bullet {
@@ -115,22 +119,27 @@
 @media (max-width: $breakpoint-smallscreen) {
   .exhibition {
     font-size: $smallscreen-fontsize;
-    //button on the title
-    .products__btn {
-      width: 180px;
-      height: 40px;
+    // title of header
+    .products__header {
+      //button on the title
+      .header__btn {
+        width: 180px;
+        height: 40px;
+      }
     }
-    // .swiper-slide-active{
-    //   width: 700px !important;
-    // }
-    // bullet under the slider
-    .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-    }
-    // active bullet
-    .swiper-pagination-bullet-active {
-      width: 45px;
+    //swiper
+    .swiper {
+      .swiper-pagination {
+        // bullet under the slider
+        .swiper-pagination-bullet {
+          width: 10px;
+          height: 10px;
+        }
+        // active bullet
+        .swiper-pagination-bullet-active {
+          width: 45px;
+        }
+      }
     }
   }
 }
@@ -139,15 +148,17 @@
 @media (max-width: $breakpoint-tablet) {
   .exhibition {
     .exhibition__swiper {
-      // before and after slides
-      .exhibition__swiper__slide {
-        transform: translate3d(0px, 0px, -133.333px) rotateX(0deg) rotateY(0deg)
-          scale(0.75) !important;
-      }
-      //active slides
-      .swiper-slide-active {
-        transform: translate3d(0px, 0px, -103.025px) rotateX(0deg) rotateY(0deg)
-          scale(1) !important ;
+      .exhibition__swiper--wrapper {
+        // before and after slides
+        .exhibition__swiper__slide {
+          transform: translate3d(0px, 0px, -133.333px) rotateX(0deg)
+            rotateY(0deg) scale(0.75) !important;
+        }
+        //active slides
+        .swiper-slide-active {
+          transform: translate3d(0px, 0px, -103.025px) rotateX(0deg)
+            rotateY(0deg) scale(1) !important ;
+        }
       }
     }
   }
