@@ -3,79 +3,77 @@
   width: fit-content;
   margin: auto;
   margin-bottom: 100px;
+  .blog__container {
+    display: grid;
+    justify-content: center;
+    gap: 14px 24px;
+    //images on the blog section
+    .blog__item,
+    .blog__item__box {
+      position: relative;
 
-  
-}
-.blog__container {
-  display: grid;
-  justify-content: center;
-  gap: 14px 24px;
+      // the container for text on the image tag
+      .blog__item__txt {
+        position: absolute;
+        bottom: 0;
+        padding: 40px 20px;
+        color: #f5f5f5;
+        font-weight: $RegularFontweight;
+        // first line on the blog images
+        .item__title {
+          font-size: 0.875em;
+          margin: 0;
+        }
+        // second line on the blog images
 
-  .blog__item1 {
-    grid-row: 1 / span 2;
-    grid-column: 1;
-  }
-  .blog__item2 {
-    grid-row: 1;
-    grid-column: 2 / span 3;
-    width: fit-content;
-  }
-  // the container for each image tag on the blog item classes
-  .grid__item,
-  .img__container {
-    position: relative;
-  }
-  // the container for text on the image tag
-  .txt__container {
-    position: absolute;
-    bottom: 0;
-    padding: 40px 20px;
-    color: #f5f5f5;
-    font-weight: $RegularFontweight;
-  }
-
-  // first line on the blog images
-  .blog__img__txt1 {
-    font-size: 0.875em;
-    margin: 0;
-  }
-  // second line on the blog images
-
-  .blog__img__txt2 {
-    font-size: 1.25em;
-    margin: 0;
-  }
-  .blog__img__link {
-    font-size: 1em;
-    color: $MainColor;
-  }
-
-  .blog__item4 {
-    border: 1px solid $MainColor;
-    width: 288px;
-    height: 288px;
-    text-align: center;
-    // the text on the first line of item4
-    .blog__p {
-      font-size: 1.5em;
-      font-weight: $LightFontweight;
-      color: $MainColor;
-      margin-top: 48px;
+        .item__subtitle {
+          font-size: 1.25em;
+          margin: 0;
+        }
+        .item__link {
+          font-size: 1em;
+          color: $MainColor;
+        }
+      }
     }
-    // the bold blog word
-    .blog__h4 {
-      font-size: 4em;
-      font-weight: $MediumFontweight;
-      color: $MainColor;
-      margin: auto;
+    .blog__item1 {
+      grid-row: 1 / span 2;
+      grid-column: 1;
     }
-    // a tag for go to blog
-    .blog__link {
-      font-size: 1.25em;
-      font-weight: $MediumFontweight;
-      color: black;
-      text-decoration: $Decoration;
-      border-bottom: 1px solid black;
+    .blog__item2 {
+      grid-row: 1;
+      grid-column: 2 / span 3;
+      width: fit-content;
+    }
+
+    .blog__item4 {
+      border: 1px solid $MainColor;
+      width: 288px;
+      height: 288px;
+      text-align: center;
+      // the text on the first line of item4
+      .item__title {
+        font-size: 1.5em;
+        font-weight: $LightFontweight;
+        color: $MainColor;
+        margin-top: 48px;
+        margin-bottom: 8px;
+      }
+      // the bold blog word
+      .item__subtitle {
+        font-size: 4em;
+        font-weight: $MediumFontweight;
+        color: $MainColor;
+        margin: auto;
+      }
+      // a tag for go to blog
+      .item__link {
+        font-size: 1.25em;
+        font-weight: $MediumFontweight;
+        color: black;
+        text-decoration: $Decoration;
+        border-bottom: 1px solid black;
+      }
     }
   }
 }
@@ -86,31 +84,30 @@
     font-size: $XLargecsreen-fontsize;
     .blog__container {
       gap: 20px 20px;
-      .grid__item {
+      .blog__item {
         //all image container
-        .img__container {
+        .blog__item__box {
           width: 35vw;
           img {
             width: 100%;
           }
         }
-        .img__container3 {
+        .blog__item__box3 {
           width: 437px;
-          img{
+          img {
             height: 100%;
           }
         }
       }
-      .blog__item2{
+      .blog__item2 {
         height: 39vh;
-        .img__container{
+        .blog__item__box {
           height: 100%;
-          img{
+          img {
             height: 100%;
           }
         }
       }
-
       .blog__item4 {
         width: 437px;
         height: 100%;
@@ -132,7 +129,7 @@
     font-size: $smallscreen-fontsize;
     .blog__container {
       // container for images
-      .img__container {
+      .blog__item__box {
         width: 430px;
         // image on the container
         img {
@@ -140,13 +137,16 @@
         }
       }
       // third and forth child
-      .img__container3,
-      .blog__item4 {
+      .blog__item__box3 {
         width: 202px;
         height: 202px;
       }
-      .blog__p {
-        margin-top: 24px;
+      .blog__item4 {
+        width: 202px;
+        height: 202px;
+        .item__title {
+          margin-top: 20px;
+        }
       }
     }
   }
@@ -155,27 +155,29 @@
 //3.tablet
 @media (max-width: $breakpoint-tablet) {
   .blog {
+    font-size: $tablet-fontsize;
     .blog__container {
       // container for images
-      .img__container {
+      .blog__item__box {
         width: 330px;
+        // txt on the image
+        .blog__item__txt {
+          padding: 15px;
+        }
       }
       // third child
-      .img__container3 {
+      .blog__item__box3 {
         width: 153px;
         height: 153px;
       }
-      // txt on the image
-      .txt__container {
-        padding: 15px;
-      }
+
       // forth child
       .blog__item4 {
         font-size: 10px;
         width: 153px;
         height: 153px;
         // first txt on the forth item
-        .blog__p {
+        .item__title {
           margin-top: 15px;
         }
       }
@@ -186,23 +188,23 @@
 // 4.mobile
 @media (max-width: 500px) {
   .blog {
-    font-size: 10px;
+    font-size: $mobile-fontsize;
     margin-bottom: 50px;
     .blog__container {
       gap: 5px 10px;
       display: flex;
       flex-wrap: wrap;
-      .img__container {
+      .blog__item__box {
         width: 360px;
       }
-      .img__container3 {
+      .blog__item__box3 {
         width: 174px;
         height: 174px;
       }
       .blog__item4 {
         width: 174px;
         height: 172px;
-        .blog__p {
+        .item__title {
           margin-top: 23px;
         }
       }
@@ -213,17 +215,17 @@
 @media (max-width: 376px) {
   .blog {
     .blog__container {
-      .img__container {
+      .blog__item__box {
         width: 310px;
       }
-      .img__container3 {
+      .blog__item__box3 {
         width: 149px;
         height: 149px;
       }
       .blog__item4 {
         width: 149px;
         height: 147px;
-        .blog__p {
+        .item__title {
           margin-top: 12px;
         }
       }
@@ -234,10 +236,10 @@
 @media (max-width: 321px) {
   .blog {
     .blog__container {
-      .img__container {
+      .blog__item__box {
         width: 260px;
       }
-      .img__container3 {
+      .blog__item__box3 {
         width: 125px;
         height: 125px;
       }
@@ -245,8 +247,8 @@
       .blog__item4 {
         width: 125px;
         height: 125px;
-        .blog__p {
-          margin-top: 10px;
+        .item__title {
+          margin-top: 5px;
         }
       }
 
