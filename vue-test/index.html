@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/vue@3.0.2"></script>
     <title>Document</title>
-</head>
-<body>
-    <div id="app"></div>
-</body>
+  </head>
+  <body>
+    <div id="app">
+       <p>{{name}}  -  {{job}}  -  {{age}} </p>
+       <button v-on:click="age++"> increase </button>
+       <button v-on:click="age--"> decrease </button>
+
+
+       <div @click="changeTitle('Khatereh Tavana')"> change text </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
 </html>
