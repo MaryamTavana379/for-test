@@ -1,67 +1,68 @@
 // contact us section tag
 .contactus {
   margin-bottom: 0;
-}
-// contact us section
-.contactus__container {
-  background-image: url(../pic/aboutus.png);
-  text-align: center;
-  padding: 130px;
-  p {
-    font-size: 2em;
-    font-weight: $LightFontweight;
-    color: $MainColor;
-    margin: $DefaultMargin;
-  }
-  h3 {
-    font-size: 3em;
-    font-weight: $RegularFontweight;
-    color: white;
-    margin: $DefaultMargin;
-    margin-bottom: 28px;
-  }
-  .contactus__btn {
-    @include mainButton(
-      $BtnWidth: 219px,
-      $BtnHeight: 55px,
-      $FontSize: 1.25em,
-      $FontWeight: $MediumFontweight,
-      $Margin: 0px
-    );
-  }
-}
-
-// social media section
-.socialmedia__container {
-  text-align: center;
-  margin: 40px;
-  p {
-    font-size: 1.5em;
-    font-weight: $LightFontweight;
-  }
-  .socialmedia__icon {
-    display: $Display;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+  // contact us section
+  .contactus__container {
+    background-image: url(../pic/aboutus.png);
+    text-align: center;
+    padding: 130px;
+    .contactus__title {
+      font-size: 2em;
+      font-weight: $LightFontweight;
+      color: $MainColor;
+      margin: $DefaultMargin;
+    }
+    .contactus__subTitle {
+      font-size: 3em;
+      font-weight: $RegularFontweight;
+      color: white;
+      margin: $DefaultMargin;
+      margin-bottom: 28px;
+    }
+    .contactus__btn {
+      @include mainButton(
+        $BtnWidth: 219px,
+        $BtnHeight: 55px,
+        $FontSize: 1.25em,
+        $FontWeight: $MediumFontweight,
+        $Margin: 0px
+      );
+    }
   }
 
-  a {
-    text-decoration: $Decoration;
-    color: $MainColor;
-    display: $Display;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(171, 152, 122, 10%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5em;
-  }
-  span {
-    color: black;
-    font-size: 0.75em;
-    font-weight: $RegularFontweight;
+  // social media section
+  .socialmedia {
+    text-align: center;
+    margin: 40px;
+    .socialmedia__title {
+      font-size: 1.5em;
+      font-weight: $LightFontweight;
+    }
+    .socialmedia__icon {
+      display: $Display;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      //icons
+      a {
+        text-decoration: $Decoration;
+        color: $MainColor;
+        display: $Display;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(171, 152, 122, 10%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.5em;
+      }
+      //icons name
+      span {
+        color: black;
+        font-size: 0.75em;
+        font-weight: $RegularFontweight;
+      }
+    }
   }
 }
 
@@ -70,20 +71,23 @@
 @media (min-width: $breakpoint-xlargescreen) {
   .contactus {
     font-size: $XLargecsreen-fontsize;
+    //contact us section
     .contactus__container {
       background-size: cover;
       padding: 300px;
-      .contactus__btn{
+      .contactus__btn {
         width: 305px;
         height: 85px;
       }
     }
 
     // social media section
-    .socialmedia__container {
-      a {
-        width: 90px;
-        height: 90px;
+    .socialmedia {
+      .socialmedia__icon {
+        a {
+          width: 90px;
+          height: 90px;
+        }
       }
     }
   }
@@ -98,7 +102,7 @@
       // second text on the picture
       background-repeat: round;
       padding: 70px;
-      h3 {
+      .contactus__subTitle {
         margin-bottom: 15px;
       }
       //contact us btn
@@ -107,7 +111,8 @@
         height: 40px;
       }
     }
-    .socialmedia__container {
+    //social media section
+    .socialmedia {
       .socialmedia__icon {
         gap: 30px;
       }
@@ -125,9 +130,10 @@
     }
 
     // socialmedia container
-    .socialmedia__container {
+    .socialmedia {
       .socialmedia__icon {
         justify-content: space-evenly;
+        //icons
         a {
           font-size: 2em;
         }
@@ -151,9 +157,9 @@
     .contactus__container {
       padding: 55px;
     }
-    .socialmedia__container {
+    .socialmedia {
       .socialmedia__icon {
-        .icon__item {
+        .icon__box {
           a {
             width: 30px;
             height: 30px;
