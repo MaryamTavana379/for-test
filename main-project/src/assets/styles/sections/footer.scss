@@ -2,14 +2,6 @@
 footer {
   background-color: #172036;
   padding: 80px 0 10px;
-  p {
-    font-size: 1em;
-    font-weight: $RegularFontweight;
-    margin: $DefaultMargin;
-    color: white;
-    width: 310px;
-  }
-
   // container of the list
   .footer__container {
     display: flex;
@@ -18,11 +10,11 @@ footer {
     color: white;
     margin-bottom: 80px;
     // items on the list
-    .footer__list {
+    .footer__list__box {
       padding: $DefaultPadding;
       margin: $DefaultMargin;
       // titles of each items
-      .listfooter__title {
+      .footer__list__title {
         font-size: 1.5em;
         font-weight: $MediumFontweight;
         margin: $DefaultMargin;
@@ -45,10 +37,10 @@ footer {
       .quickaccess__hr {
         @include hr($Width: 80px);
       }
-      .footerblog__hr {
+      .footer__list__hr1 {
         @include hr($Width: 24px);
       }
-      .footerproduct__hr {
+      .footer__list__hr2 {
         @include hr($Width: 40px);
       }
       .chanel__hr {
@@ -56,8 +48,8 @@ footer {
       }
     }
     // address column on the footer
-    .footeraddress__list {
-      .footer__address {
+    .footer__address_box {
+      .address__txt {
         margin: 40px 0;
         width: 85%;
       }
@@ -65,7 +57,7 @@ footer {
 
     // logo in the footer
     // logo container
-    .footerdiv__logo {
+    .logo__img__box {
       width: 80px;
       height: 80px;
       background-color: white;
@@ -78,6 +70,7 @@ footer {
       }
     }
   }
+
   //  the line after the lists
   .footer__hr {
     @include hr($Width: 90%, $Margin: auto);
@@ -87,6 +80,8 @@ footer {
   .last__text {
     text-align: center;
     margin: 24px auto;
+    width: 310px;
+    color: $WhiteColor;
   }
 }
 
@@ -95,26 +90,25 @@ footer {
 @media (min-width: $breakpoint-xlargescreen) {
   .footer {
     font-size: $XLargecsreen-fontsize;
-    .footer__container{
+    .footer__container {
       // logo's div
-      .footerdiv__logo{
+      .logo__img__box {
         width: 120px;
         height: 120px;
         // logo on the div
-        img{
+        img {
           width: 60%;
         }
       }
     }
     // line under the list
-    .footer__hr{
+    .footer__hr {
       width: 92%;
     }
     // text on the bottom
-    p{
-      width: 25%;
+    .last__text{
+      width: 20%;
     }
-    
   }
 }
 // 2.smal laptop
@@ -126,22 +120,25 @@ footer {
       justify-content: space-evenly;
       margin-bottom: 50px;
       // address column on the footer
-      .address__container {
+      .footer__address {
         width: 30%;
       }
-      .footeraddress__list {
+      .footer__address_box {
         //pinoox logo container
-        .footer__logo__box {
+        .address__logo {
           width: 30%;
           img {
             width: 100%;
           }
         }
-        .footer__address {
+        .address__txt {
           margin: 40px 0;
-          width: 80%;
+          width: 78%;
         }
       }
+    }
+    .last__text{
+      width: 28%;
     }
   }
 }
@@ -152,14 +149,17 @@ footer {
 
     .footer__container {
       // address section
-      .address__container {
+      .footer__address {
         width: 30%;
       }
       // logo list section
-      .footerdiv__logo {
+      .logo__img__box {
         width: 70px;
         height: 70px;
       }
+    }
+    .last__text{
+      width: 32%;
     }
   }
 }
@@ -170,19 +170,22 @@ footer {
     .footer__container {
       margin-right: 4rem;
       row-gap: 3rem;
-      .listfooter__container {
+      .footer__list {
         width: 50%;
       }
       // icon container
-      .logo__container {
+      .footer__logo {
         width: 100%;
       }
       // icons
-      .footerlogo__list {
+      .footer__logo__box {
         display: flex;
         gap: 40px;
         width: 100%;
       }
+    }
+    .last__text{
+      width: 50%;
     }
   }
 }
@@ -192,9 +195,9 @@ footer {
     .footer__container {
       margin-right: 3rem;
       //logo's container
-      .footerlogo__list {
+      .footer__logo__box {
         gap: 45px;
-        .footerdiv__logo {
+        .logo__img__box {
           width: 65px;
           height: 65px;
           img {
@@ -203,19 +206,25 @@ footer {
         }
       }
     }
+    .last__text{
+      width: 57%;
+    }
   }
 }
 //6. very smll mobile
 @media (max-width: 321px) {
   .footer {
     .footer__container {
-      .footerlogo__list {
+      .footer__logo__box {
         gap: 25px;
-        .footerdiv__logo {
+        .logo__img__box {
           width: 60px;
           height: 60px;
         }
       }
+    }
+    .last__text{
+      width: 65%;
     }
   }
 }
