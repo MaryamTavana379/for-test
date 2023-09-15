@@ -8,12 +8,19 @@
   </head>
   <body>
     <div id="app">
-       <p>{{name}}  -  {{job}}  -  {{age}} </p>
-       <button v-on:click="age++"> increase </button>
-       <button v-on:click="age--"> decrease </button>
+      <div v-if="show">
+        <p>{{name}} - {{job}} - {{age}}</p>
+        <button v-on:click="age++">increase</button>
+        <button v-on:click="age--">decrease</button>
 
+        <div @click="changeTitle('Khatereh Tavana')">change text</div>
+      </div>
 
-       <div @click="changeTitle('Khatereh Tavana')"> change text </div>
+      <button @click="showElements">
+        <span v-if=show >hide elements</span>
+        <span v-else> show elements</span>
+      </button>
+      <div v-show= show>showing....</div>
     </div>
 
     <script src="./app.js"></script>

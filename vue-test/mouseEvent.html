@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+      .box {
+        width: 400px;
+        background-color: rgb(207, 207, 207);
+        padding: 100px 0;
+        margin: 20px;
+        display: inline-block;
+        text-align: center;
+      }
+    </style>
+
+    <title>event</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="box" @mouseover="mouseEvent">mouse over</div>
+      <div class="box" @mouseleave="mouseEvent">mouse leave</div>
+      <div class="box" @dblclick="mouseEvent">dbclick</div>
+      <div class="box" @mousemove="mouseMove"> {{x}},{{y}}</div>
+    </div>
+
+    <script src="./mouseEvent.js"></script>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 const App = Vue.createApp({
   data() {
     return {
+      show: true,
       name: "Maryam Tavana",
       job: "Front-end dev",
       age: 23,
@@ -8,8 +9,11 @@ const App = Vue.createApp({
   },
   methods: {
     changeTitle(newName) {
-      this.name= newName
+      this.name = newName;
     },
+    showElements(){
+        this.show = !this.show
+    }
   },
 });
 

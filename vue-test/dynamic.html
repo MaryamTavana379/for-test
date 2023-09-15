@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+      body{
+        background-color: #eee;
+      }
+      ul{
+        margin: 0;
+        padding: 0;
+      }
+      li{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        background-color: #fff;
+        margin: 20px auto;
+      }
+      li.fav{
+        background-color: #3db133;
+      }
+      img{
+        width: 200px;
+        margin: 5px;
+      }
+    </style>
+
+    <title> for </title>
+  </head>
+  <body>
+    <div id="app">
+        <div v-if=showUser>
+            <ul v-for=" user in filterUsers">
+                <li :class="{fav:user.isFav}" @click=favClick(user)> 
+                    <h1>{{user.name}}</h1>
+                    <p> i'm working as {{user.job}}</p>
+                    <img v-bind:src="user.img" v-bind:alt="user.name">
+                </li>
+            </ul>
+        </div>
+        <button @click= showClick>
+            <span v-if="showUser"> Hide users</span>
+            <span v-else> Show users</span>
+        </button>
+    </div>
+
+    <script src="./dynamic.js"></script>
+  </body>
+</html>
