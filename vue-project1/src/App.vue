@@ -1,12 +1,15 @@
 <template>
+  <UserModal/>
   <h1>{{ title }}</h1>
   <input type="text" ref="name" />
   <button @click="inputHandler">Click</button>
 </template>
 
 <script>
+import UserModal from './components/UserModal.vue'
 export default {
   name: "App",
+  components:{UserModal},
   data() {
     return {
       title: "This is a test text!!!!!!",
@@ -21,6 +24,9 @@ export default {
 </script>
 
 <style>
+body{
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
