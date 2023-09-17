@@ -1,5 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
+  <input type="text" ref="name" />
+  <button @click="inputHandler">Click</button>
 </template>
 
 <script>
@@ -9,6 +11,11 @@ export default {
     return {
       title: "This is a test text!!!!!!",
     };
+  },
+  methods: {
+    inputHandler() {
+      this.$refs.name.classList.add("mari");
+    },
   },
 };
 </script>
