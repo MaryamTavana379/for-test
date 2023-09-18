@@ -1,12 +1,12 @@
 <template>
   <div class="backdrop">
     <div class="modal">
-      <h3>Modal Test</h3>
+      <h1>Modal Test</h1>
     </div>
   </div>
 </template>
 
-<style >
+<style scoped >
 
 .backdrop {
   background-color: rgba(0, 0, 0, 0.5);
@@ -17,8 +17,11 @@
 }
 .modal {
   width: 400px;
-  margin: auto;
+  margin:10rem auto;
   background-color: white;
   padding: 50px;
+}
+h1{
+  color: blue;
 }
 </style>
