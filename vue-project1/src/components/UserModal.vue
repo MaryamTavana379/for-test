@@ -1,10 +1,23 @@
 <template>
-  <div class="backdrop">
-    <div class="modal">
-      <h1>Modal Test</h1>
+  <div class="backdrop" @click.self="closeModal">
+    <div :class="{hi : theme === 'hi'}">
+      <h1> {{ header }}</h1>
+      <p>{{ text }} </p>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods:{
+    closeModal(){
+      this.$emit("close")
+    }
+
+  },
+  props: ['header', 'text','theme']
+}
+</script>
 
 <style scoped >
 
@@ -15,13 +28,15 @@
   width: 100%;
   height: 100%;
 }
-.modal {
+.hi {
   width: 400px;
   margin:10rem auto;
-  background-color: white;
+  background-color: darkcyan;
+  border-radius: 10px;
   padding: 50px;
+  color: white;
 }
-h1{
-  color: blue;
+.hi h1{
+  color: white;
 }
 </style>

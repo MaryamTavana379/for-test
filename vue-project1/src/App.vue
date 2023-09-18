@@ -1,8 +1,11 @@
 <template>
-  <UserModal/>
+ 
   <h1>{{ title }}</h1>
-  <input type="text" ref="name" />
-  <button @click="inputHandler">Click</button>
+  <!-- <input type="text" ref="name" /> -->
+  <button @click.shift="modalHandler"> Open Modal (shift) </button>
+  <div v-if="modal">
+    <UserModal :header="modalTitle" :text="modalTxt" theme="hi" @close="modalHandler" />
+  </div>
 </template>
 
 <script>
@@ -12,13 +15,19 @@ export default {
   components:{UserModal},
   data() {
     return {
-      title: "This is a test text!!!!!!",
+      modal:false,
+      title: "Welcome",
+      modalTitle: " Hello Mari ",
+      modalTxt: " This is a test for you!!!!!!!!! "
     };
   },
   methods: {
-    inputHandler() {
-      this.$refs.name.classList.add("mari");
-    },
+    // inputHandler() {
+    //   this.$refs.name.classList.add("mari");
+    // },
+    modalHandler(){
+      this.modal = !this.modal
+    }
   },
 };
 </script>
@@ -35,5 +44,10 @@ export default {
 }
 h1 {
   color: rgb(115, 54, 115);
+  width: fit-content;
+  border-bottom: 1px solid black;
+  margin: 2rem auto;
+
+
 }
 </style>
