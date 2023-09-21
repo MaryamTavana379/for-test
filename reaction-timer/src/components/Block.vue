@@ -1,30 +1,40 @@
 <template>
-  <div class="block" v-if="showBlock">Click me !</div>
+  <div class="block" v-if="showBlock" @click="overTime">Click me !</div>
 </template>
 
 <script>
 export default {
-    props:["delay"],
-    data(){
-      return{
-        showBlock: false
-      }
+  props: ["delay"],
+  data() {
+    return {
+      showBlock: false,
+      timer: null,
+      reaction: 0,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showBlock = true;
+      this.startTime()
+    }, this.delay);
+  },
+  updated() {
+    console.log("component updated...");
+  },
+  unmounted() {
+    console.log(" component unmounted...");
+  },
+  methods: {
+    startTime() {
+      this.timer += setInterval(() => {
+        this.reaction += 10;
+      }, 10);
     },
-    mounted(){
-      console.log("component mounted... ")
-      setTimeout(()=>{
-        this.showBlock = true;
-        console.log(this.delay);
-      },this.delay)
+    overTime() {
+      clearInterval(this.timer);
+      console.log(this.reaction);
     },
-    updated(){
-    console.log("component updated...")
-    
-    },
-    unmounted(){
-      console.log(" component unmounted...")
-    }
-
+  },
 };
 </script>
 
