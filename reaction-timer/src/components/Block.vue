@@ -32,7 +32,7 @@ export default {
     },
     overTime() {
       clearInterval(this.timer);
-      console.log(this.reaction);
+      this.$emit('end', this.reaction)
     },
   },
 };
