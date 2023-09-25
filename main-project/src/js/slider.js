@@ -1,5 +1,4 @@
-import "../assets/styles/main.scss";
-import "./hamburger.js";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
